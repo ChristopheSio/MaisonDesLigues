@@ -1,0 +1,16 @@
+﻿
+
+Inscription des licenciés
+
+
+Confirmation d'inscription par mail et LOG
+    +> L'envoi de mail peut se faire en 
+    -->C# ou sous SQLServer: 
+    ==> présenter rapidement ces deux techniques et justifier votre choix final.
+
+contrôles
+    Le montant du ou des chèques doit correspondre au total des prestations
+    
+    
+Dans le mail, on prévoit de les prévenir qu'une inscription à 
+un atelier n'a pu se faire si l'atelier est complet.

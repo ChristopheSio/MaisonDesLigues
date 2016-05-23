@@ -58,7 +58,7 @@ namespace MaisonDesLigues
                 cbHotel.DataSource = Modele.ObtenirDonnees("VHOTEL01");
                 cbHotel.DisplayMember = "LIBELLE";
                 cbHotel.ValueMember = "ID";
-                cbHotel.Width = 110;
+                cbHotel.Width = 200;
                 cbHotel.Left = 240;
                 cbHotel.Top = 5 + (25 * num);
                 cbHotel.Visible = true;
@@ -68,7 +68,7 @@ namespace MaisonDesLigues
                 cbChambre.DisplayMember = "LIBELLE";
                 cbChambre.ValueMember = "ID";
                 cbChambre.Width = 90;
-                cbChambre.Left = 410;
+                cbChambre.Left = 450;
                 cbChambre.Top = 5 + (25 * num);
                 cbChambre.Visible = true;
                 // Ajout
