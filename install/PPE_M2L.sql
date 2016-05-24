@@ -526,6 +526,19 @@ create view VDATEBENEVOLAT01 as
 select ID,DATEBENEVOLAT as LIBELLE
 from DATEBENEVOLAT;
 go
+
+-- ----------------------------------------------------------------------------------
+--                                VUES CUSTOM
+-- ----------------------------------------------------------------------------------
+CREATE VIEW VATELIERVACATIONOCCUPES AS 
+SELECT v.IDATELIER, v.IDVACATION, a.NBPLACESMAXI, COUNT(p.IDPARTICIPANT) AS NBPLACESOCCUPES 
+FROM  VACATION v
+INNER JOIN ATELIER a ON v.IDATELIER = a.ID
+LEFT JOIN PARTICIPER p ON p.IDATELIER = v.IDATELIER AND p.IDVACATION = v.IDVACATION
+GROUP BY v.IDATELIER, v.IDVACATION, a.NBPLACESMAXI
+go
+
+
 -- ----------------------------------------------------------------------------------
 --                                PROCEDURE STOCKE
 -- ----------------------------------------------------------------------------------
@@ -567,12 +580,6 @@ GO
 
 
 -- ----------------------------------------------------------------------------------
---                                VUES
--- ----------------------------------------------------------------------------------
-
-
-
--- ----------------------------------------------------------------------------------
 --                                Les utilisateurs ( à tester)
 -- ----------------------------------------------------------------------------------
 /*
@@ -584,6 +591,25 @@ GO
   - le paramètre newid est un paramètre out pour renvoyer à la procédure appelante 
   l'id du participant créé. (à compléter)
 */
+
+USE master; 
+IF EXISTS (SELECT * FROM sys.syslogins WHERE name = N'employemdl1') DROP LOGIN [employemdl1];
+CREATE LOGIN employemdl1 WITH PASSWORD = 'employemdl1'; 
+USE PPE_M2L;
+IF EXISTS (SELECT * FROM sys.syslogins WHERE name = N'employemdl1') DROP LOGIN [employemdl1];
+CREATE LOGIN employemdl1 WITH PASSWORD = 'employemdl1'; 
+GO
+grant execute to employemdl1;
+go
+
+-- Creates the login employemdl1 with password 'employemdl1'.
+
+
+-- Creates a database user for the login created above.
+
+
+
+
 /*
 use master;
 CREATE LOGIN mdl1 WITH PASSWORD = 'mdl1';

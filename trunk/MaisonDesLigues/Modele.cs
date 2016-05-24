@@ -43,7 +43,10 @@ namespace MaisonDesLigues
             ConnectionStringSettings ConnectionStr = ConfigurationManager.ConnectionStrings["MaConnection"];
             try {
                 ///<remarks>on va remplacer dans la chaine de connexion les paramètres par le login et le pwd saisis dans les zones de texte. Pour ça on va utiliser la méthode Format de la classe String.</remarks>
-                DataBaseConnection = new SqlConnection(string.Format(ConnectionStr.ConnectionString, leLogin, leMotDePasse));
+                String ConnexionStr = string.Format(ConnectionStr.ConnectionString, leLogin, leMotDePasse);
+                //DialogResult res = MessageBox.Show("Connexion String :\n\n" + ConnexionStr, "ConnexionStr", MessageBoxButtons.OK);
+                //
+                DataBaseConnection = new SqlConnection(ConnexionStr);
                 DataBaseConnection.Open();
             } catch (SqlException e) {
                 throw new Exception("Erreur à la connexion : " + e.Message + "\n\n(info:" + ConnectionStr.ConnectionString + ")");

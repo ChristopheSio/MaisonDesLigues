@@ -53,7 +53,7 @@
             this.tbLogin.Name = "tbLogin";
             this.tbLogin.Size = new System.Drawing.Size(141, 20);
             this.tbLogin.TabIndex = 2;
-            this.tbLogin.Text = "**factif**";
+            this.tbLogin.Text = "employemdl1";
             // 
             // lTitle
             // 
@@ -71,8 +71,10 @@
             // 
             this.tbMdp.Location = new System.Drawing.Point(92, 70);
             this.tbMdp.Name = "tbMdp";
+            this.tbMdp.PasswordChar = '*';
             this.tbMdp.Size = new System.Drawing.Size(141, 20);
             this.tbMdp.TabIndex = 5;
+            this.tbMdp.Text = "employemdl1";
             // 
             // lMdp
             // 

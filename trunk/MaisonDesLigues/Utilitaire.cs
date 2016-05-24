@@ -144,15 +144,12 @@ namespace MaisonDesLigues
         /// <summary>Cette fonction va compter le nombre de controles types CheckBox qui sont cochées contenus dans la collection controls du container passé en paramètre</summary>
         /// <param name="UnControl"> le container sur lequel on va compter les controles de type checkbox qui sont checked</param>
         /// <returns>nombre  de checkbox cochées</returns>
-        internal static int totalCheckedDuContainer(ScrollableControl UnContainer)
+        internal static int totalCheckedDuContainer(Control UnContainer)
         {
-            Int16 i = 0;
-            foreach (Control UnControle in UnContainer.Controls)
-            {
-                if (UnControle.GetType().Name == "CheckBox" && ((CheckBox)UnControle).Checked)
-                {
+            int i = 0;
+            foreach (Control UnControle in UnContainer.Controls) {
+                if ( (UnControle.GetType().Name == "CheckBox" && ((CheckBox)UnControle).Checked) || (UnControle.GetType().Name == "RadioButton" && ((RadioButton)UnControle).Checked) )
                     i++;
-                }
             }
             return i;
         }

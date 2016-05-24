@@ -499,337 +499,205 @@
   <data name="&gt;&gt;gbInscriptionIdentite.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <metadata name="N.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ATELIER.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="CHOIX.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="VACATION.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="dgInscriptionLicencieChoixAteliers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 109</value>
+  <data name="&gt;&gt;pInscriptionBenevoleDates.Name" xml:space="preserve">
+    <value>pInscriptionBenevoleDates</value>
   </data>
-  <data name="dgInscriptionLicencieChoixAteliers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>560, 86</value>
+  <data name="&gt;&gt;pInscriptionBenevoleDates.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="dgInscriptionLicencieChoixAteliers.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
+  <data name="&gt;&gt;pInscriptionBenevoleDates.Parent" xml:space="preserve">
+    <value>gbInscriptionBenevoleDates</value>
   </data>
-  <data name="&gt;&gt;dgInscriptionLicencieChoixAteliers.Name" xml:space="preserve">
-    <value>dgInscriptionLicencieChoixAteliers</value>
-  </data>
-  <data name="&gt;&gt;dgInscriptionLicencieChoixAteliers.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dgInscriptionLicencieChoixAteliers.Parent" xml:space="preserve">
-    <value>gbInscriptionLicencie</value>
-  </data>
-  <data name="&gt;&gt;dgInscriptionLicencieChoixAteliers.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;pInscriptionBenevoleDates.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="tbInscriptionLicencieNumeroLicence.Location" type="System.Drawing.Point, System.Drawing">
-    <value>114, 20</value>
+  <data name="gbInscriptionBenevoleDates.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 87</value>
   </data>
-  <data name="tbInscriptionLicencieNumeroLicence.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 20</value>
+  <data name="gbInscriptionBenevoleDates.Size" type="System.Drawing.Size, System.Drawing">
+    <value>350, 99</value>
   </data>
-  <data name="tbInscriptionLicencieNumeroLicence.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
+  <data name="gbInscriptionBenevoleDates.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
   </data>
-  <data name="&gt;&gt;tbInscriptionLicencieNumeroLicence.Name" xml:space="preserve">
-    <value>tbInscriptionLicencieNumeroLicence</value>
+  <data name="gbInscriptionBenevoleDates.Text" xml:space="preserve">
+    <value>Dates de bénévolat</value>
   </data>
-  <data name="&gt;&gt;tbInscriptionLicencieNumeroLicence.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;gbInscriptionBenevoleDates.Name" xml:space="preserve">
+    <value>gbInscriptionBenevoleDates</value>
   </data>
-  <data name="&gt;&gt;tbInscriptionLicencieNumeroLicence.Parent" xml:space="preserve">
-    <value>gbInscriptionLicencie</value>
-  </data>
-  <data name="&gt;&gt;tbInscriptionLicencieNumeroLicence.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lbInscriptionLicencieNumeroLicence.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lbInscriptionLicencieNumeroLicence.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 23</value>
-  </data>
-  <data name="lbInscriptionLicencieNumeroLicence.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 13</value>
-  </data>
-  <data name="lbInscriptionLicencieNumeroLicence.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="lbInscriptionLicencieNumeroLicence.Text" xml:space="preserve">
-    <value>Numéro de licence :</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionLicencieNumeroLicence.Name" xml:space="preserve">
-    <value>lbInscriptionLicencieNumeroLicence</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionLicencieNumeroLicence.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionLicencieNumeroLicence.Parent" xml:space="preserve">
-    <value>gbInscriptionLicencie</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionLicencieNumeroLicence.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;nudInscriptionLicencieChequeMontant2.Name" xml:space="preserve">
-    <value>nudInscriptionLicencieChequeMontant2</value>
-  </data>
-  <data name="&gt;&gt;nudInscriptionLicencieChequeMontant2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudInscriptionLicencieChequeMontant2.Parent" xml:space="preserve">
-    <value>gbInscriptionLicencieCheque</value>
-  </data>
-  <data name="&gt;&gt;nudInscriptionLicencieChequeMontant2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;nudInscriptionLicencieChequeMontant1.Name" xml:space="preserve">
-    <value>nudInscriptionLicencieChequeMontant1</value>
-  </data>
-  <data name="&gt;&gt;nudInscriptionLicencieChequeMontant1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudInscriptionLicencieChequeMontant1.Parent" xml:space="preserve">
-    <value>gbInscriptionLicencieCheque</value>
-  </data>
-  <data name="&gt;&gt;nudInscriptionLicencieChequeMontant1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionLicencieChequeN.Name" xml:space="preserve">
-    <value>lbInscriptionLicencieChequeN</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionLicencieChequeN.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionLicencieChequeN.Parent" xml:space="preserve">
-    <value>gbInscriptionLicencieCheque</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionLicencieChequeN.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionLicencieChequeMontant.Name" xml:space="preserve">
-    <value>lbInscriptionLicencieChequeMontant</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionLicencieChequeMontant.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionLicencieChequeMontant.Parent" xml:space="preserve">
-    <value>gbInscriptionLicencieCheque</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionLicencieChequeMontant.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionLicencieCheque1.Name" xml:space="preserve">
-    <value>lbInscriptionLicencieCheque1</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionLicencieCheque1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionLicencieCheque1.Parent" xml:space="preserve">
-    <value>gbInscriptionLicencieCheque</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionLicencieCheque1.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;tbInscriptionLicencieChequeN1.Name" xml:space="preserve">
-    <value>tbInscriptionLicencieChequeN1</value>
-  </data>
-  <data name="&gt;&gt;tbInscriptionLicencieChequeN1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbInscriptionLicencieChequeN1.Parent" xml:space="preserve">
-    <value>gbInscriptionLicencieCheque</value>
-  </data>
-  <data name="&gt;&gt;tbInscriptionLicencieChequeN1.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionLicencieCheque2.Name" xml:space="preserve">
-    <value>lbInscriptionLicencieCheque2</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionLicencieCheque2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionLicencieCheque2.Parent" xml:space="preserve">
-    <value>gbInscriptionLicencieCheque</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionLicencieCheque2.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieChequeN2Activer.Name" xml:space="preserve">
-    <value>cbInscriptionLicencieChequeN2Activer</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieChequeN2Activer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieChequeN2Activer.Parent" xml:space="preserve">
-    <value>gbInscriptionLicencieCheque</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieChequeN2Activer.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;tbInscriptionLicencieChequeN2.Name" xml:space="preserve">
-    <value>tbInscriptionLicencieChequeN2</value>
-  </data>
-  <data name="&gt;&gt;tbInscriptionLicencieChequeN2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbInscriptionLicencieChequeN2.Parent" xml:space="preserve">
-    <value>gbInscriptionLicencieCheque</value>
-  </data>
-  <data name="&gt;&gt;tbInscriptionLicencieChequeN2.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="gbInscriptionLicencieCheque.Location" type="System.Drawing.Point, System.Drawing">
-    <value>366, 13</value>
-  </data>
-  <data name="gbInscriptionLicencieCheque.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 90</value>
-  </data>
-  <data name="gbInscriptionLicencieCheque.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="gbInscriptionLicencieCheque.Text" xml:space="preserve">
-    <value>Cheque(s)</value>
-  </data>
-  <data name="&gt;&gt;gbInscriptionLicencieCheque.Name" xml:space="preserve">
-    <value>gbInscriptionLicencieCheque</value>
-  </data>
-  <data name="&gt;&gt;gbInscriptionLicencieCheque.Type" xml:space="preserve">
+  <data name="&gt;&gt;gbInscriptionBenevoleDates.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;gbInscriptionLicencieCheque.Parent" xml:space="preserve">
-    <value>gbInscriptionLicencie</value>
+  <data name="&gt;&gt;gbInscriptionBenevoleDates.Parent" xml:space="preserve">
+    <value>gbInscriptionBenevole</value>
   </data>
-  <data name="&gt;&gt;gbInscriptionLicencieCheque.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediMidi.Name" xml:space="preserve">
-    <value>cbInscriptionLicencieRepasAccompagnantSamediMidi</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediMidi.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediMidi.Parent" xml:space="preserve">
-    <value>gbInscriptionLicencieRepasAccompagnant</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediMidi.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;gbInscriptionBenevoleDates.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediSoir.Name" xml:space="preserve">
-    <value>cbInscriptionLicencieRepasAccompagnantSamediSoir</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediSoir.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediSoir.Parent" xml:space="preserve">
-    <value>gbInscriptionLicencieRepasAccompagnant</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediSoir.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantDimancheMidi.Name" xml:space="preserve">
-    <value>cbInscriptionLicencieRepasAccompagnantDimancheMidi</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantDimancheMidi.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantDimancheMidi.Parent" xml:space="preserve">
-    <value>gbInscriptionLicencieRepasAccompagnant</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantDimancheMidi.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="gbInscriptionLicencieRepasAccompagnant.Location" type="System.Drawing.Point, System.Drawing">
-    <value>213, 13</value>
-  </data>
-  <data name="gbInscriptionLicencieRepasAccompagnant.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 70</value>
-  </data>
-  <data name="gbInscriptionLicencieRepasAccompagnant.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="gbInscriptionLicencieRepasAccompagnant.Text" xml:space="preserve">
-    <value>Repas accompagnant(e)</value>
-  </data>
-  <data name="&gt;&gt;gbInscriptionLicencieRepasAccompagnant.Name" xml:space="preserve">
-    <value>gbInscriptionLicencieRepasAccompagnant</value>
-  </data>
-  <data name="&gt;&gt;gbInscriptionLicencieRepasAccompagnant.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbInscriptionLicencieRepasAccompagnant.Parent" xml:space="preserve">
-    <value>gbInscriptionLicencie</value>
-  </data>
-  <data name="&gt;&gt;gbInscriptionLicencieRepasAccompagnant.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="lbInscriptionLicencieAtelier.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lbInscriptionBenevoleNumeroLicenceOptionel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lbInscriptionLicencieAtelier.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="lbInscriptionBenevoleNumeroLicenceOptionel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="lbInscriptionLicencieAtelier.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 90</value>
+  <data name="lbInscriptionBenevoleNumeroLicenceOptionel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>268, 58</value>
   </data>
-  <data name="lbInscriptionLicencieAtelier.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 13</value>
+  <data name="lbInscriptionBenevoleNumeroLicenceOptionel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 13</value>
   </data>
-  <data name="lbInscriptionLicencieAtelier.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="lbInscriptionBenevoleNumeroLicenceOptionel.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
   </data>
-  <data name="lbInscriptionLicencieAtelier.Text" xml:space="preserve">
-    <value>Atelier(s) :      (5 choix possibles)</value>
+  <data name="lbInscriptionBenevoleNumeroLicenceOptionel.Text" xml:space="preserve">
+    <value>(optionel)</value>
   </data>
-  <data name="&gt;&gt;lbInscriptionLicencieAtelier.Name" xml:space="preserve">
-    <value>lbInscriptionLicencieAtelier</value>
+  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicenceOptionel.Name" xml:space="preserve">
+    <value>lbInscriptionBenevoleNumeroLicenceOptionel</value>
   </data>
-  <data name="&gt;&gt;lbInscriptionLicencieAtelier.Type" xml:space="preserve">
+  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicenceOptionel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lbInscriptionLicencieAtelier.Parent" xml:space="preserve">
-    <value>gbInscriptionLicencie</value>
+  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicenceOptionel.Parent" xml:space="preserve">
+    <value>gbInscriptionBenevole</value>
   </data>
-  <data name="&gt;&gt;lbInscriptionLicencieAtelier.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicenceOptionel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tbInscriptionBenevoleNumeroLicence.Location" type="System.Drawing.Point, System.Drawing">
+    <value>125, 52</value>
+  </data>
+  <data name="tbInscriptionBenevoleNumeroLicence.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 20</value>
+  </data>
+  <data name="tbInscriptionBenevoleNumeroLicence.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="gbInscriptionLicencie.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="&gt;&gt;tbInscriptionBenevoleNumeroLicence.Name" xml:space="preserve">
+    <value>tbInscriptionBenevoleNumeroLicence</value>
   </data>
-  <data name="gbInscriptionLicencie.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="&gt;&gt;tbInscriptionBenevoleNumeroLicence.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="gbInscriptionLicencie.Size" type="System.Drawing.Size, System.Drawing">
-    <value>574, 201</value>
+  <data name="&gt;&gt;tbInscriptionBenevoleNumeroLicence.Parent" xml:space="preserve">
+    <value>gbInscriptionBenevole</value>
   </data>
-  <data name="gbInscriptionLicencie.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;tbInscriptionBenevoleNumeroLicence.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lbInscriptionBenevoleNumeroLicence.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbInscriptionBenevoleNumeroLicence.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbInscriptionBenevoleNumeroLicence.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 55</value>
+  </data>
+  <data name="lbInscriptionBenevoleNumeroLicence.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 13</value>
+  </data>
+  <data name="lbInscriptionBenevoleNumeroLicence.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lbInscriptionBenevoleNumeroLicence.Text" xml:space="preserve">
+    <value>Numéro de licence :</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicence.Name" xml:space="preserve">
+    <value>lbInscriptionBenevoleNumeroLicence</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicence.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicence.Parent" xml:space="preserve">
+    <value>gbInscriptionBenevole</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicence.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="gbInscriptionLicencie.Text" xml:space="preserve">
-    <value>Complément inscription licencié</value>
+  <data name="tbInscriptionBenevoleDateNaissance.Location" type="System.Drawing.Point, System.Drawing">
+    <value>188, 26</value>
   </data>
-  <data name="gbInscriptionLicencie.Visible" type="System.Boolean, mscorlib">
+  <data name="tbInscriptionBenevoleDateNaissance.MaxLength" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="tbInscriptionBenevoleDateNaissance.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 20</value>
+  </data>
+  <data name="tbInscriptionBenevoleDateNaissance.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tbInscriptionBenevoleDateNaissance.Name" xml:space="preserve">
+    <value>tbInscriptionBenevoleDateNaissance</value>
+  </data>
+  <data name="&gt;&gt;tbInscriptionBenevoleDateNaissance.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbInscriptionBenevoleDateNaissance.Parent" xml:space="preserve">
+    <value>gbInscriptionBenevole</value>
+  </data>
+  <data name="&gt;&gt;tbInscriptionBenevoleDateNaissance.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lbInscriptionBenevoleDateNaissance.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbInscriptionBenevoleDateNaissance.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbInscriptionBenevoleDateNaissance.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 29</value>
+  </data>
+  <data name="lbInscriptionBenevoleDateNaissance.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 13</value>
+  </data>
+  <data name="lbInscriptionBenevoleDateNaissance.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lbInscriptionBenevoleDateNaissance.Text" xml:space="preserve">
+    <value>Date de naissance (jj/mm/aaaa) :</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionBenevoleDateNaissance.Name" xml:space="preserve">
+    <value>lbInscriptionBenevoleDateNaissance</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionBenevoleDateNaissance.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionBenevoleDateNaissance.Parent" xml:space="preserve">
+    <value>gbInscriptionBenevole</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionBenevoleDateNaissance.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="gbInscriptionBenevole.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="gbInscriptionBenevole.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="gbInscriptionBenevole.Size" type="System.Drawing.Size, System.Drawing">
+    <value>574, 201</value>
+  </data>
+  <data name="gbInscriptionBenevole.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="gbInscriptionBenevole.Text" xml:space="preserve">
+    <value>Disponibilités bénévoles</value>
+  </data>
+  <data name="gbInscriptionBenevole.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;gbInscriptionLicencie.Name" xml:space="preserve">
-    <value>gbInscriptionLicencie</value>
+  <data name="&gt;&gt;gbInscriptionBenevole.Name" xml:space="preserve">
+    <value>gbInscriptionBenevole</value>
   </data>
-  <data name="&gt;&gt;gbInscriptionLicencie.Type" xml:space="preserve">
+  <data name="&gt;&gt;gbInscriptionBenevole.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;gbInscriptionLicencie.Parent" xml:space="preserve">
+  <data name="&gt;&gt;gbInscriptionBenevole.Parent" xml:space="preserve">
     <value>pInscritpionComplement</value>
   </data>
-  <data name="&gt;&gt;gbInscriptionLicencie.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;gbInscriptionBenevole.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;flpInscriptionIntervenantType.Name" xml:space="preserve">
@@ -898,118 +766,106 @@
   <data name="&gt;&gt;gbInscriptionIntervenant.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;gbInscriptionBenevoleDates.Name" xml:space="preserve">
-    <value>gbInscriptionBenevoleDates</value>
+  <data name="&gt;&gt;dgInscriptionLicencieChoixAteliers.Name" xml:space="preserve">
+    <value>dgInscriptionLicencieChoixAteliers</value>
   </data>
-  <data name="&gt;&gt;gbInscriptionBenevoleDates.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;dgInscriptionLicencieChoixAteliers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;gbInscriptionBenevoleDates.Parent" xml:space="preserve">
-    <value>gbInscriptionBenevole</value>
+  <data name="&gt;&gt;dgInscriptionLicencieChoixAteliers.Parent" xml:space="preserve">
+    <value>gbInscriptionLicencie</value>
   </data>
-  <data name="&gt;&gt;gbInscriptionBenevoleDates.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;dgInscriptionLicencieChoixAteliers.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicenceOptionel.Name" xml:space="preserve">
-    <value>lbInscriptionBenevoleNumeroLicenceOptionel</value>
+  <data name="&gt;&gt;tbInscriptionLicencieNumeroLicence.Name" xml:space="preserve">
+    <value>tbInscriptionLicencieNumeroLicence</value>
   </data>
-  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicenceOptionel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;tbInscriptionLicencieNumeroLicence.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicenceOptionel.Parent" xml:space="preserve">
-    <value>gbInscriptionBenevole</value>
+  <data name="&gt;&gt;tbInscriptionLicencieNumeroLicence.Parent" xml:space="preserve">
+    <value>gbInscriptionLicencie</value>
   </data>
-  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicenceOptionel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;tbInscriptionLicencieNumeroLicence.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;dtpInscriptionBenevoleDateDeNaissance.Name" xml:space="preserve">
-    <value>dtpInscriptionBenevoleDateDeNaissance</value>
+  <data name="&gt;&gt;lbInscriptionLicencieNumeroLicence.Name" xml:space="preserve">
+    <value>lbInscriptionLicencieNumeroLicence</value>
   </data>
-  <data name="&gt;&gt;dtpInscriptionBenevoleDateDeNaissance.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dtpInscriptionBenevoleDateDeNaissance.Parent" xml:space="preserve">
-    <value>gbInscriptionBenevole</value>
-  </data>
-  <data name="&gt;&gt;dtpInscriptionBenevoleDateDeNaissance.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;tbInscriptionBenevoleNumeroLicence.Name" xml:space="preserve">
-    <value>tbInscriptionBenevoleNumeroLicence</value>
-  </data>
-  <data name="&gt;&gt;tbInscriptionBenevoleNumeroLicence.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbInscriptionBenevoleNumeroLicence.Parent" xml:space="preserve">
-    <value>gbInscriptionBenevole</value>
-  </data>
-  <data name="&gt;&gt;tbInscriptionBenevoleNumeroLicence.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicence.Name" xml:space="preserve">
-    <value>lbInscriptionBenevoleNumeroLicence</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicence.Type" xml:space="preserve">
+  <data name="&gt;&gt;lbInscriptionLicencieNumeroLicence.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicence.Parent" xml:space="preserve">
-    <value>gbInscriptionBenevole</value>
+  <data name="&gt;&gt;lbInscriptionLicencieNumeroLicence.Parent" xml:space="preserve">
+    <value>gbInscriptionLicencie</value>
   </data>
-  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicence.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;tbInscriptionBenevoleDateNaissance.Name" xml:space="preserve">
-    <value>tbInscriptionBenevoleDateNaissance</value>
-  </data>
-  <data name="&gt;&gt;tbInscriptionBenevoleDateNaissance.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbInscriptionBenevoleDateNaissance.Parent" xml:space="preserve">
-    <value>gbInscriptionBenevole</value>
-  </data>
-  <data name="&gt;&gt;tbInscriptionBenevoleDateNaissance.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionBenevoleDateNaissance.Name" xml:space="preserve">
-    <value>lbInscriptionBenevoleDateNaissance</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionBenevoleDateNaissance.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionBenevoleDateNaissance.Parent" xml:space="preserve">
-    <value>gbInscriptionBenevole</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionBenevoleDateNaissance.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="gbInscriptionBenevole.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="gbInscriptionBenevole.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="gbInscriptionBenevole.Size" type="System.Drawing.Size, System.Drawing">
-    <value>574, 201</value>
-  </data>
-  <data name="gbInscriptionBenevole.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;lbInscriptionLicencieNumeroLicence.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="gbInscriptionBenevole.Text" xml:space="preserve">
-    <value>Disponibilités bénévoles</value>
+  <data name="&gt;&gt;gbInscriptionLicencieCheque.Name" xml:space="preserve">
+    <value>gbInscriptionLicencieCheque</value>
   </data>
-  <data name="gbInscriptionBenevole.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;gbInscriptionBenevole.Name" xml:space="preserve">
-    <value>gbInscriptionBenevole</value>
-  </data>
-  <data name="&gt;&gt;gbInscriptionBenevole.Type" xml:space="preserve">
+  <data name="&gt;&gt;gbInscriptionLicencieCheque.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;gbInscriptionBenevole.Parent" xml:space="preserve">
+  <data name="&gt;&gt;gbInscriptionLicencieCheque.Parent" xml:space="preserve">
+    <value>gbInscriptionLicencie</value>
+  </data>
+  <data name="&gt;&gt;gbInscriptionLicencieCheque.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;gbInscriptionLicencieRepasAccompagnant.Name" xml:space="preserve">
+    <value>gbInscriptionLicencieRepasAccompagnant</value>
+  </data>
+  <data name="&gt;&gt;gbInscriptionLicencieRepasAccompagnant.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbInscriptionLicencieRepasAccompagnant.Parent" xml:space="preserve">
+    <value>gbInscriptionLicencie</value>
+  </data>
+  <data name="&gt;&gt;gbInscriptionLicencieRepasAccompagnant.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionLicencieAtelier.Name" xml:space="preserve">
+    <value>lbInscriptionLicencieAtelier</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionLicencieAtelier.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionLicencieAtelier.Parent" xml:space="preserve">
+    <value>gbInscriptionLicencie</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionLicencieAtelier.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="gbInscriptionLicencie.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="gbInscriptionLicencie.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="gbInscriptionLicencie.Size" type="System.Drawing.Size, System.Drawing">
+    <value>574, 201</value>
+  </data>
+  <data name="gbInscriptionLicencie.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="gbInscriptionLicencie.Text" xml:space="preserve">
+    <value>Complément inscription licencié</value>
+  </data>
+  <data name="gbInscriptionLicencie.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;gbInscriptionLicencie.Name" xml:space="preserve">
+    <value>gbInscriptionLicencie</value>
+  </data>
+  <data name="&gt;&gt;gbInscriptionLicencie.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbInscriptionLicencie.Parent" xml:space="preserve">
     <value>pInscritpionComplement</value>
   </data>
-  <data name="&gt;&gt;gbInscriptionBenevole.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;gbInscriptionLicencie.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="pInscritpionComplement.Location" type="System.Drawing.Point, System.Drawing">
@@ -1381,36 +1237,6 @@
   <data name="&gt;&gt;flpInscriptionTypeParticipant.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="rbInscriptionIntervenant.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="rbInscriptionIntervenant.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="rbInscriptionIntervenant.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 3</value>
-  </data>
-  <data name="rbInscriptionIntervenant.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 17</value>
-  </data>
-  <data name="rbInscriptionIntervenant.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="rbInscriptionIntervenant.Text" xml:space="preserve">
-    <value>Intervenant</value>
-  </data>
-  <data name="&gt;&gt;rbInscriptionIntervenant.Name" xml:space="preserve">
-    <value>rbInscriptionIntervenant</value>
-  </data>
-  <data name="&gt;&gt;rbInscriptionIntervenant.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbInscriptionIntervenant.Parent" xml:space="preserve">
-    <value>flpInscriptionTypeParticipant</value>
-  </data>
-  <data name="&gt;&gt;rbInscriptionIntervenant.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="rbInscriptionLicencie.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1440,6 +1266,36 @@
   </data>
   <data name="&gt;&gt;rbInscriptionLicencie.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="rbInscriptionIntervenant.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rbInscriptionIntervenant.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="rbInscriptionIntervenant.Location" type="System.Drawing.Point, System.Drawing">
+    <value>74, 3</value>
+  </data>
+  <data name="rbInscriptionIntervenant.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 17</value>
+  </data>
+  <data name="rbInscriptionIntervenant.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="rbInscriptionIntervenant.Text" xml:space="preserve">
+    <value>Intervenant</value>
+  </data>
+  <data name="&gt;&gt;rbInscriptionIntervenant.Name" xml:space="preserve">
+    <value>rbInscriptionIntervenant</value>
+  </data>
+  <data name="&gt;&gt;rbInscriptionIntervenant.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbInscriptionIntervenant.Parent" xml:space="preserve">
+    <value>flpInscriptionTypeParticipant</value>
+  </data>
+  <data name="&gt;&gt;rbInscriptionIntervenant.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="rbInscriptionBenevole.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1638,9 +1494,6 @@
   </data>
   <data name="tbInscriptionCP.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
-  </data>
-  <data name="tbInscriptionCP.Text" xml:space="preserve">
-    <value>04210</value>
   </data>
   <data name="&gt;&gt;tbInscriptionCP.Name" xml:space="preserve">
     <value>tbInscriptionCP</value>
@@ -1858,275 +1711,44 @@
   <data name="&gt;&gt;lbInscriptionNom.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
-  <data name="lbInscriptionLicencieChequeN.AutoSize" type="System.Boolean, mscorlib">
+  <data name="pInscriptionBenevoleDates.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lbInscriptionLicencieChequeN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>90, 10</value>
-  </data>
-  <data name="lbInscriptionLicencieChequeN.Size" type="System.Drawing.Size, System.Drawing">
-    <value>19, 13</value>
-  </data>
-  <data name="lbInscriptionLicencieChequeN.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="lbInscriptionLicencieChequeN.Text" xml:space="preserve">
-    <value>N°</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionLicencieChequeN.Name" xml:space="preserve">
-    <value>lbInscriptionLicencieChequeN</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionLicencieChequeN.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionLicencieChequeN.Parent" xml:space="preserve">
-    <value>gbInscriptionLicencieCheque</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionLicencieChequeN.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="lbInscriptionLicencieCheque1.AutoSize" type="System.Boolean, mscorlib">
+  <data name="pInscriptionBenevoleDates.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lbInscriptionLicencieCheque1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="pInscriptionBenevoleDates.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
   </data>
-  <data name="lbInscriptionLicencieCheque1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 50</value>
+  <data name="pInscriptionBenevoleDates.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
-  <data name="lbInscriptionLicencieCheque1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 13</value>
+  <data name="pInscriptionBenevoleDates.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 16</value>
   </data>
-  <data name="lbInscriptionLicencieCheque1.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
+  <data name="pInscriptionBenevoleDates.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
   </data>
-  <data name="lbInscriptionLicencieCheque1.Text" xml:space="preserve">
-    <value>Chèque 2 :</value>
+  <data name="pInscriptionBenevoleDates.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
   </data>
-  <data name="&gt;&gt;lbInscriptionLicencieCheque1.Name" xml:space="preserve">
-    <value>lbInscriptionLicencieCheque1</value>
+  <data name="pInscriptionBenevoleDates.Size" type="System.Drawing.Size, System.Drawing">
+    <value>344, 80</value>
   </data>
-  <data name="&gt;&gt;lbInscriptionLicencieCheque1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="pInscriptionBenevoleDates.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
   </data>
-  <data name="&gt;&gt;lbInscriptionLicencieCheque1.Parent" xml:space="preserve">
-    <value>gbInscriptionLicencieCheque</value>
+  <data name="&gt;&gt;pInscriptionBenevoleDates.Name" xml:space="preserve">
+    <value>pInscriptionBenevoleDates</value>
   </data>
-  <data name="&gt;&gt;lbInscriptionLicencieCheque1.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;pInscriptionBenevoleDates.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="tbInscriptionLicencieChequeN1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>71, 25</value>
+  <data name="&gt;&gt;pInscriptionBenevoleDates.Parent" xml:space="preserve">
+    <value>gbInscriptionBenevoleDates</value>
   </data>
-  <data name="tbInscriptionLicencieChequeN1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 20</value>
-  </data>
-  <data name="tbInscriptionLicencieChequeN1.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;tbInscriptionLicencieChequeN1.Name" xml:space="preserve">
-    <value>tbInscriptionLicencieChequeN1</value>
-  </data>
-  <data name="&gt;&gt;tbInscriptionLicencieChequeN1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbInscriptionLicencieChequeN1.Parent" xml:space="preserve">
-    <value>gbInscriptionLicencieCheque</value>
-  </data>
-  <data name="&gt;&gt;tbInscriptionLicencieChequeN1.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="lbInscriptionLicencieCheque2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lbInscriptionLicencieCheque2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lbInscriptionLicencieCheque2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 29</value>
-  </data>
-  <data name="lbInscriptionLicencieCheque2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 13</value>
-  </data>
-  <data name="lbInscriptionLicencieCheque2.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="lbInscriptionLicencieCheque2.Text" xml:space="preserve">
-    <value>Chèque 1 :</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionLicencieCheque2.Name" xml:space="preserve">
-    <value>lbInscriptionLicencieCheque2</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionLicencieCheque2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionLicencieCheque2.Parent" xml:space="preserve">
-    <value>gbInscriptionLicencieCheque</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionLicencieCheque2.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="lbInscriptionLicencieChequeMontant.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lbInscriptionLicencieChequeMontant.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lbInscriptionLicencieChequeMontant.Location" type="System.Drawing.Point, System.Drawing">
-    <value>136, 9</value>
-  </data>
-  <data name="lbInscriptionLicencieChequeMontant.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 13</value>
-  </data>
-  <data name="lbInscriptionLicencieChequeMontant.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="lbInscriptionLicencieChequeMontant.Text" xml:space="preserve">
-    <value>Montant (€)</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionLicencieChequeMontant.Name" xml:space="preserve">
-    <value>lbInscriptionLicencieChequeMontant</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionLicencieChequeMontant.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionLicencieChequeMontant.Parent" xml:space="preserve">
-    <value>gbInscriptionLicencieCheque</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionLicencieChequeMontant.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="cbInscriptionLicencieChequeN2Activer.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbInscriptionLicencieChequeN2Activer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 70</value>
-  </data>
-  <data name="cbInscriptionLicencieChequeN2Activer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 17</value>
-  </data>
-  <data name="cbInscriptionLicencieChequeN2Activer.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="cbInscriptionLicencieChequeN2Activer.Text" xml:space="preserve">
-    <value>Frais accompagnant en chèque 2</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieChequeN2Activer.Name" xml:space="preserve">
-    <value>cbInscriptionLicencieChequeN2Activer</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieChequeN2Activer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieChequeN2Activer.Parent" xml:space="preserve">
-    <value>gbInscriptionLicencieCheque</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieChequeN2Activer.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="tbInscriptionLicencieChequeN2.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="tbInscriptionLicencieChequeN2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>71, 47</value>
-  </data>
-  <data name="tbInscriptionLicencieChequeN2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 20</value>
-  </data>
-  <data name="tbInscriptionLicencieChequeN2.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;tbInscriptionLicencieChequeN2.Name" xml:space="preserve">
-    <value>tbInscriptionLicencieChequeN2</value>
-  </data>
-  <data name="&gt;&gt;tbInscriptionLicencieChequeN2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbInscriptionLicencieChequeN2.Parent" xml:space="preserve">
-    <value>gbInscriptionLicencieCheque</value>
-  </data>
-  <data name="&gt;&gt;tbInscriptionLicencieChequeN2.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="cbInscriptionLicencieRepasAccompagnantSamediMidi.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbInscriptionLicencieRepasAccompagnantSamediMidi.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 17</value>
-  </data>
-  <data name="cbInscriptionLicencieRepasAccompagnantSamediMidi.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 17</value>
-  </data>
-  <data name="cbInscriptionLicencieRepasAccompagnantSamediMidi.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="cbInscriptionLicencieRepasAccompagnantSamediMidi.Text" xml:space="preserve">
-    <value>Déjeuner du samedi</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediMidi.Name" xml:space="preserve">
-    <value>cbInscriptionLicencieRepasAccompagnantSamediMidi</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediMidi.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediMidi.Parent" xml:space="preserve">
-    <value>gbInscriptionLicencieRepasAccompagnant</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediMidi.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;pInscriptionBenevoleDates.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="cbInscriptionLicencieRepasAccompagnantSamediSoir.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbInscriptionLicencieRepasAccompagnantSamediSoir.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 33</value>
-  </data>
-  <data name="cbInscriptionLicencieRepasAccompagnantSamediSoir.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 17</value>
-  </data>
-  <data name="cbInscriptionLicencieRepasAccompagnantSamediSoir.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="cbInscriptionLicencieRepasAccompagnantSamediSoir.Text" xml:space="preserve">
-    <value>Dîner du samedi</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediSoir.Name" xml:space="preserve">
-    <value>cbInscriptionLicencieRepasAccompagnantSamediSoir</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediSoir.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediSoir.Parent" xml:space="preserve">
-    <value>gbInscriptionLicencieRepasAccompagnant</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediSoir.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="cbInscriptionLicencieRepasAccompagnantDimancheMidi.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbInscriptionLicencieRepasAccompagnantDimancheMidi.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 50</value>
-  </data>
-  <data name="cbInscriptionLicencieRepasAccompagnantDimancheMidi.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 17</value>
-  </data>
-  <data name="cbInscriptionLicencieRepasAccompagnantDimancheMidi.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="cbInscriptionLicencieRepasAccompagnantDimancheMidi.Text" xml:space="preserve">
-    <value>Déjeuner du dimanche</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantDimancheMidi.Name" xml:space="preserve">
-    <value>cbInscriptionLicencieRepasAccompagnantDimancheMidi</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantDimancheMidi.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantDimancheMidi.Parent" xml:space="preserve">
-    <value>gbInscriptionLicencieRepasAccompagnant</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantDimancheMidi.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="&gt;&gt;rbInscriptionIntervenantTypeAnimateur.Name" xml:space="preserve">
     <value>rbInscriptionIntervenantTypeAnimateur</value>
@@ -2284,128 +1906,659 @@
   <data name="&gt;&gt;lbInscriptionIntervenantAtelier.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="dtpInscriptionBenevoleDateDeNaissance.Location" type="System.Drawing.Point, System.Drawing">
-    <value>267, 26</value>
+  <metadata name="N.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ATELIER.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="CHOIX.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="VACATION.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="dgInscriptionLicencieChoixAteliers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 109</value>
   </data>
-  <data name="dtpInscriptionBenevoleDateDeNaissance.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 20</value>
+  <data name="dgInscriptionLicencieChoixAteliers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>560, 86</value>
   </data>
-  <data name="dtpInscriptionBenevoleDateDeNaissance.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+  <data name="dgInscriptionLicencieChoixAteliers.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
   </data>
-  <data name="&gt;&gt;dtpInscriptionBenevoleDateDeNaissance.Name" xml:space="preserve">
-    <value>dtpInscriptionBenevoleDateDeNaissance</value>
+  <data name="&gt;&gt;dgInscriptionLicencieChoixAteliers.Name" xml:space="preserve">
+    <value>dgInscriptionLicencieChoixAteliers</value>
   </data>
-  <data name="&gt;&gt;dtpInscriptionBenevoleDateDeNaissance.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;dgInscriptionLicencieChoixAteliers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dtpInscriptionBenevoleDateDeNaissance.Parent" xml:space="preserve">
-    <value>gbInscriptionBenevole</value>
+  <data name="&gt;&gt;dgInscriptionLicencieChoixAteliers.Parent" xml:space="preserve">
+    <value>gbInscriptionLicencie</value>
   </data>
-  <data name="&gt;&gt;dtpInscriptionBenevoleDateDeNaissance.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;dgInscriptionLicencieChoixAteliers.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="tbInscriptionBenevoleNumeroLicence.Location" type="System.Drawing.Point, System.Drawing">
-    <value>125, 52</value>
+  <metadata name="N.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="N.HeaderText" xml:space="preserve">
+    <value>N°</value>
   </data>
-  <data name="tbInscriptionBenevoleNumeroLicence.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 20</value>
+  <data name="N.MinimumWidth" type="System.Int32, mscorlib">
+    <value>30</value>
   </data>
-  <data name="tbInscriptionBenevoleNumeroLicence.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <metadata name="ATELIER.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ATELIER.HeaderText" xml:space="preserve">
+    <value>Atelier</value>
   </data>
-  <data name="&gt;&gt;tbInscriptionBenevoleNumeroLicence.Name" xml:space="preserve">
-    <value>tbInscriptionBenevoleNumeroLicence</value>
+  <data name="ATELIER.MinimumWidth" type="System.Int32, mscorlib">
+    <value>200</value>
   </data>
-  <data name="&gt;&gt;tbInscriptionBenevoleNumeroLicence.Type" xml:space="preserve">
+  <data name="ATELIER.Width" type="System.Int32, mscorlib">
+    <value>200</value>
+  </data>
+  <metadata name="CHOIX.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="CHOIX.HeaderText" xml:space="preserve">
+    <value>Choix</value>
+  </data>
+  <data name="CHOIX.MinimumWidth" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <metadata name="VACATION.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="VACATION.HeaderText" xml:space="preserve">
+    <value>Vacation</value>
+  </data>
+  <data name="tbInscriptionLicencieNumeroLicence.Location" type="System.Drawing.Point, System.Drawing">
+    <value>114, 20</value>
+  </data>
+  <data name="tbInscriptionLicencieNumeroLicence.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 20</value>
+  </data>
+  <data name="tbInscriptionLicencieNumeroLicence.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;tbInscriptionLicencieNumeroLicence.Name" xml:space="preserve">
+    <value>tbInscriptionLicencieNumeroLicence</value>
+  </data>
+  <data name="&gt;&gt;tbInscriptionLicencieNumeroLicence.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tbInscriptionBenevoleNumeroLicence.Parent" xml:space="preserve">
-    <value>gbInscriptionBenevole</value>
+  <data name="&gt;&gt;tbInscriptionLicencieNumeroLicence.Parent" xml:space="preserve">
+    <value>gbInscriptionLicencie</value>
   </data>
-  <data name="&gt;&gt;tbInscriptionBenevoleNumeroLicence.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;tbInscriptionLicencieNumeroLicence.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="lbInscriptionBenevoleNumeroLicence.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lbInscriptionLicencieNumeroLicence.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lbInscriptionBenevoleNumeroLicence.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="lbInscriptionLicencieNumeroLicence.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 23</value>
   </data>
-  <data name="lbInscriptionBenevoleNumeroLicence.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 55</value>
-  </data>
-  <data name="lbInscriptionBenevoleNumeroLicence.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lbInscriptionLicencieNumeroLicence.Size" type="System.Drawing.Size, System.Drawing">
     <value>102, 13</value>
   </data>
-  <data name="lbInscriptionBenevoleNumeroLicence.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="lbInscriptionLicencieNumeroLicence.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
   </data>
-  <data name="lbInscriptionBenevoleNumeroLicence.Text" xml:space="preserve">
+  <data name="lbInscriptionLicencieNumeroLicence.Text" xml:space="preserve">
     <value>Numéro de licence :</value>
   </data>
-  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicence.Name" xml:space="preserve">
-    <value>lbInscriptionBenevoleNumeroLicence</value>
+  <data name="&gt;&gt;lbInscriptionLicencieNumeroLicence.Name" xml:space="preserve">
+    <value>lbInscriptionLicencieNumeroLicence</value>
   </data>
-  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicence.Type" xml:space="preserve">
+  <data name="&gt;&gt;lbInscriptionLicencieNumeroLicence.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicence.Parent" xml:space="preserve">
-    <value>gbInscriptionBenevole</value>
+  <data name="&gt;&gt;lbInscriptionLicencieNumeroLicence.Parent" xml:space="preserve">
+    <value>gbInscriptionLicencie</value>
   </data>
-  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicence.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="tbInscriptionBenevoleDateNaissance.Location" type="System.Drawing.Point, System.Drawing">
-    <value>125, 26</value>
-  </data>
-  <data name="tbInscriptionBenevoleDateNaissance.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 20</value>
-  </data>
-  <data name="tbInscriptionBenevoleDateNaissance.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;tbInscriptionBenevoleDateNaissance.Name" xml:space="preserve">
-    <value>tbInscriptionBenevoleDateNaissance</value>
-  </data>
-  <data name="&gt;&gt;tbInscriptionBenevoleDateNaissance.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbInscriptionBenevoleDateNaissance.Parent" xml:space="preserve">
-    <value>gbInscriptionBenevole</value>
-  </data>
-  <data name="&gt;&gt;tbInscriptionBenevoleDateNaissance.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="lbInscriptionBenevoleDateNaissance.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lbInscriptionBenevoleDateNaissance.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lbInscriptionBenevoleDateNaissance.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 29</value>
-  </data>
-  <data name="lbInscriptionBenevoleDateNaissance.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 13</value>
-  </data>
-  <data name="lbInscriptionBenevoleDateNaissance.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;lbInscriptionLicencieNumeroLicence.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="lbInscriptionBenevoleDateNaissance.Text" xml:space="preserve">
-    <value>Date de naissance :</value>
+  <data name="&gt;&gt;nudInscriptionLicencieChequeMontant2.Name" xml:space="preserve">
+    <value>nudInscriptionLicencieChequeMontant2</value>
   </data>
-  <data name="&gt;&gt;lbInscriptionBenevoleDateNaissance.Name" xml:space="preserve">
-    <value>lbInscriptionBenevoleDateNaissance</value>
+  <data name="&gt;&gt;nudInscriptionLicencieChequeMontant2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lbInscriptionBenevoleDateNaissance.Type" xml:space="preserve">
+  <data name="&gt;&gt;nudInscriptionLicencieChequeMontant2.Parent" xml:space="preserve">
+    <value>gbInscriptionLicencieCheque</value>
+  </data>
+  <data name="&gt;&gt;nudInscriptionLicencieChequeMontant2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;nudInscriptionLicencieChequeMontant1.Name" xml:space="preserve">
+    <value>nudInscriptionLicencieChequeMontant1</value>
+  </data>
+  <data name="&gt;&gt;nudInscriptionLicencieChequeMontant1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudInscriptionLicencieChequeMontant1.Parent" xml:space="preserve">
+    <value>gbInscriptionLicencieCheque</value>
+  </data>
+  <data name="&gt;&gt;nudInscriptionLicencieChequeMontant1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionLicencieChequeN.Name" xml:space="preserve">
+    <value>lbInscriptionLicencieChequeN</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionLicencieChequeN.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lbInscriptionBenevoleDateNaissance.Parent" xml:space="preserve">
-    <value>gbInscriptionBenevole</value>
+  <data name="&gt;&gt;lbInscriptionLicencieChequeN.Parent" xml:space="preserve">
+    <value>gbInscriptionLicencieCheque</value>
   </data>
-  <data name="&gt;&gt;lbInscriptionBenevoleDateNaissance.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lbInscriptionLicencieChequeN.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionLicencieChequeMontant.Name" xml:space="preserve">
+    <value>lbInscriptionLicencieChequeMontant</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionLicencieChequeMontant.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionLicencieChequeMontant.Parent" xml:space="preserve">
+    <value>gbInscriptionLicencieCheque</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionLicencieChequeMontant.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionLicencieCheque1.Name" xml:space="preserve">
+    <value>lbInscriptionLicencieCheque1</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionLicencieCheque1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionLicencieCheque1.Parent" xml:space="preserve">
+    <value>gbInscriptionLicencieCheque</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionLicencieCheque1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;tbInscriptionLicencieChequeN1.Name" xml:space="preserve">
+    <value>tbInscriptionLicencieChequeN1</value>
+  </data>
+  <data name="&gt;&gt;tbInscriptionLicencieChequeN1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbInscriptionLicencieChequeN1.Parent" xml:space="preserve">
+    <value>gbInscriptionLicencieCheque</value>
+  </data>
+  <data name="&gt;&gt;tbInscriptionLicencieChequeN1.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionLicencieCheque2.Name" xml:space="preserve">
+    <value>lbInscriptionLicencieCheque2</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionLicencieCheque2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionLicencieCheque2.Parent" xml:space="preserve">
+    <value>gbInscriptionLicencieCheque</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionLicencieCheque2.ZOrder" xml:space="preserve">
     <value>6</value>
+  </data>
+  <data name="&gt;&gt;cbInscriptionLicencieChequeN2Activer.Name" xml:space="preserve">
+    <value>cbInscriptionLicencieChequeN2Activer</value>
+  </data>
+  <data name="&gt;&gt;cbInscriptionLicencieChequeN2Activer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbInscriptionLicencieChequeN2Activer.Parent" xml:space="preserve">
+    <value>gbInscriptionLicencieCheque</value>
+  </data>
+  <data name="&gt;&gt;cbInscriptionLicencieChequeN2Activer.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;tbInscriptionLicencieChequeN2.Name" xml:space="preserve">
+    <value>tbInscriptionLicencieChequeN2</value>
+  </data>
+  <data name="&gt;&gt;tbInscriptionLicencieChequeN2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbInscriptionLicencieChequeN2.Parent" xml:space="preserve">
+    <value>gbInscriptionLicencieCheque</value>
+  </data>
+  <data name="&gt;&gt;tbInscriptionLicencieChequeN2.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="gbInscriptionLicencieCheque.Location" type="System.Drawing.Point, System.Drawing">
+    <value>366, 13</value>
+  </data>
+  <data name="gbInscriptionLicencieCheque.Size" type="System.Drawing.Size, System.Drawing">
+    <value>202, 90</value>
+  </data>
+  <data name="gbInscriptionLicencieCheque.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="gbInscriptionLicencieCheque.Text" xml:space="preserve">
+    <value>Cheque(s)</value>
+  </data>
+  <data name="&gt;&gt;gbInscriptionLicencieCheque.Name" xml:space="preserve">
+    <value>gbInscriptionLicencieCheque</value>
+  </data>
+  <data name="&gt;&gt;gbInscriptionLicencieCheque.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbInscriptionLicencieCheque.Parent" xml:space="preserve">
+    <value>gbInscriptionLicencie</value>
+  </data>
+  <data name="&gt;&gt;gbInscriptionLicencieCheque.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="nudInscriptionLicencieChequeMontant2.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="nudInscriptionLicencieChequeMontant2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>135, 47</value>
+  </data>
+  <data name="nudInscriptionLicencieChequeMontant2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 20</value>
+  </data>
+  <data name="nudInscriptionLicencieChequeMontant2.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;nudInscriptionLicencieChequeMontant2.Name" xml:space="preserve">
+    <value>nudInscriptionLicencieChequeMontant2</value>
+  </data>
+  <data name="&gt;&gt;nudInscriptionLicencieChequeMontant2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudInscriptionLicencieChequeMontant2.Parent" xml:space="preserve">
+    <value>gbInscriptionLicencieCheque</value>
+  </data>
+  <data name="&gt;&gt;nudInscriptionLicencieChequeMontant2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="nudInscriptionLicencieChequeMontant1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>135, 25</value>
+  </data>
+  <data name="nudInscriptionLicencieChequeMontant1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 20</value>
+  </data>
+  <data name="nudInscriptionLicencieChequeMontant1.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;nudInscriptionLicencieChequeMontant1.Name" xml:space="preserve">
+    <value>nudInscriptionLicencieChequeMontant1</value>
+  </data>
+  <data name="&gt;&gt;nudInscriptionLicencieChequeMontant1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudInscriptionLicencieChequeMontant1.Parent" xml:space="preserve">
+    <value>gbInscriptionLicencieCheque</value>
+  </data>
+  <data name="&gt;&gt;nudInscriptionLicencieChequeMontant1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lbInscriptionLicencieChequeN.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbInscriptionLicencieChequeN.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 10</value>
+  </data>
+  <data name="lbInscriptionLicencieChequeN.Size" type="System.Drawing.Size, System.Drawing">
+    <value>19, 13</value>
+  </data>
+  <data name="lbInscriptionLicencieChequeN.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="lbInscriptionLicencieChequeN.Text" xml:space="preserve">
+    <value>N°</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionLicencieChequeN.Name" xml:space="preserve">
+    <value>lbInscriptionLicencieChequeN</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionLicencieChequeN.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionLicencieChequeN.Parent" xml:space="preserve">
+    <value>gbInscriptionLicencieCheque</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionLicencieChequeN.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lbInscriptionLicencieChequeMontant.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbInscriptionLicencieChequeMontant.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbInscriptionLicencieChequeMontant.Location" type="System.Drawing.Point, System.Drawing">
+    <value>136, 9</value>
+  </data>
+  <data name="lbInscriptionLicencieChequeMontant.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 13</value>
+  </data>
+  <data name="lbInscriptionLicencieChequeMontant.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="lbInscriptionLicencieChequeMontant.Text" xml:space="preserve">
+    <value>Montant (€)</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionLicencieChequeMontant.Name" xml:space="preserve">
+    <value>lbInscriptionLicencieChequeMontant</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionLicencieChequeMontant.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionLicencieChequeMontant.Parent" xml:space="preserve">
+    <value>gbInscriptionLicencieCheque</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionLicencieChequeMontant.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lbInscriptionLicencieCheque1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbInscriptionLicencieCheque1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbInscriptionLicencieCheque1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 50</value>
+  </data>
+  <data name="lbInscriptionLicencieCheque1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 13</value>
+  </data>
+  <data name="lbInscriptionLicencieCheque1.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="lbInscriptionLicencieCheque1.Text" xml:space="preserve">
+    <value>Chèque 2 :</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionLicencieCheque1.Name" xml:space="preserve">
+    <value>lbInscriptionLicencieCheque1</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionLicencieCheque1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionLicencieCheque1.Parent" xml:space="preserve">
+    <value>gbInscriptionLicencieCheque</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionLicencieCheque1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tbInscriptionLicencieChequeN1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>71, 25</value>
+  </data>
+  <data name="tbInscriptionLicencieChequeN1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 20</value>
+  </data>
+  <data name="tbInscriptionLicencieChequeN1.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;tbInscriptionLicencieChequeN1.Name" xml:space="preserve">
+    <value>tbInscriptionLicencieChequeN1</value>
+  </data>
+  <data name="&gt;&gt;tbInscriptionLicencieChequeN1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbInscriptionLicencieChequeN1.Parent" xml:space="preserve">
+    <value>gbInscriptionLicencieCheque</value>
+  </data>
+  <data name="&gt;&gt;tbInscriptionLicencieChequeN1.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lbInscriptionLicencieCheque2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbInscriptionLicencieCheque2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbInscriptionLicencieCheque2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 29</value>
+  </data>
+  <data name="lbInscriptionLicencieCheque2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 13</value>
+  </data>
+  <data name="lbInscriptionLicencieCheque2.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="lbInscriptionLicencieCheque2.Text" xml:space="preserve">
+    <value>Chèque 1 :</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionLicencieCheque2.Name" xml:space="preserve">
+    <value>lbInscriptionLicencieCheque2</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionLicencieCheque2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionLicencieCheque2.Parent" xml:space="preserve">
+    <value>gbInscriptionLicencieCheque</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionLicencieCheque2.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="cbInscriptionLicencieChequeN2Activer.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbInscriptionLicencieChequeN2Activer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 70</value>
+  </data>
+  <data name="cbInscriptionLicencieChequeN2Activer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 17</value>
+  </data>
+  <data name="cbInscriptionLicencieChequeN2Activer.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="cbInscriptionLicencieChequeN2Activer.Text" xml:space="preserve">
+    <value>Frais accompagnant en chèque 2</value>
+  </data>
+  <data name="&gt;&gt;cbInscriptionLicencieChequeN2Activer.Name" xml:space="preserve">
+    <value>cbInscriptionLicencieChequeN2Activer</value>
+  </data>
+  <data name="&gt;&gt;cbInscriptionLicencieChequeN2Activer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbInscriptionLicencieChequeN2Activer.Parent" xml:space="preserve">
+    <value>gbInscriptionLicencieCheque</value>
+  </data>
+  <data name="&gt;&gt;cbInscriptionLicencieChequeN2Activer.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="tbInscriptionLicencieChequeN2.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="tbInscriptionLicencieChequeN2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>71, 47</value>
+  </data>
+  <data name="tbInscriptionLicencieChequeN2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 20</value>
+  </data>
+  <data name="tbInscriptionLicencieChequeN2.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;tbInscriptionLicencieChequeN2.Name" xml:space="preserve">
+    <value>tbInscriptionLicencieChequeN2</value>
+  </data>
+  <data name="&gt;&gt;tbInscriptionLicencieChequeN2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbInscriptionLicencieChequeN2.Parent" xml:space="preserve">
+    <value>gbInscriptionLicencieCheque</value>
+  </data>
+  <data name="&gt;&gt;tbInscriptionLicencieChequeN2.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediMidi.Name" xml:space="preserve">
+    <value>cbInscriptionLicencieRepasAccompagnantSamediMidi</value>
+  </data>
+  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediMidi.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediMidi.Parent" xml:space="preserve">
+    <value>gbInscriptionLicencieRepasAccompagnant</value>
+  </data>
+  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediMidi.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediSoir.Name" xml:space="preserve">
+    <value>cbInscriptionLicencieRepasAccompagnantSamediSoir</value>
+  </data>
+  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediSoir.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediSoir.Parent" xml:space="preserve">
+    <value>gbInscriptionLicencieRepasAccompagnant</value>
+  </data>
+  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediSoir.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantDimancheMidi.Name" xml:space="preserve">
+    <value>cbInscriptionLicencieRepasAccompagnantDimancheMidi</value>
+  </data>
+  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantDimancheMidi.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantDimancheMidi.Parent" xml:space="preserve">
+    <value>gbInscriptionLicencieRepasAccompagnant</value>
+  </data>
+  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantDimancheMidi.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="gbInscriptionLicencieRepasAccompagnant.Location" type="System.Drawing.Point, System.Drawing">
+    <value>213, 13</value>
+  </data>
+  <data name="gbInscriptionLicencieRepasAccompagnant.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 70</value>
+  </data>
+  <data name="gbInscriptionLicencieRepasAccompagnant.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="gbInscriptionLicencieRepasAccompagnant.Text" xml:space="preserve">
+    <value>Repas accompagnant(e)</value>
+  </data>
+  <data name="&gt;&gt;gbInscriptionLicencieRepasAccompagnant.Name" xml:space="preserve">
+    <value>gbInscriptionLicencieRepasAccompagnant</value>
+  </data>
+  <data name="&gt;&gt;gbInscriptionLicencieRepasAccompagnant.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbInscriptionLicencieRepasAccompagnant.Parent" xml:space="preserve">
+    <value>gbInscriptionLicencie</value>
+  </data>
+  <data name="&gt;&gt;gbInscriptionLicencieRepasAccompagnant.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="cbInscriptionLicencieRepasAccompagnantSamediMidi.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbInscriptionLicencieRepasAccompagnantSamediMidi.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 17</value>
+  </data>
+  <data name="cbInscriptionLicencieRepasAccompagnantSamediMidi.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 17</value>
+  </data>
+  <data name="cbInscriptionLicencieRepasAccompagnantSamediMidi.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="cbInscriptionLicencieRepasAccompagnantSamediMidi.Text" xml:space="preserve">
+    <value>Déjeuner du samedi</value>
+  </data>
+  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediMidi.Name" xml:space="preserve">
+    <value>cbInscriptionLicencieRepasAccompagnantSamediMidi</value>
+  </data>
+  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediMidi.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediMidi.Parent" xml:space="preserve">
+    <value>gbInscriptionLicencieRepasAccompagnant</value>
+  </data>
+  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediMidi.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbInscriptionLicencieRepasAccompagnantSamediSoir.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbInscriptionLicencieRepasAccompagnantSamediSoir.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 33</value>
+  </data>
+  <data name="cbInscriptionLicencieRepasAccompagnantSamediSoir.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 17</value>
+  </data>
+  <data name="cbInscriptionLicencieRepasAccompagnantSamediSoir.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="cbInscriptionLicencieRepasAccompagnantSamediSoir.Text" xml:space="preserve">
+    <value>Dîner du samedi</value>
+  </data>
+  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediSoir.Name" xml:space="preserve">
+    <value>cbInscriptionLicencieRepasAccompagnantSamediSoir</value>
+  </data>
+  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediSoir.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediSoir.Parent" xml:space="preserve">
+    <value>gbInscriptionLicencieRepasAccompagnant</value>
+  </data>
+  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediSoir.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cbInscriptionLicencieRepasAccompagnantDimancheMidi.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbInscriptionLicencieRepasAccompagnantDimancheMidi.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 50</value>
+  </data>
+  <data name="cbInscriptionLicencieRepasAccompagnantDimancheMidi.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 17</value>
+  </data>
+  <data name="cbInscriptionLicencieRepasAccompagnantDimancheMidi.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="cbInscriptionLicencieRepasAccompagnantDimancheMidi.Text" xml:space="preserve">
+    <value>Déjeuner du dimanche</value>
+  </data>
+  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantDimancheMidi.Name" xml:space="preserve">
+    <value>cbInscriptionLicencieRepasAccompagnantDimancheMidi</value>
+  </data>
+  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantDimancheMidi.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantDimancheMidi.Parent" xml:space="preserve">
+    <value>gbInscriptionLicencieRepasAccompagnant</value>
+  </data>
+  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantDimancheMidi.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lbInscriptionLicencieAtelier.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbInscriptionLicencieAtelier.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbInscriptionLicencieAtelier.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 90</value>
+  </data>
+  <data name="lbInscriptionLicencieAtelier.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 13</value>
+  </data>
+  <data name="lbInscriptionLicencieAtelier.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lbInscriptionLicencieAtelier.Text" xml:space="preserve">
+    <value>Atelier(s) :      (5 choix possibles)</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionLicencieAtelier.Name" xml:space="preserve">
+    <value>lbInscriptionLicencieAtelier</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionLicencieAtelier.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionLicencieAtelier.Parent" xml:space="preserve">
+    <value>gbInscriptionLicencie</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionLicencieAtelier.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <metadata name="gbInscriptionHebergementNuites.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2764,189 +2917,6 @@
   <metadata name="backgroundWorker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="lbInscriptionBenevoleNumeroLicenceOptionel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lbInscriptionBenevoleNumeroLicenceOptionel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lbInscriptionBenevoleNumeroLicenceOptionel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>268, 58</value>
-  </data>
-  <data name="lbInscriptionBenevoleNumeroLicenceOptionel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 13</value>
-  </data>
-  <data name="lbInscriptionBenevoleNumeroLicenceOptionel.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="lbInscriptionBenevoleNumeroLicenceOptionel.Text" xml:space="preserve">
-    <value>(optionel)</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicenceOptionel.Name" xml:space="preserve">
-    <value>lbInscriptionBenevoleNumeroLicenceOptionel</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicenceOptionel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicenceOptionel.Parent" xml:space="preserve">
-    <value>gbInscriptionBenevole</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicenceOptionel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;pInscriptionBenevoleDates.Name" xml:space="preserve">
-    <value>pInscriptionBenevoleDates</value>
-  </data>
-  <data name="&gt;&gt;pInscriptionBenevoleDates.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pInscriptionBenevoleDates.Parent" xml:space="preserve">
-    <value>gbInscriptionBenevoleDates</value>
-  </data>
-  <data name="&gt;&gt;pInscriptionBenevoleDates.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="gbInscriptionBenevoleDates.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 87</value>
-  </data>
-  <data name="gbInscriptionBenevoleDates.Size" type="System.Drawing.Size, System.Drawing">
-    <value>350, 99</value>
-  </data>
-  <data name="gbInscriptionBenevoleDates.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="gbInscriptionBenevoleDates.Text" xml:space="preserve">
-    <value>Dates de bénévolat</value>
-  </data>
-  <data name="&gt;&gt;gbInscriptionBenevoleDates.Name" xml:space="preserve">
-    <value>gbInscriptionBenevoleDates</value>
-  </data>
-  <data name="&gt;&gt;gbInscriptionBenevoleDates.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbInscriptionBenevoleDates.Parent" xml:space="preserve">
-    <value>gbInscriptionBenevole</value>
-  </data>
-  <data name="&gt;&gt;gbInscriptionBenevoleDates.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="pInscriptionBenevoleDates.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="pInscriptionBenevoleDates.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="pInscriptionBenevoleDates.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="pInscriptionBenevoleDates.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="pInscriptionBenevoleDates.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 16</value>
-  </data>
-  <data name="pInscriptionBenevoleDates.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="pInscriptionBenevoleDates.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>No</value>
-  </data>
-  <data name="pInscriptionBenevoleDates.Size" type="System.Drawing.Size, System.Drawing">
-    <value>344, 80</value>
-  </data>
-  <data name="pInscriptionBenevoleDates.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;pInscriptionBenevoleDates.Name" xml:space="preserve">
-    <value>pInscriptionBenevoleDates</value>
-  </data>
-  <data name="&gt;&gt;pInscriptionBenevoleDates.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pInscriptionBenevoleDates.Parent" xml:space="preserve">
-    <value>gbInscriptionBenevoleDates</value>
-  </data>
-  <data name="&gt;&gt;pInscriptionBenevoleDates.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="N.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="N.HeaderText" xml:space="preserve">
-    <value>N°</value>
-  </data>
-  <data name="N.MinimumWidth" type="System.Int32, mscorlib">
-    <value>30</value>
-  </data>
-  <metadata name="ATELIER.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="ATELIER.HeaderText" xml:space="preserve">
-    <value>Atelier</value>
-  </data>
-  <data name="ATELIER.MinimumWidth" type="System.Int32, mscorlib">
-    <value>200</value>
-  </data>
-  <data name="ATELIER.Width" type="System.Int32, mscorlib">
-    <value>200</value>
-  </data>
-  <metadata name="CHOIX.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="CHOIX.HeaderText" xml:space="preserve">
-    <value>Choix</value>
-  </data>
-  <data name="CHOIX.MinimumWidth" type="System.Int32, mscorlib">
-    <value>40</value>
-  </data>
-  <metadata name="VACATION.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="VACATION.HeaderText" xml:space="preserve">
-    <value>Vacation</value>
-  </data>
-  <data name="nudInscriptionLicencieChequeMontant1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>135, 25</value>
-  </data>
-  <data name="nudInscriptionLicencieChequeMontant1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 20</value>
-  </data>
-  <data name="nudInscriptionLicencieChequeMontant1.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="&gt;&gt;nudInscriptionLicencieChequeMontant1.Name" xml:space="preserve">
-    <value>nudInscriptionLicencieChequeMontant1</value>
-  </data>
-  <data name="&gt;&gt;nudInscriptionLicencieChequeMontant1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudInscriptionLicencieChequeMontant1.Parent" xml:space="preserve">
-    <value>gbInscriptionLicencieCheque</value>
-  </data>
-  <data name="&gt;&gt;nudInscriptionLicencieChequeMontant1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="nudInscriptionLicencieChequeMontant2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>135, 47</value>
-  </data>
-  <data name="nudInscriptionLicencieChequeMontant2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 20</value>
-  </data>
-  <data name="nudInscriptionLicencieChequeMontant2.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
-  </data>
-  <data name="&gt;&gt;nudInscriptionLicencieChequeMontant2.Name" xml:space="preserve">
-    <value>nudInscriptionLicencieChequeMontant2</value>
-  </data>
-  <data name="&gt;&gt;nudInscriptionLicencieChequeMontant2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudInscriptionLicencieChequeMontant2.Parent" xml:space="preserve">
-    <value>gbInscriptionLicencieCheque</value>
-  </data>
-  <data name="&gt;&gt;nudInscriptionLicencieChequeMontant2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -6657,12 +6627,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Maison des Ligues</value>
   </data>
-  <data name="&gt;&gt;backgroundWorker1.Name" xml:space="preserve">
-    <value>backgroundWorker1</value>
-  </data>
-  <data name="&gt;&gt;backgroundWorker1.Type" xml:space="preserve">
-    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;N.Name" xml:space="preserve">
     <value>N</value>
   </data>
@@ -6686,6 +6650,12 @@
   </data>
   <data name="&gt;&gt;VACATION.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewComboBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;backgroundWorker1.Name" xml:space="preserve">
+    <value>backgroundWorker1</value>
+  </data>
+  <data name="&gt;&gt;backgroundWorker1.Type" xml:space="preserve">
+    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Fenaitre</value>

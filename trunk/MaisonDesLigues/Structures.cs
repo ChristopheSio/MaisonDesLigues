@@ -17,7 +17,7 @@ namespace MaisonDesLigues
             /// <summary> Cette classe permet l'affichage d'une entrée pour la nuités </summary>
             class LesNuites
             {
-                public LesNuites(ScrollableControl lePanel)
+                public LesNuites(ScrollableControl lePanel, Action<object, EventArgs> callback)
                 {
                     listeDesNuites = new List<LaNuite>();
                     DataTable lesNuites = Modele.ObtenirDonnees("VDATENUITEE02");
@@ -29,7 +29,7 @@ namespace MaisonDesLigues
                         DateTime laDateNuite = (DateTime)nuiteLigne[1];
                         if ((DateTime.Compare(laDateNuite, dateDeMaintenant) > 0) || laDateNuite.Date.Equals(dateDeMaintenant.Date)) // est bien une date dans le futur ou bien la date d'aujourd'hui
                         {
-                            listeDesNuites.Add(new LaNuite(lePanel, nuiteLigne[0].ToString(), numNuite, laDateNuite));
+                            listeDesNuites.Add(new LaNuite(lePanel, nuiteLigne[0].ToString(), numNuite, laDateNuite, callback));
                             numNuite++;
                         }
                     }
@@ -57,7 +57,7 @@ namespace MaisonDesLigues
             /// <summary> Cette classe permet l'affichage des entrées pour les nuités </summary>
             class LaNuite
             {
-                public LaNuite(ScrollableControl lePanel, String UnIDNuite, Int16 num, DateTime laDate)
+                public LaNuite(ScrollableControl lePanel, String UnIDNuite, Int16 num, DateTime laDate, Action<object, EventArgs> callback)
                 {
                     IdNuite = UnIDNuite;
                     chLaNuite = new CheckBox();
@@ -67,6 +67,7 @@ namespace MaisonDesLigues
                     chLaNuite.Left = 10;
                     chLaNuite.Top = 5 + (25 * num);
                     chLaNuite.Visible = true;
+                    chLaNuite.TextChanged += new System.EventHandler(callback);
                     cbHotel = new ComboBox();
                     cbHotel.Name = "cbInscriptionUneNuiteHotel" + num;
                     cbHotel.DataSource = Modele.ObtenirDonnees("VHOTEL01");
@@ -106,7 +107,7 @@ namespace MaisonDesLigues
             /// <summary> Cette classe permet l'affichage d'une entrée pour la nuités </summary>
             class LesDatesBenevolat
             {
-                public LesDatesBenevolat(ScrollableControl lePanel)
+                public LesDatesBenevolat(ScrollableControl lePanel, Action<object, EventArgs> callback)
                 {
                     listeDesDatesBenevolat = new List<LaDateBenevolat>();
                     DataTable lesDateBenevolat = Modele.ObtenirDonnees("VDATEBENEVOLAT01");
@@ -117,7 +118,7 @@ namespace MaisonDesLigues
                         DateTime laDateNuite = (DateTime)dateBenevolatLigne[1];
                         if ((DateTime.Compare(laDateNuite, dateDeMaintenant) > 0) || laDateNuite.Date.Equals(dateDeMaintenant.Date)) // est bien une date dans le futur ou bien la date d'aujourd'hui
                         {
-                            listeDesDatesBenevolat.Add(new LaDateBenevolat(lePanel, dateBenevolatLigne[0].ToString(), numDateBenevolat, laDateNuite));
+                            listeDesDatesBenevolat.Add(new LaDateBenevolat(lePanel, dateBenevolatLigne[0].ToString(), numDateBenevolat, laDateNuite, callback));
                             numDateBenevolat++;
                         }
                     }
@@ -148,7 +149,7 @@ namespace MaisonDesLigues
 
             class LaDateBenevolat
             {
-                public LaDateBenevolat(ScrollableControl lePanel, String UnIDDateBenevolat, Int16 num, DateTime laDateBenevolat)
+                public LaDateBenevolat(ScrollableControl lePanel, String UnIDDateBenevolat, Int16 num, DateTime laDateBenevolat, Action<object, EventArgs> callback)
                 {
                     IdDateBenevolat = UnIDDateBenevolat;
                     cbDateBenevolat = new CheckBox();
@@ -158,6 +159,7 @@ namespace MaisonDesLigues
                     cbDateBenevolat.Left = 10;
                     cbDateBenevolat.Top = 5 + (25 * num);
                     cbDateBenevolat.Visible = true;
+                    cbDateBenevolat.TextChanged += new System.EventHandler(callback);
                     // Ajout
                     lePanel.Controls.Add(cbDateBenevolat);
                 }
