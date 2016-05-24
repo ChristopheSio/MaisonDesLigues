@@ -27,6 +27,8 @@ namespace MaisonDesLigues.Gui
             Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("fr-FR");
             InitializeComponent();
             laDate.Text = "Le " + Utilitaire.obtenirMaintenant().ToString("d") + " (date de test)";
+            // Gestion Enregistrement
+            btInscritpionEnregistrer.Text = "Enregistrer + Email";
         }
 
 
@@ -35,6 +37,8 @@ namespace MaisonDesLigues.Gui
         ///
 
         Structures.Inscription.LesNuites InscriptionLesNuites;
+        Structures.Inscription.LesDatesBenevolat InscriptionLesDatesBenevolat;
+        //
         TypeInscription InscriptionChoixActif = TypeInscription.Aucun;
 
         private void refreshInscription()
@@ -53,16 +57,16 @@ namespace MaisonDesLigues.Gui
                 case TypeInscription.Benevole:     loadInscriptionBenevole(); break; 
                 case TypeInscription.Licencie:     loadInscriptionLicencie(); break; 
             }
-            // Afin de laisser les elements se charger
+            // Afin de laisser les elements se charger, a placer en dernier donc
             this.gbInscriptionIntervenant.Visible = (activeType == TypeInscription.Intervenant);
             this.gbInscriptionBenevole.Visible = (activeType == TypeInscription.Benevole);
             this.gbInscriptionLicencie.Visible = (activeType == TypeInscription.Licencie);
-            // Gestion Hebergement
-            loadInscriptionHebergement();
-            this.gbInscriptionHebergement.Visible = (activeType == TypeInscription.Licencie) || (activeType == TypeInscription.Intervenant);
+            
         }
 
         
+        /* 3 TYPES D'INSCRIPTIONS */
+
         private void loadInscriptionIntervenant()
         {
             if (cbInscriptionIntervenantAtelier.DataSource == null)
@@ -71,31 +75,18 @@ namespace MaisonDesLigues.Gui
                 cbInscriptionIntervenantAtelier.ValueMember = "ID";
                 cbInscriptionIntervenantAtelier.DisplayMember = "LIBELLE";
             }
-        }
-
-        private void loadInscriptionHebergement()
-        {
-            if (InscriptionChoixActif == TypeInscription.Intervenant) 
-                gbInscriptionHebergement.Text = "Hébergement (choix non décisif, voir avec l'administration)";
-            else if (InscriptionChoixActif == TypeInscription.Licencie)
-                gbInscriptionHebergement.Text = "Hébergement";
-            //
-            gbInscriptionHebergementNuites.Visible = chbInscriptionNuites.Checked;
-            if (chbInscriptionNuites.Checked)
-            {
-                if (InscriptionLesNuites == null)
-                    InscriptionLesNuites = new Structures.Inscription.LesNuites(pInscriptionNuites);
-            }
-            else
-            {
-                if (InscriptionLesNuites != null)
-                    InscriptionLesNuites = null; // Supprime les nuites et appel le destructeur de chaque nuitee
-            }
+            // Gestion bouton auto
+            loadInscriptionHebergement(true);
+            loadInscriptionBenevoletDateBenevolat(false);
         }
 
         private void loadInscriptionBenevole()
         {
 
+
+            // Gestion bouton auto
+            loadInscriptionHebergement(false);
+            loadInscriptionBenevoletDateBenevolat(true);
         }
 
         private void loadInscriptionLicencie()
@@ -108,7 +99,48 @@ namespace MaisonDesLigues.Gui
                 dt.Columns.Add(new DataColumn("Selected", typeof(bool))); //this will show checkboxes
                 dt.Columns.Add(new DataColumn("Text", typeof(string)));   //this will show text
                 */
+            // Gestion bouton auto
+            loadInscriptionHebergement(true);
+            loadInscriptionBenevoletDateBenevolat(false);
         }
+
+        /* GERER LES OPTIONS LIES AUX INSCRIPTIONS */
+
+        private void loadInscriptionHebergement(bool visible)
+        {
+            if (chbInscriptionNuites.Checked && visible)
+            {
+                if (InscriptionLesNuites == null)
+                    InscriptionLesNuites = new Structures.Inscription.LesNuites(pInscriptionNuites);
+            }
+            else
+            {
+                if (InscriptionLesNuites != null)
+                    InscriptionLesNuites = null; // Supprime les nuites et appel le destructeur de chaque nuitee
+            }
+            // Afin de laisser les elements se charger, a placer en dernier donc
+            gbInscriptionHebergementNuites.Visible = chbInscriptionNuites.Checked;
+            gbInscriptionHebergement.Visible = visible;
+        }
+
+        private void loadInscriptionBenevoletDateBenevolat(bool visible)
+        {
+            if (visible)
+            {
+                if (InscriptionLesDatesBenevolat == null)
+                    InscriptionLesDatesBenevolat = new Structures.Inscription.LesDatesBenevolat(pInscriptionBenevoleDates);
+                //
+
+            }
+            else
+            {
+                if (InscriptionLesDatesBenevolat != null)
+                    InscriptionLesDatesBenevolat = null; // Supprime les nuites et appel le destructeur de chaque nuitee
+            }
+            // Afin de laisser les elements se charger, a placer en dernier donc
+            gbInscriptionBenevoleDates.Visible = visible;
+        }
+
 
         ///
         /// Event : Inscription
@@ -136,7 +168,7 @@ namespace MaisonDesLigues.Gui
         ///
 
         private void chbInscriptionNuites_CheckedChanged(object sender, EventArgs e) {
-            loadInscriptionHebergement();
+            loadInscriptionHebergement(true);
         }
 
     }

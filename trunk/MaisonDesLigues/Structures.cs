@@ -12,12 +12,8 @@ namespace MaisonDesLigues
 {
     namespace Structures
     {
-
-       
-
         namespace Inscription
         {
-
             /// <summary> Cette classe permet l'affichage d'une entrée pour la nuités </summary>
             class LesNuites
             {
@@ -31,55 +27,151 @@ namespace MaisonDesLigues
                     {
                         //DateTime laDateNuite = DateTime.ParseExact( nuiteLigne[1].ToString(), "yyyy-MM-dd", null);
                         DateTime laDateNuite = (DateTime)nuiteLigne[1];
-                        if ( (DateTime.Compare(laDateNuite,dateDeMaintenant) > 0) || laDateNuite.Date.Equals(dateDeMaintenant.Date) ) // est bien une date dans le futur ou bien la date d'aujourd'hui
+                        if ((DateTime.Compare(laDateNuite, dateDeMaintenant) > 0) || laDateNuite.Date.Equals(dateDeMaintenant.Date)) // est bien une date dans le futur ou bien la date d'aujourd'hui
                         {
-                            listeDesNuites.Add(new LaNuite(lePanel, nuiteLigne[0].ToString(), numNuite, laDateNuite) );
+                            listeDesNuites.Add(new LaNuite(lePanel, nuiteLigne[0].ToString(), numNuite, laDateNuite));
                             numNuite++;
                         }
                     }
                 }
+                public List<String> getLesNuitesChoisies() {
+                    List<String> listeDesNuitesChoisies = new List<String>();
+                    foreach (LaNuite uneNuite in listeDesNuites) {
+                        if ( uneNuite.estSelectionner() ) {
+                            listeDesNuitesChoisies.Add( uneNuite.getIdNuite() );
+                        }
+                    }
+                    return listeDesNuitesChoisies;
+                }
+                public bool estAuMoinsUneNuiteChoisie() {
+                    foreach (LaNuite uneNuite in listeDesNuites) {
+                        if (uneNuite.estSelectionner()) {
+                            return true;
+                        }
+                    }
+                    return false;
+                }
                 private List<LaNuite> listeDesNuites;
             }
-        }
-        class LaNuite
-        {
-            public LaNuite(ScrollableControl lePanel, String UnIDNuite, Int16 num, DateTime laDate)
+
+            /// <summary> Cette classe permet l'affichage des entrées pour les nuités </summary>
+            class LaNuite
             {
-                IdNuite = UnIDNuite;
-                chLaNuite = new CheckBox();
-                chLaNuite.Name = "chInscriptionUneNuite" + num;
-                chLaNuite.Text = "Nuit du " + laDate.ToString("D");
-                chLaNuite.Width = 220;
-                chLaNuite.Left = 10;
-                chLaNuite.Top = 5 + (25 * num);
-                chLaNuite.Visible = true;
-                cbHotel = new ComboBox();
-                cbHotel.Name = "cbInscriptionUneNuiteHotel" + num;
-                cbHotel.DataSource = Modele.ObtenirDonnees("VHOTEL01");
-                cbHotel.DisplayMember = "LIBELLE";
-                cbHotel.ValueMember = "ID";
-                cbHotel.Width = 200;
-                cbHotel.Left = 240;
-                cbHotel.Top = 5 + (25 * num);
-                cbHotel.Visible = true;
-                cbChambre = new ComboBox();
-                cbChambre.Name = "cbInscriptionUneNuiteChambre" + num;
-                cbChambre.DataSource = Modele.ObtenirDonnees("VCATEGORIECHAMBRE01");
-                cbChambre.DisplayMember = "LIBELLE";
-                cbChambre.ValueMember = "ID";
-                cbChambre.Width = 90;
-                cbChambre.Left = 450;
-                cbChambre.Top = 5 + (25 * num);
-                cbChambre.Visible = true;
-                // Ajout
-                lePanel.Controls.Add(chLaNuite);
-                lePanel.Controls.Add(cbHotel);
-                lePanel.Controls.Add(cbChambre);
+                public LaNuite(ScrollableControl lePanel, String UnIDNuite, Int16 num, DateTime laDate)
+                {
+                    IdNuite = UnIDNuite;
+                    chLaNuite = new CheckBox();
+                    chLaNuite.Name = "chInscriptionUneNuite" + num;
+                    chLaNuite.Text = "Nuit du " + laDate.ToString("D");
+                    chLaNuite.Width = 220;
+                    chLaNuite.Left = 10;
+                    chLaNuite.Top = 5 + (25 * num);
+                    chLaNuite.Visible = true;
+                    cbHotel = new ComboBox();
+                    cbHotel.Name = "cbInscriptionUneNuiteHotel" + num;
+                    cbHotel.DataSource = Modele.ObtenirDonnees("VHOTEL01");
+                    cbHotel.DisplayMember = "LIBELLE";
+                    cbHotel.ValueMember = "ID";
+                    cbHotel.Width = 200;
+                    cbHotel.Left = 240;
+                    cbHotel.Top = 5 + (25 * num);
+                    cbHotel.Visible = true;
+                    cbChambre = new ComboBox();
+                    cbChambre.Name = "cbInscriptionUneNuiteChambre" + num;
+                    cbChambre.DataSource = Modele.ObtenirDonnees("VCATEGORIECHAMBRE01");
+                    cbChambre.DisplayMember = "LIBELLE";
+                    cbChambre.ValueMember = "ID";
+                    cbChambre.Width = 90;
+                    cbChambre.Left = 450;
+                    cbChambre.Top = 5 + (25 * num);
+                    cbChambre.Visible = true;
+                    // Ajout
+                    lePanel.Controls.Add(chLaNuite);
+                    lePanel.Controls.Add(cbHotel);
+                    lePanel.Controls.Add(cbChambre);
+                }
+                public bool estSelectionner() {
+                    return chLaNuite.Checked;
+                }
+                public String getIdNuite() {
+                    return IdNuite;
+                }
+                private CheckBox chLaNuite;
+                private ComboBox cbHotel;
+                private ComboBox cbChambre;
+                private String IdNuite;
             }
-            private CheckBox chLaNuite;
-            private ComboBox cbHotel;
-            private ComboBox cbChambre;
-            private String IdNuite;
+
+
+            /// <summary> Cette classe permet l'affichage d'une entrée pour la nuités </summary>
+            class LesDatesBenevolat
+            {
+                public LesDatesBenevolat(ScrollableControl lePanel)
+                {
+                    listeDesDatesBenevolat = new List<LaDateBenevolat>();
+                    DataTable lesDateBenevolat = Modele.ObtenirDonnees("VDATEBENEVOLAT01");
+                    DateTime dateDeMaintenant = Utilitaire.obtenirMaintenant();
+                    Int16 numDateBenevolat = 0;
+                    foreach (DataRow dateBenevolatLigne in lesDateBenevolat.Rows)
+                    {
+                        DateTime laDateNuite = (DateTime)dateBenevolatLigne[1];
+                        if ((DateTime.Compare(laDateNuite, dateDeMaintenant) > 0) || laDateNuite.Date.Equals(dateDeMaintenant.Date)) // est bien une date dans le futur ou bien la date d'aujourd'hui
+                        {
+                            listeDesDatesBenevolat.Add(new LaDateBenevolat(lePanel, dateBenevolatLigne[0].ToString(), numDateBenevolat, laDateNuite));
+                            numDateBenevolat++;
+                        }
+                    }
+                }
+                public List<String> getLesDatesBenevolatChoisies()
+                {
+                    List<String> listeDesDatesBenevolatChoisies = new List<String>();
+                    foreach (LaDateBenevolat uneDatesBenevolat in listeDesDatesBenevolat)
+                    {
+                        if (uneDatesBenevolat.estSelectionner()) {
+                            listeDesDatesBenevolatChoisies.Add(uneDatesBenevolat.getIdDateBenevolat());
+                        }
+                    }
+                    return listeDesDatesBenevolatChoisies;
+                }
+                public bool estAuMoinsUneDateBenevolatChoisie()
+                {
+                    foreach (LaDateBenevolat uneDatesBenevolat in listeDesDatesBenevolat)
+                    {
+                        if (uneDatesBenevolat.estSelectionner()) {
+                            return true;
+                        }
+                    }
+                    return false;
+                }
+                private List<LaDateBenevolat> listeDesDatesBenevolat;
+            }
+
+            class LaDateBenevolat
+            {
+                public LaDateBenevolat(ScrollableControl lePanel, String UnIDDateBenevolat, Int16 num, DateTime laDateBenevolat)
+                {
+                    IdDateBenevolat = UnIDDateBenevolat;
+                    cbDateBenevolat = new CheckBox();
+                    cbDateBenevolat.Name = "cbInscriptionUneDateBenevolat" + num;
+                    cbDateBenevolat.Text = "Journée du " + laDateBenevolat.ToString("D");
+                    cbDateBenevolat.Width = 300;
+                    cbDateBenevolat.Left = 10;
+                    cbDateBenevolat.Top = 5 + (25 * num);
+                    cbDateBenevolat.Visible = true;
+                    // Ajout
+                    lePanel.Controls.Add(cbDateBenevolat);
+                }
+                public bool estSelectionner()
+                {
+                    return cbDateBenevolat.Checked;
+                }
+                public String getIdDateBenevolat()
+                {
+                    return IdDateBenevolat;
+                }
+                private CheckBox cbDateBenevolat;
+                private String IdDateBenevolat;
+            }
         }
     }
 }
