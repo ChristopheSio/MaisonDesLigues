@@ -90,7 +90,7 @@
             this.tbInscriptionBenevoleDateNaissance = new System.Windows.Forms.TextBox();
             this.lbInscriptionBenevoleDateNaissance = new System.Windows.Forms.Label();
             this.gbInscriptionIntervenant = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbInscriptionIntervenantTypeIntervenantExiste = new System.Windows.Forms.Label();
             this.flpInscriptionIntervenantType = new System.Windows.Forms.FlowLayoutPanel();
             this.rbInscriptionIntervenantTypeAnimateur = new System.Windows.Forms.RadioButton();
             this.rbInscriptionIntervenantTypeIntervenant = new System.Windows.Forms.RadioButton();
@@ -111,6 +111,8 @@
             this.btInscriptionQuitter = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.lbInscriptionLicencieQualite = new System.Windows.Forms.Label();
+            this.cbInscriptionLicencieQualite = new System.Windows.Forms.ComboBox();
             this.tabControl.SuspendLayout();
             this.tabInscription.SuspendLayout();
             this.gbInscriptionTypeParticipant.SuspendLayout();
@@ -348,14 +350,16 @@
             // 
             // pInscritpionComplement
             // 
-            this.pInscritpionComplement.Controls.Add(this.gbInscriptionLicencie);
             this.pInscritpionComplement.Controls.Add(this.gbInscriptionBenevole);
+            this.pInscritpionComplement.Controls.Add(this.gbInscriptionLicencie);
             this.pInscritpionComplement.Controls.Add(this.gbInscriptionIntervenant);
             resources.ApplyResources(this.pInscritpionComplement, "pInscritpionComplement");
             this.pInscritpionComplement.Name = "pInscritpionComplement";
             // 
             // gbInscriptionLicencie
             // 
+            this.gbInscriptionLicencie.Controls.Add(this.cbInscriptionLicencieQualite);
+            this.gbInscriptionLicencie.Controls.Add(this.lbInscriptionLicencieQualite);
             this.gbInscriptionLicencie.Controls.Add(this.dgInscriptionLicencieChoixAteliers);
             this.gbInscriptionLicencie.Controls.Add(this.tbInscriptionLicencieNumeroLicence);
             this.gbInscriptionLicencie.Controls.Add(this.lbInscriptionLicencieNumeroLicence);
@@ -582,7 +586,7 @@
             // 
             // gbInscriptionIntervenant
             // 
-            this.gbInscriptionIntervenant.Controls.Add(this.label2);
+            this.gbInscriptionIntervenant.Controls.Add(this.lbInscriptionIntervenantTypeIntervenantExiste);
             this.gbInscriptionIntervenant.Controls.Add(this.flpInscriptionIntervenantType);
             this.gbInscriptionIntervenant.Controls.Add(this.cbInscriptionIntervenantAtelier);
             this.gbInscriptionIntervenant.Controls.Add(this.lbInscriptionIntervenantAtelier);
@@ -590,10 +594,10 @@
             this.gbInscriptionIntervenant.Name = "gbInscriptionIntervenant";
             this.gbInscriptionIntervenant.TabStop = false;
             // 
-            // label2
+            // lbInscriptionIntervenantTypeIntervenantExiste
             // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
+            resources.ApplyResources(this.lbInscriptionIntervenantTypeIntervenantExiste, "lbInscriptionIntervenantTypeIntervenantExiste");
+            this.lbInscriptionIntervenantTypeIntervenantExiste.Name = "lbInscriptionIntervenantTypeIntervenantExiste";
             // 
             // flpInscriptionIntervenantType
             // 
@@ -725,6 +729,19 @@
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // lbInscriptionLicencieQualite
+            // 
+            resources.ApplyResources(this.lbInscriptionLicencieQualite, "lbInscriptionLicencieQualite");
+            this.lbInscriptionLicencieQualite.Name = "lbInscriptionLicencieQualite";
+            // 
+            // cbInscriptionLicencieQualite
+            // 
+            this.cbInscriptionLicencieQualite.FormattingEnabled = true;
+            resources.ApplyResources(this.cbInscriptionLicencieQualite, "cbInscriptionLicencieQualite");
+            this.cbInscriptionLicencieQualite.Name = "cbInscriptionLicencieQualite";
+            this.cbInscriptionLicencieQualite.SelectedIndexChanged += new System.EventHandler(this.cbInscriptionLicencieQualite_Change);
+            this.cbInscriptionLicencieQualite.TextChanged += new System.EventHandler(this.cbInscriptionLicencieQualite_Change);
+            // 
             // Fenaitre
             // 
             resources.ApplyResources(this, "$this");
@@ -846,13 +863,15 @@
         private System.Windows.Forms.Panel pInscriptionBenevoleDates;
         private System.Windows.Forms.NumericUpDown nudInscriptionLicencieChequeMontant1;
         private System.Windows.Forms.NumericUpDown nudInscriptionLicencieChequeMontant2;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbInscriptionIntervenantTypeIntervenantExiste;
         private System.Windows.Forms.DataGridViewTextBoxColumn N;
         private System.Windows.Forms.DataGridViewTextBoxColumn ATELIER;
         private System.Windows.Forms.DataGridViewCheckBoxColumn CHOIX;
         private System.Windows.Forms.DataGridViewTextBoxColumn PLACES_RESTANTES;
         private System.Windows.Forms.Button btInscriptionAvertirEmail;
         private System.Windows.Forms.Button btInscriptionAvertirTel;
+        private System.Windows.Forms.ComboBox cbInscriptionLicencieQualite;
+        private System.Windows.Forms.Label lbInscriptionLicencieQualite;
     }
 }
 

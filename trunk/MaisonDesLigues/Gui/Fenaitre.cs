@@ -48,6 +48,7 @@ namespace MaisonDesLigues.Gui
         //
         private void refreshInscription() {
             InscriptionGlobaleValidatation.detacher(gbInscriptionLicencie.Text);
+            InscriptionGlobaleValidatation.detacher(gbInscriptionLicencieCheque.Text);
             InscriptionGlobaleValidatation.detacher(gbInscriptionIntervenant.Text);
             InscriptionGlobaleValidatation.detacher(gbInscriptionBenevole.Text);
             //
@@ -77,13 +78,24 @@ namespace MaisonDesLigues.Gui
 
         private void loadInscriptionIntervenant()
         {
-            if (cbInscriptionIntervenantAtelier.DataSource == null)
-            {
-                DataTable IntervenantAtelier = Modele.ObtenirDonnees("VATELIER01");
-                Utilitaire.ajouterChoixSurUneDatatble(IntervenantAtelier, "ID", "LIBELLE");
-                cbInscriptionIntervenantAtelier.DataSource = IntervenantAtelier;
+            if (cbInscriptionIntervenantAtelier.DataSource == null) {
+                DataTable Atelier = Modele.ObtenirDonnees("V_ATELIER01");
+                Utilitaire.ajouterChoixSurUneDatatble(Atelier, "ID", "LIBELLE");
+                cbInscriptionIntervenantAtelier.DataSource = Atelier;
                 cbInscriptionIntervenantAtelier.ValueMember = "ID";
                 cbInscriptionIntervenantAtelier.DisplayMember = "LIBELLE";
+            }
+            // Un seul intervenant
+            lbInscriptionIntervenantTypeIntervenantExiste.Text = "";
+            rbInscriptionIntervenantTypeIntervenant.Enabled = true;
+            if (cbInscriptionIntervenantAtelier.SelectedItem != null) {
+                DataRow AtelierSelectionne = ((DataRowView)cbInscriptionIntervenantAtelier.SelectedItem).Row;
+                if (AtelierSelectionne["IDPARTICIPANTINTERVENANT"]!=null) {
+                    if (AtelierSelectionne["IDPARTICIPANTINTERVENANT"].ToString() != "") {
+                        lbInscriptionIntervenantTypeIntervenantExiste.Text = "Un intervenant existe déja pour cet atelier";
+                        rbInscriptionIntervenantTypeIntervenant.Enabled = false;
+                    }
+                }
             }
             // Gestion bouton auto
             loadInscriptionHebergement(true);
@@ -103,7 +115,15 @@ namespace MaisonDesLigues.Gui
         }
         private void loadInscriptionLicencie()
         {
-            DataTable AtelierParVacation = Modele.ObtenirDonnees("VATELIER02");
+            if (cbInscriptionLicencieQualite.DataSource == null) {
+                DataTable Qualite = Modele.ObtenirDonnees("V_QUALITE01");
+                Utilitaire.ajouterChoixSurUneDatatble(Qualite, "ID", "LIBELLE");
+                cbInscriptionLicencieQualite.DataSource = Qualite;
+                cbInscriptionLicencieQualite.ValueMember = "ID";
+                cbInscriptionLicencieQualite.DisplayMember = "LIBELLE";
+            }
+            // DATAGRID
+            DataTable AtelierParVacation = Modele.ObtenirDonnees("V_ATELIER02");
             dgInscriptionLicencieChoixAteliers.AutoGenerateColumns = false;
             dgInscriptionLicencieChoixAteliers.DataSource = AtelierParVacation;
             //dgInscriptionLicencieChoixAteliers.Invalidate();
@@ -144,8 +164,8 @@ namespace MaisonDesLigues.Gui
                 validInscriptionNuite();
             }
             else {
-                if (InscriptionLesNuites != null)
-                    InscriptionLesNuites = null; // Supprime les nuites et appel le destructeur de chaque nuitee
+                //if (InscriptionLesNuites != null)
+                //    InscriptionLesNuites = null; // Supprime les nuites et appel le destructeur de chaque nuitee
                 InscriptionGlobaleValidatation.detacher(gbInscriptionHebergement.Text);
             }
             // Afin de laisser les elements se charger, a placer en dernier donc
@@ -157,10 +177,12 @@ namespace MaisonDesLigues.Gui
             if (visible) {
                 if (InscriptionLesDatesBenevolat == null)
                     InscriptionLesDatesBenevolat = new Structures.Inscription.LesDatesBenevolat(pInscriptionBenevoleDates, chbInscriptionBenevoleDates_CheckedChanged);
+                validInscriptionBenevole();
             }
             else {
-                if (InscriptionLesDatesBenevolat != null)
-                    InscriptionLesDatesBenevolat = null; // Supprime les nuites et appel le destructeur de chaque nuitee
+                //if (InscriptionLesDatesBenevolat != null)
+                //    InscriptionLesDatesBenevolat = null; // Supprime les nuites et appel le destructeur de chaque nuitee
+                InscriptionGlobaleValidatation.detacher(gbInscriptionBenevole.Text);
             }
             // Afin de laisser les elements se charger, a placer en dernier donc
             gbInscriptionBenevoleDates.Visible = visible;
@@ -178,7 +200,7 @@ namespace MaisonDesLigues.Gui
             //
             if (InscriptionChoixActif == TypeInscription.Licencie)
                 prixAccompagnant = calculerInscriptionLicencieAccompagnant();
-            if(InscriptionLesNuites!=null)
+            if(InscriptionLesNuites!=null && chbInscriptionNuites.Checked)
                 prixNuites = InscriptionLesNuites.getPrixTotalDesNuites();
             //
             total = prixAccompagnant + prixNuites + prixInscription;
@@ -190,14 +212,12 @@ namespace MaisonDesLigues.Gui
             else if (InscriptionChoixActif == TypeInscription.Benevole)
                 tbInscriptionMontant.Text = "Gratuit.";
             //
-            validInscriptionLicencieCheque();
-            //
             return total;
         }
 
         private float calculerInscriptionLicencieAccompagnant()
         {
-            DataTable LesTarifs = Modele.ObtenirDonnees("VTARIFINSCRIPTION");
+            DataTable LesTarifs = Modele.ObtenirDonnees("V_TARIFINSCRIPTION");
             //DataRow LesTarifs.Rows.
             float prixDuRepasAccompagnant = float.Parse(LesTarifs.Rows[0]["TARIFREPASACCOMPAGNANT"].ToString());
             int nbRepas = Utilitaire.totalCheckedDuContainer(gbInscriptionLicencieRepasAccompagnant);
@@ -206,7 +226,7 @@ namespace MaisonDesLigues.Gui
 
         private float obtenirFraisInscription()
         {
-            DataTable LesTarifs = Modele.ObtenirDonnees("VTARIFINSCRIPTION");
+            DataTable LesTarifs = Modele.ObtenirDonnees("V_TARIFINSCRIPTION");
             return float.Parse(LesTarifs.Rows[0]["TARIFINSCRIPTION"].ToString());
         }
 
@@ -277,6 +297,7 @@ namespace MaisonDesLigues.Gui
         {
             Validation licencie = new Validation();
             licencie.applyRegex(tbInscriptionLicencieNumeroLicence, Validateur.NumeroDeLicence, "Le numéro de licence est incorrecte");
+            licencie.applyChoix(cbInscriptionLicencieQualite, "La qualité du licencié n'est pas correcte");
             licencie.applyRegex(tbInscriptionLicencieChequeN1, Validateur.NumeroDeCheque, "Le numéro de chèque 1 est incorrecte");
             licencie.applyRegex(tbInscriptionLicencieChequeN2, Validateur.NumeroDeCheque, "Le numéro de chèque 2 est incorrecte");
             licencie.applyChoixDatagridview(dgInscriptionLicencieChoixAteliers, 1, 5, "Il doit avoir au moin 1 ateliers choisie ou 5 maximum");
@@ -349,18 +370,49 @@ namespace MaisonDesLigues.Gui
         /* ENREGISTER ET MAIL */
         private void btInscritpionEnregistrerEtMail_Click(object sender, EventArgs e)
         {
+            String newId = null;
             switch (InscriptionChoixActif)
             {
+
                 case TypeInscription.Intervenant:
                     String statut = rbInscriptionIntervenantTypeAnimateur.Checked ? "ANI" : rbInscriptionIntervenantTypeIntervenant.Checked ? "INT" : "";
-                    Modele.InscrireIntervenant(tbInscriptionNom.Text, tbInscriptionPrenom.Text, tbInscriptionAdresse1.Text, tbInscriptionAdresse2.Text, tbInscriptionCP.Text, tbInscriptionVille.Text, tbInscriptionTelephone.Text, tbInscriptionEmail.Text, cbInscriptionIntervenantAtelier.SelectedValue.ToString(), statut);
-                        );
+                    Modele.InscrireIntervenant(
+                        tbInscriptionNom.Text, tbInscriptionPrenom.Text, tbInscriptionAdresse1.Text, tbInscriptionAdresse2.Text, tbInscriptionCP.Text, tbInscriptionVille.Text, tbInscriptionTelephone.Text, tbInscriptionEmail.Text, 
+                        cbInscriptionIntervenantAtelier.SelectedValue.ToString(), statut, 
+                        out newId
+                    );
                     break;
-                case TypeInscription.Benevole: break;
+                //
                 case TypeInscription.Licencie: break;
-            }
-
+                //
+                case TypeInscription.Benevole:
+                    DateTime dateDeNaisance;
+                    DateTime.TryParseExact(tbInscriptionBenevoleDateNaissance.Text, "dd/MM/yyyy", CultureInfo.CurrentCulture, DateTimeStyles.None, out dateDeNaisance);
+                    //
+                    Modele.InscrireBenevole(
+                        tbInscriptionNom.Text, tbInscriptionPrenom.Text, tbInscriptionAdresse1.Text, tbInscriptionAdresse2.Text, tbInscriptionCP.Text, tbInscriptionVille.Text, tbInscriptionTelephone.Text, tbInscriptionEmail.Text,
+                        dateDeNaisance, tbInscriptionBenevoleNumeroLicence.Text,
+                        out newId
+                        );
+                    //
+                    List<String> LesDatesDeBenevolatChoix = InscriptionLesDatesBenevolat.getLesDatesBenevolatChoisies();
+                    foreach (String uneDateBenevolatChoix in LesDatesDeBenevolatChoix) {
+                        Modele.AjouterUneDateDeBenevolat(newId, uneDateBenevolatChoix);
+                    }
+                    break;
                 
+            }
+            // Pour nuites si Licencié ou Intervenant
+            if(newId!=null && chbInscriptionNuites.Checked && (InscriptionChoixActif == TypeInscription.Intervenant || InscriptionChoixActif == TypeInscription.Licencie)) {
+                List <Structures.Inscription.UnChoixNuite> LesChoixDeNuites = InscriptionLesNuites.getLesNuitesChoisies();
+                foreach (Structures.Inscription.UnChoixNuite unChoixNuite in LesChoixDeNuites) {
+                    Modele.AjouterUneNuite(newId, unChoixNuite.idNuite, unChoixNuite.idHotel, unChoixNuite.idChambre);
+                }
+            }
+            // Rafrichir la fenaitre
+            Utilitaire.toutVider(tabInscription);
+            refreshInscription();
+
         }
 
 
@@ -416,12 +468,12 @@ namespace MaisonDesLigues.Gui
             validInscriptionIdentite();
         }
 
-        /* VALIDATION INTERVENANT EVENTS */
+        /* GESTION & VALIDATION INTERVENANT EVENTS */
         private void rbInscriptionIntervenantType_CheckedChanged(object sender, EventArgs e) {
             validInscriptionIntervenant();
         }
         private void cbInscriptionIntervenantAtelier_Change(object sender, EventArgs e) {
-            validInscriptionIntervenant();
+            loadInscriptionIntervenant();
         }
 
         /* GESTION & VALIDATION BENEVOLE/DATE BENEVOLAT EVENTS */
@@ -435,10 +487,10 @@ namespace MaisonDesLigues.Gui
         /* GESTION & VALIDATION NUITES EVENTS */
         private void chbInscriptionNuites_CheckedChanged(object sender, EventArgs e) {
             loadInscriptionHebergement(true);
+            loadMontantTotal();
         }
         private void chbInscriptionUneNuite_CheckedChanged(object sender, EventArgs e) {
-            loadMontantTotal();
-            validInscriptionNuite();
+            refreshInscription();
         }
 
         /* GESTION & VALIDATION  LICENCIE EVENTS */
@@ -450,6 +502,10 @@ namespace MaisonDesLigues.Gui
             loadInscriptionLicencie();
         }
         private void tbInscriptionLicencie_TextChanged(object sender, EventArgs e) {
+            validInscriptionLicencie();
+            validInscriptionLicencieCheque();
+        }
+        private void cbInscriptionLicencieQualite_Change(object sender, EventArgs e) {
             validInscriptionLicencie();
         }
 
@@ -483,5 +539,7 @@ namespace MaisonDesLigues.Gui
             dgInscriptionLicencieChoixAteliers.Refresh();
             validInscriptionLicencie();
         }
+
+
     }
 }

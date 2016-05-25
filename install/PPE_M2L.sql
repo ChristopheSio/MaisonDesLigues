@@ -102,7 +102,7 @@ go
 /*      INDEX DE DATENUITEE      */
 ALTER TABLE DATENUITEE ADD CONSTRAINT PK_DATENUITEE PRIMARY KEY(ID)
 go
-insert into DATENUITEE (DATEARRIVEENUITEE) values ('2015-09-12');
+insert into DATENUITEE (DATEARRIVEENUITEE) values ('2015-09-11');
 insert into DATENUITEE (DATEARRIVEENUITEE) values ('2015-09-12');
 /* -----------------------------------------------------------------------------
       TABLE : ATELIER
@@ -110,7 +110,7 @@ insert into DATENUITEE (DATEARRIVEENUITEE) values ('2015-09-12');
 create table ATELIER
 (
      ID int IDENTITY(1,1) not null,
-     IDPARTICIPANT int null,
+     IDPARTICIPANTINTERVENANT int null,
      LIBELLEATELIER varchar(50) null ,
      NBPLACESMAXI int null
 )
@@ -372,19 +372,6 @@ go
 ALTER TABLE PARTICIPER ADD CONSTRAINT PK_PARTICIPER  PRIMARY KEY(IDATELIER, IDVACATION, IDPARTICIPANT)
 go
 /* -----------------------------------------------------------------------------
-      TABLE : PROPOSER
------------------------------------------------------------------------------ */
-create table PROPOSER
-(
-     CODEHOTEL int not null,
-     IDCATEGORIE int not null,
-     TARIFNUITEE float 
-)
-go
-/*      INDEX DE PROPOSER      */
-ALTER TABLE PROPOSER ADD CONSTRAINT PK_PROPOSER  PRIMARY KEY(CODEHOTEL, IDCATEGORIE)
-go
-/* -----------------------------------------------------------------------------
       TABLE : ETREPRESENT
 ----------------------------------------------------------------------------- */
 create table ETREPRESENT
@@ -417,7 +404,7 @@ ALTER TABLE HOTELCHAMBREPRIX ADD CONSTRAINT FK_HOTELCHAMBREPRIX_1 FOREIGN KEY (C
 go
 ALTER TABLE HOTELCHAMBREPRIX ADD CONSTRAINT FK_HOTELCHAMBREPRIX_2 FOREIGN KEY (IDCATEGORIECHAMBRE)  REFERENCES CATEGORIECHAMBRE(ID)
 go
-ALTER TABLE ATELIER ADD CONSTRAINT FK_ATELIER_1 FOREIGN KEY (IDPARTICIPANT)  REFERENCES PARTICIPANT (ID)
+ALTER TABLE ATELIER ADD CONSTRAINT FK_ATELIER_1 FOREIGN KEY (IDPARTICIPANTINTERVENANT)  REFERENCES PARTICIPANT (ID)
 go
 ALTER TABLE DETAILHEBERGEMENT ADD CONSTRAINT FK_DETAILHEBERGEMENT_1 FOREIGN KEY (CODEHOTEL)  REFERENCES  HOTEL (CODEHOTEL)
 go
@@ -444,10 +431,6 @@ go
 ALTER TABLE PARTICIPER ADD CONSTRAINT FK_PARTICIPER_1 FOREIGN KEY (IDATELIER, IDVACATION)  REFERENCES VACATION (IDATELIER, IDVACATION)
 go
 ALTER TABLE PARTICIPER ADD CONSTRAINT FK_PARTICIPER_2 FOREIGN KEY (IDATELIER, IDPARTICIPANT)  REFERENCES INSCRIRE (IDATELIER, IDPARTICIPANT)
-go
-ALTER TABLE PROPOSER ADD CONSTRAINT FK_PROPOSER_1 FOREIGN KEY (CODEHOTEL)  REFERENCES HOTEL (CODEHOTEL)
-go
-ALTER TABLE PROPOSER ADD CONSTRAINT FK_PROPOSER_2 FOREIGN KEY (IDCATEGORIE)  REFERENCES CATEGORIECHAMBRE (ID)
 go
 ALTER TABLE ETREPRESENT ADD CONSTRAINT FK_ETREPRESENT_1 FOREIGN KEY (IDPARTICIPANT)  REFERENCES PARTICIPANT (ID)
 go
@@ -485,7 +468,7 @@ go
 
 --
 -- Cette vue VATELIERVACATIONOCCUPEES permet de connaître de nombre de place disponible pour une vacation
-CREATE VIEW VATELIERVACATIONOCCUPEES AS 
+CREATE VIEW V_ATELIERVACATIONOCCUPEES AS 
 SELECT v.IDATELIER, v.IDVACATION, a.NBPLACESMAXI, COUNT(p.IDPARTICIPANT) AS NBPLACESOCCUPEES 
 FROM  VACATION v
 INNER JOIN ATELIER a ON v.IDATELIER = a.ID
@@ -498,20 +481,20 @@ go
 --                LES VUES
 -- -----------------------------------------------------------------------------
 -- Cette vue vqualite01 va permettre d'avoir un résultat trié dans les combobox
-create view VQUALITE01 as
+create VIEW V_QUALITE01 as
 select ID, LIBELLEQUALITE as LIBELLE
 from qualite
 go
 
 --
 -- Cette vue VATELIER01 va permettre de remplir la combo Atelier pour l'intervenant
-create view VATELIER01 as
-select ID , LIBELLEATELIER as LIBELLE
+create VIEW V_ATELIER01 as
+select ID , LIBELLEATELIER as LIBELLE, IDPARTICIPANTINTERVENANT
 from atelier;
 go
 
 -- Cette vue VATELIER02 va permettre de remplir la grid Atelier pour un licencié
-create view VATELIER02 as
+create VIEW V_ATELIER02 as
 select a.ID , a.LIBELLEATELIER as ATELIER, SUM(vavo.NBPLACESMAXI) AS MAXPLACESVACATIONS, SUM(vavo.NBPLACESOCCUPEES) AS PLACESOCCUPEESVACATIONS, (SUM(vavo.NBPLACESMAXI)-SUM(vavo.NBPLACESOCCUPEES)) AS PLACESRETESTANTESVACATIONS
 from atelier a
 inner join VATELIERVACATIONOCCUPEES vavo ON vavo.IDATELIER = a.ID
@@ -520,50 +503,50 @@ go
 
 
 /*
-create view VATELIER02 as
+create VIEW V_ATELIER02 as
 select ID, LIBELLEATELIER,  rank() over (ORDER BY ID) as NUMORDRE from atelier;
 go*/
 --
 ---- Cette vue VDATENUITEE01 va permettre de choisir les dates où un participant peut arriver à l'hotel
---create view VDATENUITEE01 as
+--create VIEW V_DATENUITEE01 as
 --select id, to_char(DATEARRIVEENUITEE, 'Day dd Month YYYY','NLS_DATE_LANGUAGE = FRENCH')as libelle
 --from DATENUITEE;
 --go
 -- Cette vue VDATENUITEE02 est une alternative à VDATENUITEE01 elle va renvoyer la date au format date
-create view VDATENUITEE02 as
+create VIEW V_DATENUITEE02 as
 select ID, DATEARRIVEENUITEE
 from DATENUITEE;
 go
 --
 -- Cette vue VHOTEL01 va permettre de remplir la combobox du choix d'hotel du composant nuité
 
-create view VHOTEL01 as
+create VIEW V_HOTEL01 as
 select CODEHOTEL as ID, NOMHOTEL as LIBELLE
 from HOTEL;
 go
 --
 -- Cette vue VCATEGORIECHAMBRE01 va permettre de remplir la combobox du choix de la catégorie de la chambre du composant nuité
-create view VCATEGORIECHAMBRE01 as
+create VIEW V_CATEGORIECHAMBRE01 as
 select ID , LIBELLECATEGORIE as LIBELLE
 from CATEGORIECHAMBRE;
 go
 --
 -- Cette vue VDATEBENEVOLAT01 va permettre de choisir les dates où un bénévole est disponible
-create view VDATEBENEVOLAT01 as
+create VIEW V_DATEBENEVOLAT01 as
 select ID,DATEBENEVOLAT as LIBELLE
 from DATEBENEVOLAT;
 go
 
 --
 -- Cette vue VTARIFINSCRIPTION permet de connaître les info d'inscription
-CREATE VIEW VTARIFINSCRIPTION AS 
+CREATE VIEW V_TARIFINSCRIPTION AS 
 SELECT TARIFINSCRIPTION, TARIFREPASACCOMPAGNANT
 FROM  PARAMETRES
 go
 
 --
 -- Cette vue VTARIFHOTELCHAMBRE permet de connaître le prix d'une chambre pour un hotel
-CREATE VIEW VTARIFHOTELCHAMBRE AS 
+CREATE VIEW V_TARIFHOTELCHAMBRE AS 
 SELECT CODEHOTEL, IDCATEGORIECHAMBRE, PRIX
 FROM  HOTELCHAMBREPRIX
 go
@@ -584,8 +567,11 @@ go
   - le paramètre newid est un paramètre out pour renvoyer à la procédure appelante 
   l'id du participant créé. (à compléter)
 */
+
+
+
 /* procédure insérant un intervenant et retournant un paramètre @erreur = 1 si erreur à l'insertion, 0 sinon */
-create procedure PSnouvelintervenant
+create procedure PS_InsererIntervenant
   @pNom varchar(50),
   @pPrenom varchar(50),
   @pAdr1 varchar(50),
@@ -594,18 +580,80 @@ create procedure PSnouvelintervenant
   @pVille varchar(50),
   @pTel varchar(15),
   @pMail varchar(50),
-  @ptype varchar(1),
+  @pType varchar(1),
   @pIdAtelierIntervenant int,
-  @pIdStatut varchar(3)
- /* @newId int output*/
+  @pIdStatut varchar(3),
+  @outId int output
   as  
   BEGIN 
-  SET NOCOUNT ON     /*  indique à SQL Server de ne pas retourner le nombre de lignes affectées par la requête INSERT*/
+        SET NOCOUNT ON  -- indique à SQL Server de ne pas retourner le nombre de lignes affectées par la requête INSERT
+        /* insérant un intervenant */
         insert into PARTICIPANT(nom, prenom, adresse1, adresse2,cp, ville,tel, mail,typeparticipant, DATEINSCRIPTION,IDATELIERINTERVENANT,IDSTATUT)
-        values (@pNom,@pPrenom,@pAdr1,@pAdr2,@pCp,@pVille,@pTel,@pMail,@ptype,GETDATE(),@pIdAtelierIntervenant,@pIdStatut)
-        end
-/*  SET @newId = @@identity*/
-/* il faudra aussi mettre à jour idparticipant avec @newId dans la table Atelier */
+        values (@pNom,@pPrenom,@pAdr1,@pAdr2,@pCp,@pVille,@pTel,@pMail,@pType,GETDATE(),@pIdAtelierIntervenant,@pIdStatut);
+        SELECT @outId = SCOPE_IDENTITY();
+        /* mettre à jour IDPARTICIPANTINTERVENANT la table Atelier si necessaire */
+        IF ( @pType = 'I' AND @pIdStatut = 'INT') BEGIN -- Si c'est un intervenant I INT alors, est assigné a atelier comme tel
+         UPDATE ATELIER SET IDPARTICIPANTINTERVENANT = @outId WHERE ID = @pIdAtelierIntervenant;
+        END
+  end
+GO
+
+/* procédure insérant un benevole et retournant un paramètre @erreur = 1 si erreur à l'insertion, 0 sinon */
+create procedure PS_InsererBenevole 
+  @pNom varchar(50),
+  @pPrenom varchar(50),
+  @pAdr1 varchar(50),
+  @pAdr2 varchar(50),
+  @pCp varchar(5),
+  @pVille varchar(50),
+  @pTel varchar(15),
+  @pMail varchar(50),
+  @pType varchar(1),
+  @pDateNaissanceBenevole date,
+  @pNumeroLicence varchar(32),
+  @outId int output
+  as  
+  BEGIN 
+        SET NOCOUNT ON  -- indique à SQL Server de ne pas retourner le nombre de lignes affectées par la requête INSERT
+        /* insérant un intervenant */
+        insert into PARTICIPANT(nom, prenom, adresse1, adresse2,cp, ville,tel, mail,typeparticipant, DATEINSCRIPTION,DATENAISSANCEBENEVOLE,NUMEROLICENCE)
+        values (@pNom,@pPrenom,@pAdr1,@pAdr2,@pCp,@pVille,@pTel,@pMail,@pType,GETDATE(),@pDateNaissanceBenevole,@pNumeroLicence);
+        SELECT @outId = SCOPE_IDENTITY();
+  end
+GO
+
+-- PS_InsererLicencie @pIdQualiteLicencie int,
+
+
+
+/* procédure insérant une nuite */
+create procedure PS_AjouterDateBenevolat
+  @pIdParticipant int,
+  @pIdDateBenevolat int,
+  as  
+  BEGIN 
+    SET NOCOUNT ON -- indique à SQL Server de ne pas retourner le nombre de lignes affectées par la requête INSERT*/
+    insert into ETREPRESENT(IDPARTICIPANT, IDDATEBENEVOLAT)
+        values (@pIdParticipant,@pIdDateBenevolat);
+  end
+GO
+
+/* procédure insérant une nuite */
+create procedure PS_AjouterNuite
+  @pIdParticipant int,
+  @pIdNuite int,
+  @pIdHotel int,
+  @pIdCategorieChambre int
+  as  
+  BEGIN 
+    -- Permet d'optenire le numordre
+    DECLARE @numOrdre int;
+    SELECT @numOrdre = ISNULL(MAX(NUMORDRE)+1,0) FROM DETAILHEBERGEMENT WHERE IDPARTICIPANT = @pIdParticipant;
+    --
+    SET NOCOUNT ON -- indique à SQL Server de ne pas retourner le nombre de lignes affectées par la requête INSERT*/
+    insert into DETAILHEBERGEMENT(IDPARTICIPANT, NUMORDRE, CODEHOTEL, IDCATEGORIE,IDDATENUITEE)
+        values (@pIdParticipant,@numOrdre,@pIdHotel,@pIdCategorieChambre,@pIdNuite);
+  end
 GO
 
 

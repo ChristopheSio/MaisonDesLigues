@@ -14,13 +14,23 @@ namespace MaisonDesLigues
     {
         namespace Inscription
         {
+            /// <summary> Cette strucutre permet de connaitre les d'une nuité </summary>
+            struct UnChoixNuite
+            {
+                public UnChoixNuite(string _idNuite =null, string _idHotel = null, string _idChambre = null)
+                { idNuite = _idNuite; idHotel = _idHotel; idChambre = _idChambre; }
+                public string idNuite;
+                public string idHotel;
+                public string idChambre;
+            }
+            
             /// <summary> Cette classe permet l'affichage d'une entrée pour la nuités </summary>
             class LesNuites
             {
                 public LesNuites(ScrollableControl lePanel, Action<object, EventArgs> callback)
                 {
                     listeDesNuites = new List<LaNuite>();
-                    DataTable lesNuites = Modele.ObtenirDonnees("VDATENUITEE02");
+                    DataTable lesNuites = Modele.ObtenirDonnees("V_DATENUITEE02");
                     DateTime dateDeMaintenant = Utilitaire.obtenirMaintenant();
                     Int16 numNuite = 0;
                     foreach (DataRow nuiteLigne in lesNuites.Rows)
@@ -34,11 +44,11 @@ namespace MaisonDesLigues
                         }
                     }
                 }
-                public List<String> getLesNuitesChoisies() {
-                    List<String> listeDesNuitesChoisies = new List<String>();
+                public List<UnChoixNuite> getLesNuitesChoisies() {
+                    List<UnChoixNuite> listeDesNuitesChoisies = new List<UnChoixNuite>();
                     foreach (LaNuite uneNuite in listeDesNuites) {
                         if ( uneNuite.estSelectionner() ) {
-                            listeDesNuitesChoisies.Add( uneNuite.getIdNuite() );
+                            listeDesNuitesChoisies.Add( uneNuite.getChoix() );
                         }
                     }
                     return listeDesNuitesChoisies;
@@ -46,8 +56,8 @@ namespace MaisonDesLigues
                 public float getPrixTotalDesNuites()
                 {
                     float total = 0;
-                    Tuple<string, string, string> uneNuiteChoix;
-                    DataTable lesPrix = Modele.ObtenirDonnees("VTARIFHOTELCHAMBRE");
+                    UnChoixNuite uneNuiteChoix;
+                    DataTable lesPrix = Modele.ObtenirDonnees("V_TARIFHOTELCHAMBRE");
                     DataRow[] desLignePrix;
                     //
                     foreach (LaNuite uneNuite in listeDesNuites)
@@ -55,10 +65,10 @@ namespace MaisonDesLigues
                         if(uneNuite.estSelectionner())
                         {
                             uneNuiteChoix = uneNuite.getChoix();
-                            if (uneNuiteChoix.Item2 == null || uneNuiteChoix.Item3 == null)
+                            if (uneNuiteChoix.idHotel == null || uneNuiteChoix.idChambre == null)
                                 continue;
                             //
-                            desLignePrix = lesPrix.Select("CODEHOTEL = '"+uneNuiteChoix.Item2+ "' AND IDCATEGORIECHAMBRE = '"+uneNuiteChoix.Item3+"'");
+                            desLignePrix = lesPrix.Select("CODEHOTEL = '"+uneNuiteChoix.idHotel + "' AND IDCATEGORIECHAMBRE = '"+uneNuiteChoix.idChambre + "'");
                             if (desLignePrix.Length != 1)
                                 continue;
                             //
@@ -88,7 +98,7 @@ namespace MaisonDesLigues
                     chLaNuite.CheckedChanged += new System.EventHandler(callback);
                     cbHotel = new ComboBox();
                     cbHotel.Name = "cbInscriptionUneNuiteHotel" + num;
-                    cbHotel.DataSource = Modele.ObtenirDonnees("VHOTEL01");
+                    cbHotel.DataSource = Modele.ObtenirDonnees("V_HOTEL01");
                     cbHotel.DisplayMember = "LIBELLE";
                     cbHotel.ValueMember = "ID";
                     cbHotel.Width = 200;
@@ -99,7 +109,7 @@ namespace MaisonDesLigues
                     cbHotel.SelectedIndexChanged += new System.EventHandler(callback);
                     cbChambre = new ComboBox();
                     cbChambre.Name = "cbInscriptionUneNuiteChambre" + num;
-                    cbChambre.DataSource = Modele.ObtenirDonnees("VCATEGORIECHAMBRE01");
+                    cbChambre.DataSource = Modele.ObtenirDonnees("V_CATEGORIECHAMBRE01");
                     cbChambre.DisplayMember = "LIBELLE";
                     cbChambre.ValueMember = "ID";
                     cbChambre.Width = 90;
@@ -119,8 +129,11 @@ namespace MaisonDesLigues
                 public String getIdNuite() {
                     return IdNuite;
                 }
-                public Tuple<string,string,string> getChoix() {
-                    return new Tuple<string, string, string>(IdNuite, cbHotel.SelectedValue.ToString(), cbChambre.SelectedValue.ToString());
+                public UnChoixNuite getChoix() {
+                    UnChoixNuite unChoix = new UnChoixNuite(IdNuite);
+                    if (cbHotel.SelectedValue != null) unChoix.idHotel = cbHotel.SelectedValue.ToString();
+                    if (cbChambre.SelectedValue != null) unChoix.idChambre = cbChambre.SelectedValue.ToString();
+                    return unChoix;
                 }
                 private CheckBox chLaNuite;
                 private ComboBox cbHotel;
@@ -135,7 +148,7 @@ namespace MaisonDesLigues
                 public LesDatesBenevolat(ScrollableControl lePanel, Action<object, EventArgs> callback)
                 {
                     listeDesDatesBenevolat = new List<LaDateBenevolat>();
-                    DataTable lesDateBenevolat = Modele.ObtenirDonnees("VDATEBENEVOLAT01");
+                    DataTable lesDateBenevolat = Modele.ObtenirDonnees("V_DATEBENEVOLAT01");
                     DateTime dateDeMaintenant = Utilitaire.obtenirMaintenant();
                     Int16 numDateBenevolat = 0;
                     foreach (DataRow dateBenevolatLigne in lesDateBenevolat.Rows)
