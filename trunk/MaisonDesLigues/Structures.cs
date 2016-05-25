@@ -45,14 +45,24 @@ namespace MaisonDesLigues
                 }
                 public float getPrixTotalDesNuites()
                 {
-                    Tuple<string, string, string> uneNuiteChoix;
                     float total = 0;
+                    Tuple<string, string, string> uneNuiteChoix;
+                    DataTable lesPrix = Modele.ObtenirDonnees("VTARIFHOTELCHAMBRE");
+                    DataRow[] desLignePrix;
+                    //
                     foreach (LaNuite uneNuite in listeDesNuites)
                     {
                         if(uneNuite.estSelectionner())
                         {
                             uneNuiteChoix = uneNuite.getChoix();
-
+                            if (uneNuiteChoix.Item2 == null || uneNuiteChoix.Item3 == null)
+                                continue;
+                            //
+                            desLignePrix = lesPrix.Select("CODEHOTEL = '"+uneNuiteChoix.Item2+ "' AND IDCATEGORIECHAMBRE = '"+uneNuiteChoix.Item3+"'");
+                            if (desLignePrix.Length != 1)
+                                continue;
+                            //
+                            total += float.Parse(desLignePrix[0]["PRIX"].ToString());
                         }
                     }
                     return total;
@@ -86,6 +96,7 @@ namespace MaisonDesLigues
                     cbHotel.Top = 5 + (25 * num);
                     cbHotel.DropDownStyle = ComboBoxStyle.DropDownList;
                     cbHotel.Visible = true;
+                    cbHotel.SelectedIndexChanged += new System.EventHandler(callback);
                     cbChambre = new ComboBox();
                     cbChambre.Name = "cbInscriptionUneNuiteChambre" + num;
                     cbChambre.DataSource = Modele.ObtenirDonnees("VCATEGORIECHAMBRE01");
@@ -96,6 +107,7 @@ namespace MaisonDesLigues
                     cbChambre.Top = 5 + (25 * num);
                     cbChambre.DropDownStyle = ComboBoxStyle.DropDownList;
                     cbChambre.Visible = true;
+                    cbChambre.SelectedIndexChanged += new System.EventHandler(callback);
                     // Ajout
                     lePanel.Controls.Add(chLaNuite);
                     lePanel.Controls.Add(cbHotel);

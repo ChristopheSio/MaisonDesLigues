@@ -478,6 +478,22 @@ BEGIN
 END
 
 go
+
+-- ----------------------------------------------------------------------------------
+--                                VUES CUSTOM
+-- ----------------------------------------------------------------------------------
+
+--
+-- Cette vue VATELIERVACATIONOCCUPEES permet de connaître de nombre de place disponible pour une vacation
+CREATE VIEW VATELIERVACATIONOCCUPEES AS 
+SELECT v.IDATELIER, v.IDVACATION, a.NBPLACESMAXI, COUNT(p.IDPARTICIPANT) AS NBPLACESOCCUPEES 
+FROM  VACATION v
+INNER JOIN ATELIER a ON v.IDATELIER = a.ID
+LEFT JOIN PARTICIPER p ON p.IDATELIER = v.IDATELIER AND p.IDVACATION = v.IDVACATION
+GROUP BY v.IDATELIER, v.IDVACATION, a.NBPLACESMAXI
+go
+
+
 -- -----------------------------------------------------------------------------
 --                LES VUES
 -- -----------------------------------------------------------------------------
@@ -493,9 +509,20 @@ create view VATELIER01 as
 select ID , LIBELLEATELIER as LIBELLE
 from atelier;
 go
+
+-- Cette vue VATELIER02 va permettre de remplir la grid Atelier pour un licencié
+create view VATELIER02 as
+select a.ID , a.LIBELLEATELIER as ATELIER, SUM(vavo.NBPLACESMAXI) AS MAXPLACESVACATIONS, SUM(vavo.NBPLACESOCCUPEES) AS PLACESOCCUPEESVACATIONS, (SUM(vavo.NBPLACESMAXI)-SUM(vavo.NBPLACESOCCUPEES)) AS PLACESRETESTANTESVACATIONS
+from atelier a
+inner join VATELIERVACATIONOCCUPEES vavo ON vavo.IDATELIER = a.ID
+GROUP BY a.ID , a.LIBELLEATELIER
+go
+
+
+/*
 create view VATELIER02 as
 select ID, LIBELLEATELIER,  rank() over (ORDER BY ID) as NUMORDRE from atelier;
-go
+go*/
 --
 ---- Cette vue VDATENUITEE01 va permettre de choisir les dates où un participant peut arriver à l'hotel
 --create view VDATENUITEE01 as
@@ -527,26 +554,20 @@ select ID,DATEBENEVOLAT as LIBELLE
 from DATEBENEVOLAT;
 go
 
--- ----------------------------------------------------------------------------------
---                                VUES CUSTOM
--- ----------------------------------------------------------------------------------
-
---
--- Cette vue VATELIERVACATIONOCCUPES permet de connaître de nombre de place disponible pour une vacation
-CREATE VIEW VATELIERVACATIONOCCUPES AS 
-SELECT v.IDATELIER, v.IDVACATION, a.NBPLACESMAXI, COUNT(p.IDPARTICIPANT) AS NBPLACESOCCUPES 
-FROM  VACATION v
-INNER JOIN ATELIER a ON v.IDATELIER = a.ID
-LEFT JOIN PARTICIPER p ON p.IDATELIER = v.IDATELIER AND p.IDVACATION = v.IDVACATION
-GROUP BY v.IDATELIER, v.IDVACATION, a.NBPLACESMAXI
-go
-
 --
 -- Cette vue VTARIFINSCRIPTION permet de connaître les info d'inscription
 CREATE VIEW VTARIFINSCRIPTION AS 
 SELECT TARIFINSCRIPTION, TARIFREPASACCOMPAGNANT
 FROM  PARAMETRES
 go
+
+--
+-- Cette vue VTARIFHOTELCHAMBRE permet de connaître le prix d'une chambre pour un hotel
+CREATE VIEW VTARIFHOTELCHAMBRE AS 
+SELECT CODEHOTEL, IDCATEGORIECHAMBRE, PRIX
+FROM  HOTELCHAMBREPRIX
+go
+
 
 -- ----------------------------------------------------------------------------------
 --                                PROCEDURE STOCKE
@@ -574,14 +595,14 @@ create procedure PSnouvelintervenant
   @pTel varchar(15),
   @pMail varchar(50),
   @ptype varchar(1),
-  @pidatelierintervenant int,
+  @pIdAtelierIntervenant int,
   @pIdStatut varchar(3)
  /* @newId int output*/
   as  
   BEGIN 
   SET NOCOUNT ON     /*  indique à SQL Server de ne pas retourner le nombre de lignes affectées par la requête INSERT*/
         insert into PARTICIPANT(nom, prenom, adresse1, adresse2,cp, ville,tel, mail,typeparticipant, DATEINSCRIPTION,IDATELIERINTERVENANT,IDSTATUT)
-        values (@pNom,@pPrenom,@pAdr1,@pAdr2,@pCp,@pVille,@pTel,@pMail,@ptype,GETDATE(),@pidatelierintervenant,@pIdStatut)
+        values (@pNom,@pPrenom,@pAdr1,@pAdr2,@pCp,@pVille,@pTel,@pMail,@ptype,GETDATE(),@pIdAtelierIntervenant,@pIdStatut)
         end
 /*  SET @newId = @@identity*/
 /* il faudra aussi mettre à jour idparticipant avec @newId dans la table Atelier */

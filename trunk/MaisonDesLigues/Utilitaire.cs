@@ -66,6 +66,29 @@ namespace MaisonDesLigues
         }
 
 
+        /// <summary>Cette fonction permet de réinitialiser toutes le propriété d'un contenaire</summary>
+        internal static void toutVider(Control unContainer)
+        {
+            if (unContainer.Controls == null)
+                return;
+            foreach (Control unControle in unContainer.Controls)
+            {
+                switch(unControle.GetType().Name)
+                {
+                    case "CheckBox": ((CheckBox)unControle).Checked = false;  break;
+                    case "RadioButton": ((RadioButton)unControle).Checked = false; break;
+                    case "TextBox": ((TextBox)unControle).Clear(); break;
+                    case "ComboBox": ((ComboBox)unControle).DataSource = null; break;
+                    case "DataGridView": ((DataGridView)unControle).DataSource = null; break;
+                    default:
+                        if (typeof(Control).IsAssignableFrom(unControle.GetType()))
+                            toutVider(unControle);
+                        break;
+                }
+            }
+        }
+
+
 
 
 

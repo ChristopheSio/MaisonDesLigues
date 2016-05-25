@@ -17,7 +17,7 @@ namespace MaisonDesLigues
         public static readonly Regex Email = new Regex(@"^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$", RegexOptions.IgnoreCase);
         public static readonly Regex NomVille = new Regex(@"^[a-zA-ZÀ-ÿ0-9]{2,64}$", RegexOptions.IgnoreCase);
         public static readonly Regex CodePostal = new Regex(@"^[0-9]{5}$");
-        public static readonly Regex TelephoneFr = new Regex(@"^[0-9]{9}$");
+        public static readonly Regex TelephoneFr = new Regex(@"^[0-9]{10}$");
         public static readonly Regex Adresse1 = new Regex(@"^.{3,512}$");
         public static readonly Regex Adresse2 = new Regex(@"^.{0,512}$");
         public static readonly Regex NumeroDeCheque = new Regex(@"^[A-Z0-9]{2,20}$", RegexOptions.IgnoreCase);
@@ -39,11 +39,10 @@ namespace MaisonDesLigues
 
      class Validation
      {
-        public Validation(bool logErreursActive = true) {
+        public Validation() {
             totalTest = 0;
             totalValidTest = 0;
-            if (logErreursActive)
-                listLogErreurs = new List<string>();
+            listLogErreurs = new List<string>();
         }
         //
         private void setBackColor(Control unControle, bool doitValider) {
@@ -51,37 +50,44 @@ namespace MaisonDesLigues
                 System.Drawing.SystemColors.Window :
                 System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192))))); // 255; 192; 192
         }
+        private void setBackColor(DataGridViewRow uneDatagridviewrow, bool doitValider)
+        {
+            uneDatagridviewrow.DefaultCellStyle.BackColor = doitValider ?
+                System.Drawing.SystemColors.Window :
+                System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192))))); // 255; 192; 192
+        }
         private void setValid(bool doitValider, string logErreur) {
             totalTest++;
             if (doitValider)
                 totalValidTest++;
-            else if (listLogErreurs != null && logErreur != null)
+            else if (logErreur != null)
                 listLogErreurs.Add(logErreur);
         }
         private void setControleDependant(bool doitValider, Control[] controlesDependant) {
             if (controlesDependant == null) return;
             foreach (Control unControleDependant in controlesDependant) {
-                setBackColor(unControleDependant, doitValider);
+                if(doitValider==false)
+                    setBackColor(unControleDependant, doitValider);
             }
         }
         private bool validOptionel(Control unControle, bool doitValider, bool estOptionel) {
             return (((unControle.Text=="")&&estOptionel==true)||unControle.Enabled==false) ? true : doitValider;
         }
         //
-        public void apply(Control unControle, bool doitValider, string logErreur = null, bool estOptionel = false, Control[] controlesDependant = null) {
+        public void apply(Control unControle, bool doitValider, string logErreur, bool estOptionel = false, Control[] controlesDependant = null) {
             bool valid = validOptionel(unControle, doitValider, estOptionel);
             setValid(valid, logErreur);
             setBackColor(unControle, valid);
             setControleDependant(valid, controlesDependant);
         }
-        public void applyRegex(Control unControle, Regex doitMatch, string logErreur = null, bool estOptionel = false, Control[] controlesDependant = null) {
+        public void applyRegex(Control unControle, Regex doitMatch, string logErreur, bool estOptionel = false, Control[] controlesDependant = null) {
             apply(unControle, doitMatch.IsMatch(unControle.Text), logErreur, estOptionel, controlesDependant);
         }
-        public void applyFunction(Control unControle, Func<string, bool> functionDeTest, string logErreur = null, bool estOptionel = false, Control[] controlesDependant = null) {
+        public void applyFunction(Control unControle, Func<string, bool> functionDeTest, string logErreur, bool estOptionel = false, Control[] controlesDependant = null) {
             apply(unControle, functionDeTest(unControle.Text), logErreur, estOptionel, controlesDependant);
         }
         //
-        public void applyAuMoinUnCheckedEstFait(Control unContainer, string logErreur = null, Control[] controlesDependant = null) {
+        public void applyAuMoinUnCheckedEstFait(Control unContainer, string logErreur, Control[] controlesDependant = null) {
             bool estOk = Utilitaire.totalCheckedDuContainer(unContainer) > 0;
             setValid(estOk, logErreur);
             setBackColor(unContainer, estOk);
@@ -97,25 +103,92 @@ namespace MaisonDesLigues
             setBackColor(uneCombobox, estOk);
             setControleDependant(estOk, controlesDependant);
         }
+        public void applyChoixDatagridview(DataGridView uneDatagridview, int min, int max, string logErreur, Control[] controlesDependant = null)
+        {
+            int nbChoixChecked = 0;
+            foreach(DataGridViewRow uneLigne in uneDatagridview.Rows) {
+                if (uneLigne.Cells["CHOIX"] == null) continue;
+                if (uneLigne.Cells["CHOIX"].Value == null) continue;
+                if ((bool)uneLigne.Cells["CHOIX"].Value == false) continue;
+                nbChoixChecked++;
+            }
+            //
+            bool valid = (nbChoixChecked >= min) && (nbChoixChecked <= max);
+            setValid(valid, logErreur);
+            setControleDependant(valid, controlesDependant);
+            foreach (DataGridViewRow uneLigne in uneDatagridview.Rows) {
+                setBackColor(uneLigne, valid);
+            }
+        }
         //
         public bool contientAuMoinUneErreur() {
             return totalTest > totalValidTest;
         }
         public string logErreurs() {
-            if (listLogErreurs == null)
-                return null;
-            //
             string log = "";
             foreach (string uneErreur in listLogErreurs) {
                 log += uneErreur+"\n";
             }
             return log;
         }
+        public int totalErreurs() {
+            return totalTest-totalValidTest;
+        }
         //
         private List<string> listLogErreurs;
         private int totalTest;
         private int totalValidTest;
 
+    }
+
+    class GlobaleValidatation
+    {
+        public GlobaleValidatation(Action<GlobaleValidatation> _callback) {
+            lesValidationsDict = new Dictionary<string, Validation>();
+            callback = _callback;
+        }
+        public void attacher(Validation uneValidation, string nomDuGroupe) {
+            lesValidationsDict[nomDuGroupe] = uneValidation;
+            if (callback == null) return;
+            callback(this);
+        }
+        public void detacher(string nomDuGroupe) {
+            if (lesValidationsDict.ContainsKey(nomDuGroupe))
+                lesValidationsDict.Remove(nomDuGroupe);
+        }
+        public void actualise() {
+            callback(this);
+        }
+        public Dictionary<string, Validation> getLesValidationsDict() {
+            return lesValidationsDict;
+        }
+        public bool contientAuMoinUneErreur() {
+            foreach (KeyValuePair<string, Validation> kvp in lesValidationsDict) {
+                if (kvp.Value.contientAuMoinUneErreur())
+                    return true;
+            }
+            return false;
+        }
+        public string logErreurs() {
+            string log = "";
+            foreach (KeyValuePair<string, Validation> kvp in lesValidationsDict) {
+                if (!kvp.Value.contientAuMoinUneErreur())
+                    continue;
+                log += "-- " + kvp.Key + " --\n";
+                log += kvp.Value.logErreurs()+"\n";
+            }
+            return log;
+        }
+        public int totalErreurs() {
+            int total = 0;
+            foreach (KeyValuePair<string, Validation> kvp in lesValidationsDict) {
+                total += kvp.Value.totalErreurs();
+            }
+            return total;
+        }
+
+        Dictionary<string, Validation> lesValidationsDict;
+        Action<GlobaleValidatation> callback;
     }
 
     // foreach (Control unControle in unContainer.Controls) { setBackColor(unControle, estOk); }

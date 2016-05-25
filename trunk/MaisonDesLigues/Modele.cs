@@ -97,7 +97,7 @@ namespace MaisonDesLigues
         /// <param name="pMail">mail du participant</param>
         /// <param name="pIdAtelier"> Id de l'atelier où interviendra l'intervenant</param>
         /// <param name="pIdStatut">statut de l'intervenant pour l'atelier : animateur ou intervenant ('ANI' ou 'INT')</param>
-        static public void InscrireIntervenant(String pNom, String pPrenom, String pAdresse1, String pAdresse2, String pCp, String pVille, String pTel, String pMail, Int16 pIdAtelier, String pIdStatut)
+        static public void InscrireIntervenant(String pNom, String pPrenom, String pAdresse1, String pAdresse2, String pCp, String pVille, String pTel, String pMail, String pIdAtelier, String pIdStatut)
         {
             String MessageErreur = "";
             SqlTransaction transaction = DataBaseConnection.BeginTransaction();
@@ -109,7 +109,7 @@ namespace MaisonDesLigues
                 ParamCommunsNouveauxParticipants(command, pNom, pPrenom, pAdresse1, pAdresse2, pCp, pVille, pTel, pMail);
                 // on complète les paramètres spécifiques à l'intervenant
                 command.Parameters.Add("@ptype", SqlDbType.VarChar).Value = "I";   // "I" pour le type du participant (Intervenant)
-                command.Parameters.Add("@pidatelierintervenant", SqlDbType.Int).Value = pIdAtelier;
+                command.Parameters.Add("@pIdAtelierIntervenant", SqlDbType.Int).Value = pIdAtelier;
                 command.Parameters.Add("@pIdStatut", SqlDbType.VarChar).Value = pIdStatut; 
                 //execution
                 command.ExecuteNonQuery();
@@ -199,19 +199,7 @@ namespace MaisonDesLigues
             }
         }
 
-        /// <summary>
-        /// fonction permettant de construire un dictionnaire dont l'id est l'id d'une nuité et le contenu une date
-        /// sous la la forme : lundi 7 janvier 2014        /// 
-        /// </summary>
-        /// <returns>un dictionnaire dont l'id est l'id d'une nuité et le contenu une date</returns>
-        static public Dictionary<Int16, String> ObtenirDatesNuitees() {
-            Dictionary<Int16, String> LesDatesARetourner = new Dictionary<Int16, String>();
-            DataTable LesDatesNuitees = ObtenirDonnees("VDATENUITEE02");
-            foreach (DataRow UneLigne in LesDatesNuitees.Rows) {
-                LesDatesARetourner.Add(System.Convert.ToInt16(UneLigne["ID"]), UneLigne["DATEARRIVEENUITEE"].ToString());
-            }
-            return LesDatesARetourner;
-        }
+        
         
         /// <summary>procédure qui va se charger d'invoquer la procédure stockée qui ira inscrire un participant de type bénévole</summary>
         /// <param name="Cmd">nom de l'objet command concerné par les paramètres</param>
@@ -245,6 +233,8 @@ namespace MaisonDesLigues
             String[] message = Regex.Split(unMessage, "SQLSERVER-");
             return (Regex.Split(message[1], ":"))[1];
         }
+   
+        
 
         /// <summary>méthode privée permettant de valoriser les paramètres d'un objet commmand communs aux licenciés, bénévoles et intervenants</summary>
         /// <param name="Cmd">nom de l'objet command concerné par les paramètres</param>
@@ -267,6 +257,26 @@ namespace MaisonDesLigues
             Cmd.Parameters.Add("@pTel", SqlDbType.VarChar).Value = pTel;
             Cmd.Parameters.Add("@pMail", SqlDbType.VarChar).Value = pMail;
         }
+
+        /*
+        /// <summary>
+        /// fonction permettant de construire un dictionnaire dont l'id est l'id d'une nuité et le contenu une date
+        /// sous la la forme : lundi 7 janvier 2014        /// 
+        /// </summary>
+        /// <returns>un dictionnaire dont l'id est l'id d'une nuité et le contenu une date</returns>
+        static public Dictionary<Int16, String> ObtenirDatesNuitees() {
+            Dictionary<Int16, String> LesDatesARetourner = new Dictionary<Int16, String>();
+            DataTable LesDatesNuitees = ObtenirDonnees("VDATENUITEE02");
+            foreach (DataRow UneLigne in LesDatesNuitees.Rows) {
+                LesDatesARetourner.Add(System.Convert.ToInt16(UneLigne["ID"]), UneLigne["DATEARRIVEENUITEE"].ToString());
+            }
+            return LesDatesARetourner;
+        }
+        */
+
+
+
+
 
     }
 }
