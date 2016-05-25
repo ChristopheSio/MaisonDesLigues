@@ -499,206 +499,65 @@
   <data name="&gt;&gt;gbInscriptionIdentite.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;pInscriptionBenevoleDates.Name" xml:space="preserve">
-    <value>pInscriptionBenevoleDates</value>
-  </data>
-  <data name="&gt;&gt;pInscriptionBenevoleDates.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pInscriptionBenevoleDates.Parent" xml:space="preserve">
-    <value>gbInscriptionBenevoleDates</value>
-  </data>
-  <data name="&gt;&gt;pInscriptionBenevoleDates.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="gbInscriptionBenevoleDates.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 87</value>
-  </data>
-  <data name="gbInscriptionBenevoleDates.Size" type="System.Drawing.Size, System.Drawing">
-    <value>350, 99</value>
-  </data>
-  <data name="gbInscriptionBenevoleDates.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="gbInscriptionBenevoleDates.Text" xml:space="preserve">
-    <value>Dates de bénévolat</value>
-  </data>
-  <data name="&gt;&gt;gbInscriptionBenevoleDates.Name" xml:space="preserve">
-    <value>gbInscriptionBenevoleDates</value>
-  </data>
-  <data name="&gt;&gt;gbInscriptionBenevoleDates.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbInscriptionBenevoleDates.Parent" xml:space="preserve">
-    <value>gbInscriptionBenevole</value>
-  </data>
-  <data name="&gt;&gt;gbInscriptionBenevoleDates.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lbInscriptionBenevoleNumeroLicenceOptionel.AutoSize" type="System.Boolean, mscorlib">
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lbInscriptionBenevoleNumeroLicenceOptionel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>106, 78</value>
   </data>
-  <data name="lbInscriptionBenevoleNumeroLicenceOptionel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>268, 58</value>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 13</value>
   </data>
-  <data name="lbInscriptionBenevoleNumeroLicenceOptionel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 13</value>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
-  <data name="lbInscriptionBenevoleNumeroLicenceOptionel.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+  <data name="label2.Text" xml:space="preserve">
+    <value>**auto-intervenant-existe**</value>
   </data>
-  <data name="lbInscriptionBenevoleNumeroLicenceOptionel.Text" xml:space="preserve">
-    <value>(optionel)</value>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
   </data>
-  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicenceOptionel.Name" xml:space="preserve">
-    <value>lbInscriptionBenevoleNumeroLicenceOptionel</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicenceOptionel.Type" xml:space="preserve">
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicenceOptionel.Parent" xml:space="preserve">
-    <value>gbInscriptionBenevole</value>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>gbInscriptionIntervenant</value>
   </data>
-  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicenceOptionel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;rbInscriptionIntervenantTypeAnimateur.Name" xml:space="preserve">
+    <value>rbInscriptionIntervenantTypeAnimateur</value>
+  </data>
+  <data name="&gt;&gt;rbInscriptionIntervenantTypeAnimateur.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbInscriptionIntervenantTypeAnimateur.Parent" xml:space="preserve">
+    <value>flpInscriptionIntervenantType</value>
+  </data>
+  <data name="&gt;&gt;rbInscriptionIntervenantTypeAnimateur.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;rbInscriptionIntervenantTypeIntervenant.Name" xml:space="preserve">
+    <value>rbInscriptionIntervenantTypeIntervenant</value>
+  </data>
+  <data name="&gt;&gt;rbInscriptionIntervenantTypeIntervenant.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbInscriptionIntervenantTypeIntervenant.Parent" xml:space="preserve">
+    <value>flpInscriptionIntervenantType</value>
+  </data>
+  <data name="&gt;&gt;rbInscriptionIntervenantTypeIntervenant.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="tbInscriptionBenevoleNumeroLicence.Location" type="System.Drawing.Point, System.Drawing">
-    <value>125, 52</value>
+  <data name="flpInscriptionIntervenantType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 50</value>
   </data>
-  <data name="tbInscriptionBenevoleNumeroLicence.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 20</value>
+  <data name="flpInscriptionIntervenantType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 48</value>
   </data>
-  <data name="tbInscriptionBenevoleNumeroLicence.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;tbInscriptionBenevoleNumeroLicence.Name" xml:space="preserve">
-    <value>tbInscriptionBenevoleNumeroLicence</value>
-  </data>
-  <data name="&gt;&gt;tbInscriptionBenevoleNumeroLicence.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbInscriptionBenevoleNumeroLicence.Parent" xml:space="preserve">
-    <value>gbInscriptionBenevole</value>
-  </data>
-  <data name="&gt;&gt;tbInscriptionBenevoleNumeroLicence.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="lbInscriptionBenevoleNumeroLicence.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lbInscriptionBenevoleNumeroLicence.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lbInscriptionBenevoleNumeroLicence.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 55</value>
-  </data>
-  <data name="lbInscriptionBenevoleNumeroLicence.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 13</value>
-  </data>
-  <data name="lbInscriptionBenevoleNumeroLicence.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="lbInscriptionBenevoleNumeroLicence.Text" xml:space="preserve">
-    <value>Numéro de licence :</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicence.Name" xml:space="preserve">
-    <value>lbInscriptionBenevoleNumeroLicence</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicence.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicence.Parent" xml:space="preserve">
-    <value>gbInscriptionBenevole</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicence.ZOrder" xml:space="preserve">
+  <data name="flpInscriptionIntervenantType.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
-  </data>
-  <data name="tbInscriptionBenevoleDateNaissance.Location" type="System.Drawing.Point, System.Drawing">
-    <value>188, 26</value>
-  </data>
-  <data name="tbInscriptionBenevoleDateNaissance.MaxLength" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="tbInscriptionBenevoleDateNaissance.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 20</value>
-  </data>
-  <data name="tbInscriptionBenevoleDateNaissance.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;tbInscriptionBenevoleDateNaissance.Name" xml:space="preserve">
-    <value>tbInscriptionBenevoleDateNaissance</value>
-  </data>
-  <data name="&gt;&gt;tbInscriptionBenevoleDateNaissance.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbInscriptionBenevoleDateNaissance.Parent" xml:space="preserve">
-    <value>gbInscriptionBenevole</value>
-  </data>
-  <data name="&gt;&gt;tbInscriptionBenevoleDateNaissance.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="lbInscriptionBenevoleDateNaissance.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lbInscriptionBenevoleDateNaissance.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lbInscriptionBenevoleDateNaissance.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 29</value>
-  </data>
-  <data name="lbInscriptionBenevoleDateNaissance.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 13</value>
-  </data>
-  <data name="lbInscriptionBenevoleDateNaissance.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="lbInscriptionBenevoleDateNaissance.Text" xml:space="preserve">
-    <value>Date de naissance (jj/mm/aaaa) :</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionBenevoleDateNaissance.Name" xml:space="preserve">
-    <value>lbInscriptionBenevoleDateNaissance</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionBenevoleDateNaissance.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionBenevoleDateNaissance.Parent" xml:space="preserve">
-    <value>gbInscriptionBenevole</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionBenevoleDateNaissance.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="gbInscriptionBenevole.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="gbInscriptionBenevole.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="gbInscriptionBenevole.Size" type="System.Drawing.Size, System.Drawing">
-    <value>574, 201</value>
-  </data>
-  <data name="gbInscriptionBenevole.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="gbInscriptionBenevole.Text" xml:space="preserve">
-    <value>Disponibilités bénévoles</value>
-  </data>
-  <data name="gbInscriptionBenevole.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;gbInscriptionBenevole.Name" xml:space="preserve">
-    <value>gbInscriptionBenevole</value>
-  </data>
-  <data name="&gt;&gt;gbInscriptionBenevole.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbInscriptionBenevole.Parent" xml:space="preserve">
-    <value>pInscritpionComplement</value>
-  </data>
-  <data name="&gt;&gt;gbInscriptionBenevole.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="&gt;&gt;flpInscriptionIntervenantType.Name" xml:space="preserve">
     <value>flpInscriptionIntervenantType</value>
@@ -710,7 +569,16 @@
     <value>gbInscriptionIntervenant</value>
   </data>
   <data name="&gt;&gt;flpInscriptionIntervenantType.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
+  </data>
+  <data name="cbInscriptionIntervenantAtelier.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 23</value>
+  </data>
+  <data name="cbInscriptionIntervenantAtelier.Size" type="System.Drawing.Size, System.Drawing">
+    <value>327, 21</value>
+  </data>
+  <data name="cbInscriptionIntervenantAtelier.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;cbInscriptionIntervenantAtelier.Name" xml:space="preserve">
     <value>cbInscriptionIntervenantAtelier</value>
@@ -722,7 +590,25 @@
     <value>gbInscriptionIntervenant</value>
   </data>
   <data name="&gt;&gt;cbInscriptionIntervenantAtelier.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lbInscriptionIntervenantAtelier.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbInscriptionIntervenantAtelier.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbInscriptionIntervenantAtelier.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 26</value>
+  </data>
+  <data name="lbInscriptionIntervenantAtelier.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 13</value>
+  </data>
+  <data name="lbInscriptionIntervenantAtelier.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="lbInscriptionIntervenantAtelier.Text" xml:space="preserve">
+    <value>Atelier :</value>
   </data>
   <data name="&gt;&gt;lbInscriptionIntervenantAtelier.Name" xml:space="preserve">
     <value>lbInscriptionIntervenantAtelier</value>
@@ -734,7 +620,7 @@
     <value>gbInscriptionIntervenant</value>
   </data>
   <data name="&gt;&gt;lbInscriptionIntervenantAtelier.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="gbInscriptionIntervenant.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -764,6 +650,96 @@
     <value>pInscritpionComplement</value>
   </data>
   <data name="&gt;&gt;gbInscriptionIntervenant.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;gbInscriptionBenevoleDates.Name" xml:space="preserve">
+    <value>gbInscriptionBenevoleDates</value>
+  </data>
+  <data name="&gt;&gt;gbInscriptionBenevoleDates.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbInscriptionBenevoleDates.Parent" xml:space="preserve">
+    <value>gbInscriptionBenevole</value>
+  </data>
+  <data name="&gt;&gt;gbInscriptionBenevoleDates.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tbInscriptionBenevoleNumeroLicence.Name" xml:space="preserve">
+    <value>tbInscriptionBenevoleNumeroLicence</value>
+  </data>
+  <data name="&gt;&gt;tbInscriptionBenevoleNumeroLicence.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbInscriptionBenevoleNumeroLicence.Parent" xml:space="preserve">
+    <value>gbInscriptionBenevole</value>
+  </data>
+  <data name="&gt;&gt;tbInscriptionBenevoleNumeroLicence.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicence.Name" xml:space="preserve">
+    <value>lbInscriptionBenevoleNumeroLicence</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicence.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicence.Parent" xml:space="preserve">
+    <value>gbInscriptionBenevole</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicence.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;tbInscriptionBenevoleDateNaissance.Name" xml:space="preserve">
+    <value>tbInscriptionBenevoleDateNaissance</value>
+  </data>
+  <data name="&gt;&gt;tbInscriptionBenevoleDateNaissance.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbInscriptionBenevoleDateNaissance.Parent" xml:space="preserve">
+    <value>gbInscriptionBenevole</value>
+  </data>
+  <data name="&gt;&gt;tbInscriptionBenevoleDateNaissance.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionBenevoleDateNaissance.Name" xml:space="preserve">
+    <value>lbInscriptionBenevoleDateNaissance</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionBenevoleDateNaissance.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionBenevoleDateNaissance.Parent" xml:space="preserve">
+    <value>gbInscriptionBenevole</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionBenevoleDateNaissance.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="gbInscriptionBenevole.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="gbInscriptionBenevole.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="gbInscriptionBenevole.Size" type="System.Drawing.Size, System.Drawing">
+    <value>574, 201</value>
+  </data>
+  <data name="gbInscriptionBenevole.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="gbInscriptionBenevole.Text" xml:space="preserve">
+    <value>Disponibilités bénévoles</value>
+  </data>
+  <data name="gbInscriptionBenevole.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;gbInscriptionBenevole.Name" xml:space="preserve">
+    <value>gbInscriptionBenevole</value>
+  </data>
+  <data name="&gt;&gt;gbInscriptionBenevole.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbInscriptionBenevole.Parent" xml:space="preserve">
+    <value>pInscritpionComplement</value>
+  </data>
+  <data name="&gt;&gt;gbInscriptionBenevole.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="&gt;&gt;dgInscriptionLicencieChoixAteliers.Name" xml:space="preserve">
@@ -1177,18 +1153,6 @@
   <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;rbInscriptionLicencie.Name" xml:space="preserve">
-    <value>rbInscriptionLicencie</value>
-  </data>
-  <data name="&gt;&gt;rbInscriptionLicencie.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbInscriptionLicencie.Parent" xml:space="preserve">
-    <value>flpInscriptionTypeParticipant</value>
-  </data>
-  <data name="&gt;&gt;rbInscriptionLicencie.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;rbInscriptionIntervenant.Name" xml:space="preserve">
     <value>rbInscriptionIntervenant</value>
   </data>
@@ -1199,6 +1163,18 @@
     <value>flpInscriptionTypeParticipant</value>
   </data>
   <data name="&gt;&gt;rbInscriptionIntervenant.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;rbInscriptionLicencie.Name" xml:space="preserve">
+    <value>rbInscriptionLicencie</value>
+  </data>
+  <data name="&gt;&gt;rbInscriptionLicencie.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbInscriptionLicencie.Parent" xml:space="preserve">
+    <value>flpInscriptionTypeParticipant</value>
+  </data>
+  <data name="&gt;&gt;rbInscriptionLicencie.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="&gt;&gt;rbInscriptionBenevole.Name" xml:space="preserve">
@@ -1237,36 +1213,6 @@
   <data name="&gt;&gt;flpInscriptionTypeParticipant.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="rbInscriptionLicencie.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="rbInscriptionLicencie.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="rbInscriptionLicencie.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="rbInscriptionLicencie.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 17</value>
-  </data>
-  <data name="rbInscriptionLicencie.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="rbInscriptionLicencie.Text" xml:space="preserve">
-    <value>Licencié</value>
-  </data>
-  <data name="&gt;&gt;rbInscriptionLicencie.Name" xml:space="preserve">
-    <value>rbInscriptionLicencie</value>
-  </data>
-  <data name="&gt;&gt;rbInscriptionLicencie.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbInscriptionLicencie.Parent" xml:space="preserve">
-    <value>flpInscriptionTypeParticipant</value>
-  </data>
-  <data name="&gt;&gt;rbInscriptionLicencie.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="rbInscriptionIntervenant.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1274,7 +1220,7 @@
     <value>NoControl</value>
   </data>
   <data name="rbInscriptionIntervenant.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 3</value>
+    <value>3, 3</value>
   </data>
   <data name="rbInscriptionIntervenant.Size" type="System.Drawing.Size, System.Drawing">
     <value>79, 17</value>
@@ -1295,6 +1241,36 @@
     <value>flpInscriptionTypeParticipant</value>
   </data>
   <data name="&gt;&gt;rbInscriptionIntervenant.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rbInscriptionLicencie.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rbInscriptionLicencie.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="rbInscriptionLicencie.Location" type="System.Drawing.Point, System.Drawing">
+    <value>88, 3</value>
+  </data>
+  <data name="rbInscriptionLicencie.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 17</value>
+  </data>
+  <data name="rbInscriptionLicencie.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="rbInscriptionLicencie.Text" xml:space="preserve">
+    <value>Licencié</value>
+  </data>
+  <data name="&gt;&gt;rbInscriptionLicencie.Name" xml:space="preserve">
+    <value>rbInscriptionLicencie</value>
+  </data>
+  <data name="&gt;&gt;rbInscriptionLicencie.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbInscriptionLicencie.Parent" xml:space="preserve">
+    <value>flpInscriptionTypeParticipant</value>
+  </data>
+  <data name="&gt;&gt;rbInscriptionLicencie.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="rbInscriptionBenevole.AutoSize" type="System.Boolean, mscorlib">
@@ -1328,10 +1304,10 @@
     <value>2</value>
   </data>
   <data name="tbInscriptionEmail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>175, 120</value>
+    <value>255, 120</value>
   </data>
   <data name="tbInscriptionEmail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 20</value>
+    <value>141, 20</value>
   </data>
   <data name="tbInscriptionEmail.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -1355,16 +1331,16 @@
     <value>NoControl</value>
   </data>
   <data name="lbInscriptionEmail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 123</value>
+    <value>165, 123</value>
   </data>
   <data name="lbInscriptionEmail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 13</value>
+    <value>87, 13</value>
   </data>
   <data name="lbInscriptionEmail.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
   <data name="lbInscriptionEmail.Text" xml:space="preserve">
-    <value>E-mail :</value>
+    <value>E-mail (optionel) :</value>
   </data>
   <data name="&gt;&gt;lbInscriptionEmail.Name" xml:space="preserve">
     <value>lbInscriptionEmail</value>
@@ -1379,7 +1355,7 @@
     <value>1</value>
   </data>
   <data name="tbInscriptionTelephone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>62, 120</value>
+    <value>99, 120</value>
   </data>
   <data name="tbInscriptionTelephone.MaxLength" type="System.Int32, mscorlib">
     <value>9</value>
@@ -1409,16 +1385,16 @@
     <value>NoControl</value>
   </data>
   <data name="lbInscriptionTelephone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 123</value>
+    <value>5, 123</value>
   </data>
   <data name="lbInscriptionTelephone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 13</value>
+    <value>95, 13</value>
   </data>
   <data name="lbInscriptionTelephone.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
   <data name="lbInscriptionTelephone.Text" xml:space="preserve">
-    <value>Tél : +33</value>
+    <value>Tél (optionel) : +33</value>
   </data>
   <data name="&gt;&gt;lbInscriptionTelephone.Name" xml:space="preserve">
     <value>lbInscriptionTelephone</value>
@@ -1710,201 +1686,6 @@
   </data>
   <data name="&gt;&gt;lbInscriptionNom.ZOrder" xml:space="preserve">
     <value>14</value>
-  </data>
-  <data name="pInscriptionBenevoleDates.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="pInscriptionBenevoleDates.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="pInscriptionBenevoleDates.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="pInscriptionBenevoleDates.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="pInscriptionBenevoleDates.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 16</value>
-  </data>
-  <data name="pInscriptionBenevoleDates.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="pInscriptionBenevoleDates.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>No</value>
-  </data>
-  <data name="pInscriptionBenevoleDates.Size" type="System.Drawing.Size, System.Drawing">
-    <value>344, 80</value>
-  </data>
-  <data name="pInscriptionBenevoleDates.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;pInscriptionBenevoleDates.Name" xml:space="preserve">
-    <value>pInscriptionBenevoleDates</value>
-  </data>
-  <data name="&gt;&gt;pInscriptionBenevoleDates.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pInscriptionBenevoleDates.Parent" xml:space="preserve">
-    <value>gbInscriptionBenevoleDates</value>
-  </data>
-  <data name="&gt;&gt;pInscriptionBenevoleDates.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;rbInscriptionIntervenantTypeAnimateur.Name" xml:space="preserve">
-    <value>rbInscriptionIntervenantTypeAnimateur</value>
-  </data>
-  <data name="&gt;&gt;rbInscriptionIntervenantTypeAnimateur.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbInscriptionIntervenantTypeAnimateur.Parent" xml:space="preserve">
-    <value>flpInscriptionIntervenantType</value>
-  </data>
-  <data name="&gt;&gt;rbInscriptionIntervenantTypeAnimateur.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;rbInscriptionIntervenantTypeIntervenant.Name" xml:space="preserve">
-    <value>rbInscriptionIntervenantTypeIntervenant</value>
-  </data>
-  <data name="&gt;&gt;rbInscriptionIntervenantTypeIntervenant.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbInscriptionIntervenantTypeIntervenant.Parent" xml:space="preserve">
-    <value>flpInscriptionIntervenantType</value>
-  </data>
-  <data name="&gt;&gt;rbInscriptionIntervenantTypeIntervenant.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="flpInscriptionIntervenantType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 50</value>
-  </data>
-  <data name="flpInscriptionIntervenantType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 53</value>
-  </data>
-  <data name="flpInscriptionIntervenantType.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;flpInscriptionIntervenantType.Name" xml:space="preserve">
-    <value>flpInscriptionIntervenantType</value>
-  </data>
-  <data name="&gt;&gt;flpInscriptionIntervenantType.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flpInscriptionIntervenantType.Parent" xml:space="preserve">
-    <value>gbInscriptionIntervenant</value>
-  </data>
-  <data name="&gt;&gt;flpInscriptionIntervenantType.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="rbInscriptionIntervenantTypeAnimateur.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="rbInscriptionIntervenantTypeAnimateur.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="rbInscriptionIntervenantTypeAnimateur.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="rbInscriptionIntervenantTypeAnimateur.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 17</value>
-  </data>
-  <data name="rbInscriptionIntervenantTypeAnimateur.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="rbInscriptionIntervenantTypeAnimateur.Text" xml:space="preserve">
-    <value>Animateur</value>
-  </data>
-  <data name="&gt;&gt;rbInscriptionIntervenantTypeAnimateur.Name" xml:space="preserve">
-    <value>rbInscriptionIntervenantTypeAnimateur</value>
-  </data>
-  <data name="&gt;&gt;rbInscriptionIntervenantTypeAnimateur.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbInscriptionIntervenantTypeAnimateur.Parent" xml:space="preserve">
-    <value>flpInscriptionIntervenantType</value>
-  </data>
-  <data name="&gt;&gt;rbInscriptionIntervenantTypeAnimateur.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="rbInscriptionIntervenantTypeIntervenant.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="rbInscriptionIntervenantTypeIntervenant.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="rbInscriptionIntervenantTypeIntervenant.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 26</value>
-  </data>
-  <data name="rbInscriptionIntervenantTypeIntervenant.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 17</value>
-  </data>
-  <data name="rbInscriptionIntervenantTypeIntervenant.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="rbInscriptionIntervenantTypeIntervenant.Text" xml:space="preserve">
-    <value>Intervenant</value>
-  </data>
-  <data name="&gt;&gt;rbInscriptionIntervenantTypeIntervenant.Name" xml:space="preserve">
-    <value>rbInscriptionIntervenantTypeIntervenant</value>
-  </data>
-  <data name="&gt;&gt;rbInscriptionIntervenantTypeIntervenant.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbInscriptionIntervenantTypeIntervenant.Parent" xml:space="preserve">
-    <value>flpInscriptionIntervenantType</value>
-  </data>
-  <data name="&gt;&gt;rbInscriptionIntervenantTypeIntervenant.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="cbInscriptionIntervenantAtelier.Location" type="System.Drawing.Point, System.Drawing">
-    <value>69, 23</value>
-  </data>
-  <data name="cbInscriptionIntervenantAtelier.Size" type="System.Drawing.Size, System.Drawing">
-    <value>327, 21</value>
-  </data>
-  <data name="cbInscriptionIntervenantAtelier.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionIntervenantAtelier.Name" xml:space="preserve">
-    <value>cbInscriptionIntervenantAtelier</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionIntervenantAtelier.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionIntervenantAtelier.Parent" xml:space="preserve">
-    <value>gbInscriptionIntervenant</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionIntervenantAtelier.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lbInscriptionIntervenantAtelier.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lbInscriptionIntervenantAtelier.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lbInscriptionIntervenantAtelier.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 26</value>
-  </data>
-  <data name="lbInscriptionIntervenantAtelier.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 13</value>
-  </data>
-  <data name="lbInscriptionIntervenantAtelier.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="lbInscriptionIntervenantAtelier.Text" xml:space="preserve">
-    <value>Atelier :</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionIntervenantAtelier.Name" xml:space="preserve">
-    <value>lbInscriptionIntervenantAtelier</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionIntervenantAtelier.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionIntervenantAtelier.Parent" xml:space="preserve">
-    <value>gbInscriptionIntervenant</value>
-  </data>
-  <data name="&gt;&gt;lbInscriptionIntervenantAtelier.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <metadata name="N.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2560,6 +2341,246 @@
   <data name="&gt;&gt;lbInscriptionLicencieAtelier.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="rbInscriptionIntervenantTypeAnimateur.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rbInscriptionIntervenantTypeAnimateur.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="rbInscriptionIntervenantTypeAnimateur.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="rbInscriptionIntervenantTypeAnimateur.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 17</value>
+  </data>
+  <data name="rbInscriptionIntervenantTypeAnimateur.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="rbInscriptionIntervenantTypeAnimateur.Text" xml:space="preserve">
+    <value>Animateur</value>
+  </data>
+  <data name="&gt;&gt;rbInscriptionIntervenantTypeAnimateur.Name" xml:space="preserve">
+    <value>rbInscriptionIntervenantTypeAnimateur</value>
+  </data>
+  <data name="&gt;&gt;rbInscriptionIntervenantTypeAnimateur.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbInscriptionIntervenantTypeAnimateur.Parent" xml:space="preserve">
+    <value>flpInscriptionIntervenantType</value>
+  </data>
+  <data name="&gt;&gt;rbInscriptionIntervenantTypeAnimateur.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rbInscriptionIntervenantTypeIntervenant.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rbInscriptionIntervenantTypeIntervenant.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="rbInscriptionIntervenantTypeIntervenant.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 26</value>
+  </data>
+  <data name="rbInscriptionIntervenantTypeIntervenant.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 17</value>
+  </data>
+  <data name="rbInscriptionIntervenantTypeIntervenant.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="rbInscriptionIntervenantTypeIntervenant.Text" xml:space="preserve">
+    <value>Intervenant</value>
+  </data>
+  <data name="&gt;&gt;rbInscriptionIntervenantTypeIntervenant.Name" xml:space="preserve">
+    <value>rbInscriptionIntervenantTypeIntervenant</value>
+  </data>
+  <data name="&gt;&gt;rbInscriptionIntervenantTypeIntervenant.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbInscriptionIntervenantTypeIntervenant.Parent" xml:space="preserve">
+    <value>flpInscriptionIntervenantType</value>
+  </data>
+  <data name="&gt;&gt;rbInscriptionIntervenantTypeIntervenant.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;pInscriptionBenevoleDates.Name" xml:space="preserve">
+    <value>pInscriptionBenevoleDates</value>
+  </data>
+  <data name="&gt;&gt;pInscriptionBenevoleDates.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pInscriptionBenevoleDates.Parent" xml:space="preserve">
+    <value>gbInscriptionBenevoleDates</value>
+  </data>
+  <data name="&gt;&gt;pInscriptionBenevoleDates.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="gbInscriptionBenevoleDates.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 87</value>
+  </data>
+  <data name="gbInscriptionBenevoleDates.Size" type="System.Drawing.Size, System.Drawing">
+    <value>350, 75</value>
+  </data>
+  <data name="gbInscriptionBenevoleDates.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="gbInscriptionBenevoleDates.Text" xml:space="preserve">
+    <value>Dates de bénévolat</value>
+  </data>
+  <data name="&gt;&gt;gbInscriptionBenevoleDates.Name" xml:space="preserve">
+    <value>gbInscriptionBenevoleDates</value>
+  </data>
+  <data name="&gt;&gt;gbInscriptionBenevoleDates.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbInscriptionBenevoleDates.Parent" xml:space="preserve">
+    <value>gbInscriptionBenevole</value>
+  </data>
+  <data name="&gt;&gt;gbInscriptionBenevoleDates.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pInscriptionBenevoleDates.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="pInscriptionBenevoleDates.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="pInscriptionBenevoleDates.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="pInscriptionBenevoleDates.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pInscriptionBenevoleDates.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 16</value>
+  </data>
+  <data name="pInscriptionBenevoleDates.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="pInscriptionBenevoleDates.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="pInscriptionBenevoleDates.Size" type="System.Drawing.Size, System.Drawing">
+    <value>344, 56</value>
+  </data>
+  <data name="pInscriptionBenevoleDates.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;pInscriptionBenevoleDates.Name" xml:space="preserve">
+    <value>pInscriptionBenevoleDates</value>
+  </data>
+  <data name="&gt;&gt;pInscriptionBenevoleDates.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pInscriptionBenevoleDates.Parent" xml:space="preserve">
+    <value>gbInscriptionBenevoleDates</value>
+  </data>
+  <data name="&gt;&gt;pInscriptionBenevoleDates.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tbInscriptionBenevoleNumeroLicence.Location" type="System.Drawing.Point, System.Drawing">
+    <value>165, 52</value>
+  </data>
+  <data name="tbInscriptionBenevoleNumeroLicence.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 20</value>
+  </data>
+  <data name="tbInscriptionBenevoleNumeroLicence.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;tbInscriptionBenevoleNumeroLicence.Name" xml:space="preserve">
+    <value>tbInscriptionBenevoleNumeroLicence</value>
+  </data>
+  <data name="&gt;&gt;tbInscriptionBenevoleNumeroLicence.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbInscriptionBenevoleNumeroLicence.Parent" xml:space="preserve">
+    <value>gbInscriptionBenevole</value>
+  </data>
+  <data name="&gt;&gt;tbInscriptionBenevoleNumeroLicence.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lbInscriptionBenevoleNumeroLicence.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbInscriptionBenevoleNumeroLicence.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbInscriptionBenevoleNumeroLicence.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 55</value>
+  </data>
+  <data name="lbInscriptionBenevoleNumeroLicence.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 13</value>
+  </data>
+  <data name="lbInscriptionBenevoleNumeroLicence.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lbInscriptionBenevoleNumeroLicence.Text" xml:space="preserve">
+    <value>Numéro de licence (optionel) :</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicence.Name" xml:space="preserve">
+    <value>lbInscriptionBenevoleNumeroLicence</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicence.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicence.Parent" xml:space="preserve">
+    <value>gbInscriptionBenevole</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionBenevoleNumeroLicence.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tbInscriptionBenevoleDateNaissance.Location" type="System.Drawing.Point, System.Drawing">
+    <value>188, 26</value>
+  </data>
+  <data name="tbInscriptionBenevoleDateNaissance.MaxLength" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="tbInscriptionBenevoleDateNaissance.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 20</value>
+  </data>
+  <data name="tbInscriptionBenevoleDateNaissance.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tbInscriptionBenevoleDateNaissance.Name" xml:space="preserve">
+    <value>tbInscriptionBenevoleDateNaissance</value>
+  </data>
+  <data name="&gt;&gt;tbInscriptionBenevoleDateNaissance.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbInscriptionBenevoleDateNaissance.Parent" xml:space="preserve">
+    <value>gbInscriptionBenevole</value>
+  </data>
+  <data name="&gt;&gt;tbInscriptionBenevoleDateNaissance.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lbInscriptionBenevoleDateNaissance.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbInscriptionBenevoleDateNaissance.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbInscriptionBenevoleDateNaissance.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 29</value>
+  </data>
+  <data name="lbInscriptionBenevoleDateNaissance.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 13</value>
+  </data>
+  <data name="lbInscriptionBenevoleDateNaissance.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lbInscriptionBenevoleDateNaissance.Text" xml:space="preserve">
+    <value>Date de naissance (jj/mm/aaaa) :</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionBenevoleDateNaissance.Name" xml:space="preserve">
+    <value>lbInscriptionBenevoleDateNaissance</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionBenevoleDateNaissance.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionBenevoleDateNaissance.Parent" xml:space="preserve">
+    <value>gbInscriptionBenevole</value>
+  </data>
+  <data name="&gt;&gt;lbInscriptionBenevoleDateNaissance.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <metadata name="gbInscriptionHebergementNuites.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -2597,7 +2618,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="gbInscriptionHebergementNuites.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
+    <value>1, 1, 1, 1</value>
   </data>
   <data name="gbInscriptionHebergementNuites.Size" type="System.Drawing.Size, System.Drawing">
     <value>568, 94</value>
@@ -2630,7 +2651,7 @@
     <value>Fill</value>
   </data>
   <data name="pInscriptionNuites.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 33</value>
+    <value>1, 34</value>
   </data>
   <data name="pInscriptionNuites.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -2639,7 +2660,7 @@
     <value>No</value>
   </data>
   <data name="pInscriptionNuites.Size" type="System.Drawing.Size, System.Drawing">
-    <value>568, 61</value>
+    <value>566, 59</value>
   </data>
   <data name="pInscriptionNuites.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -2699,10 +2720,10 @@
     <value>Top</value>
   </data>
   <data name="pInscriptionNuitesInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 13</value>
+    <value>1, 14</value>
   </data>
   <data name="pInscriptionNuitesInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>568, 20</value>
+    <value>566, 20</value>
   </data>
   <data name="pInscriptionNuitesInfo.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>

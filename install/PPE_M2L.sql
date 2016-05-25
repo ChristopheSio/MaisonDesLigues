@@ -530,6 +530,9 @@ go
 -- ----------------------------------------------------------------------------------
 --                                VUES CUSTOM
 -- ----------------------------------------------------------------------------------
+
+--
+-- Cette vue VATELIERVACATIONOCCUPES permet de connaître de nombre de place disponible pour une vacation
 CREATE VIEW VATELIERVACATIONOCCUPES AS 
 SELECT v.IDATELIER, v.IDVACATION, a.NBPLACESMAXI, COUNT(p.IDPARTICIPANT) AS NBPLACESOCCUPES 
 FROM  VACATION v
@@ -538,6 +541,12 @@ LEFT JOIN PARTICIPER p ON p.IDATELIER = v.IDATELIER AND p.IDVACATION = v.IDVACAT
 GROUP BY v.IDATELIER, v.IDVACATION, a.NBPLACESMAXI
 go
 
+--
+-- Cette vue VTARIFINSCRIPTION permet de connaître les info d'inscription
+CREATE VIEW VTARIFINSCRIPTION AS 
+SELECT TARIFINSCRIPTION, TARIFREPASACCOMPAGNANT
+FROM  PARAMETRES
+go
 
 -- ----------------------------------------------------------------------------------
 --                                PROCEDURE STOCKE
@@ -592,6 +601,7 @@ GO
   l'id du participant créé. (à compléter)
 */
 
+/*
 USE master; 
 IF EXISTS (SELECT * FROM sys.syslogins WHERE name = N'employemdl1') DROP LOGIN [employemdl1];
 CREATE LOGIN employemdl1 WITH PASSWORD = 'employemdl1'; 
@@ -601,6 +611,7 @@ CREATE LOGIN employemdl1 WITH PASSWORD = 'employemdl1';
 GO
 grant execute to employemdl1;
 go
+*/
 
 -- Creates the login employemdl1 with password 'employemdl1'.
 

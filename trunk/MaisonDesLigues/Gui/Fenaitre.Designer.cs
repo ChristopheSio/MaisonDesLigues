@@ -37,8 +37,8 @@
             this.btInscritpionRafraichir = new System.Windows.Forms.Button();
             this.gbInscriptionTypeParticipant = new System.Windows.Forms.GroupBox();
             this.flpInscriptionTypeParticipant = new System.Windows.Forms.FlowLayoutPanel();
-            this.rbInscriptionLicencie = new System.Windows.Forms.RadioButton();
             this.rbInscriptionIntervenant = new System.Windows.Forms.RadioButton();
+            this.rbInscriptionLicencie = new System.Windows.Forms.RadioButton();
             this.rbInscriptionBenevole = new System.Windows.Forms.RadioButton();
             this.gbInscriptionIdentite = new System.Windows.Forms.GroupBox();
             this.tbInscriptionEmail = new System.Windows.Forms.TextBox();
@@ -57,20 +57,6 @@
             this.tbInscriptionNom = new System.Windows.Forms.TextBox();
             this.lbInscriptionNom = new System.Windows.Forms.Label();
             this.pInscritpionComplement = new System.Windows.Forms.Panel();
-            this.gbInscriptionBenevole = new System.Windows.Forms.GroupBox();
-            this.gbInscriptionBenevoleDates = new System.Windows.Forms.GroupBox();
-            this.pInscriptionBenevoleDates = new System.Windows.Forms.Panel();
-            this.lbInscriptionBenevoleNumeroLicenceOptionel = new System.Windows.Forms.Label();
-            this.tbInscriptionBenevoleNumeroLicence = new System.Windows.Forms.TextBox();
-            this.lbInscriptionBenevoleNumeroLicence = new System.Windows.Forms.Label();
-            this.tbInscriptionBenevoleDateNaissance = new System.Windows.Forms.TextBox();
-            this.lbInscriptionBenevoleDateNaissance = new System.Windows.Forms.Label();
-            this.gbInscriptionIntervenant = new System.Windows.Forms.GroupBox();
-            this.flpInscriptionIntervenantType = new System.Windows.Forms.FlowLayoutPanel();
-            this.rbInscriptionIntervenantTypeAnimateur = new System.Windows.Forms.RadioButton();
-            this.rbInscriptionIntervenantTypeIntervenant = new System.Windows.Forms.RadioButton();
-            this.cbInscriptionIntervenantAtelier = new System.Windows.Forms.ComboBox();
-            this.lbInscriptionIntervenantAtelier = new System.Windows.Forms.Label();
             this.gbInscriptionLicencie = new System.Windows.Forms.GroupBox();
             this.dgInscriptionLicencieChoixAteliers = new System.Windows.Forms.DataGridView();
             this.N = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -94,6 +80,20 @@
             this.cbInscriptionLicencieRepasAccompagnantSamediSoir = new System.Windows.Forms.CheckBox();
             this.cbInscriptionLicencieRepasAccompagnantDimancheMidi = new System.Windows.Forms.CheckBox();
             this.lbInscriptionLicencieAtelier = new System.Windows.Forms.Label();
+            this.gbInscriptionIntervenant = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.flpInscriptionIntervenantType = new System.Windows.Forms.FlowLayoutPanel();
+            this.rbInscriptionIntervenantTypeAnimateur = new System.Windows.Forms.RadioButton();
+            this.rbInscriptionIntervenantTypeIntervenant = new System.Windows.Forms.RadioButton();
+            this.cbInscriptionIntervenantAtelier = new System.Windows.Forms.ComboBox();
+            this.lbInscriptionIntervenantAtelier = new System.Windows.Forms.Label();
+            this.gbInscriptionBenevole = new System.Windows.Forms.GroupBox();
+            this.gbInscriptionBenevoleDates = new System.Windows.Forms.GroupBox();
+            this.pInscriptionBenevoleDates = new System.Windows.Forms.Panel();
+            this.tbInscriptionBenevoleNumeroLicence = new System.Windows.Forms.TextBox();
+            this.lbInscriptionBenevoleNumeroLicence = new System.Windows.Forms.Label();
+            this.tbInscriptionBenevoleDateNaissance = new System.Windows.Forms.TextBox();
+            this.lbInscriptionBenevoleDateNaissance = new System.Windows.Forms.Label();
             this.btInscritpionErreurs = new System.Windows.Forms.Button();
             this.btInscritpionEnregistrer = new System.Windows.Forms.Button();
             this.gbInscriptionHebergement = new System.Windows.Forms.GroupBox();
@@ -115,16 +115,16 @@
             this.flpInscriptionTypeParticipant.SuspendLayout();
             this.gbInscriptionIdentite.SuspendLayout();
             this.pInscritpionComplement.SuspendLayout();
-            this.gbInscriptionBenevole.SuspendLayout();
-            this.gbInscriptionBenevoleDates.SuspendLayout();
-            this.gbInscriptionIntervenant.SuspendLayout();
-            this.flpInscriptionIntervenantType.SuspendLayout();
             this.gbInscriptionLicencie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgInscriptionLicencieChoixAteliers)).BeginInit();
             this.gbInscriptionLicencieCheque.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudInscriptionLicencieChequeMontant2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudInscriptionLicencieChequeMontant1)).BeginInit();
             this.gbInscriptionLicencieRepasAccompagnant.SuspendLayout();
+            this.gbInscriptionIntervenant.SuspendLayout();
+            this.flpInscriptionIntervenantType.SuspendLayout();
+            this.gbInscriptionBenevole.SuspendLayout();
+            this.gbInscriptionBenevoleDates.SuspendLayout();
             this.gbInscriptionHebergement.SuspendLayout();
             this.gbInscriptionHebergementNuites.SuspendLayout();
             this.pInscriptionNuitesInfo.SuspendLayout();
@@ -189,19 +189,11 @@
             // 
             // flpInscriptionTypeParticipant
             // 
-            this.flpInscriptionTypeParticipant.Controls.Add(this.rbInscriptionLicencie);
             this.flpInscriptionTypeParticipant.Controls.Add(this.rbInscriptionIntervenant);
+            this.flpInscriptionTypeParticipant.Controls.Add(this.rbInscriptionLicencie);
             this.flpInscriptionTypeParticipant.Controls.Add(this.rbInscriptionBenevole);
             resources.ApplyResources(this.flpInscriptionTypeParticipant, "flpInscriptionTypeParticipant");
             this.flpInscriptionTypeParticipant.Name = "flpInscriptionTypeParticipant";
-            // 
-            // rbInscriptionLicencie
-            // 
-            resources.ApplyResources(this.rbInscriptionLicencie, "rbInscriptionLicencie");
-            this.rbInscriptionLicencie.Name = "rbInscriptionLicencie";
-            this.rbInscriptionLicencie.TabStop = true;
-            this.rbInscriptionLicencie.UseVisualStyleBackColor = true;
-            this.rbInscriptionLicencie.CheckedChanged += new System.EventHandler(this.rbInscription_CheckedChanged);
             // 
             // rbInscriptionIntervenant
             // 
@@ -210,6 +202,14 @@
             this.rbInscriptionIntervenant.TabStop = true;
             this.rbInscriptionIntervenant.UseVisualStyleBackColor = true;
             this.rbInscriptionIntervenant.CheckedChanged += new System.EventHandler(this.rbInscription_CheckedChanged);
+            // 
+            // rbInscriptionLicencie
+            // 
+            resources.ApplyResources(this.rbInscriptionLicencie, "rbInscriptionLicencie");
+            this.rbInscriptionLicencie.Name = "rbInscriptionLicencie";
+            this.rbInscriptionLicencie.TabStop = true;
+            this.rbInscriptionLicencie.UseVisualStyleBackColor = true;
+            this.rbInscriptionLicencie.CheckedChanged += new System.EventHandler(this.rbInscription_CheckedChanged);
             // 
             // rbInscriptionBenevole
             // 
@@ -326,103 +326,11 @@
             // 
             // pInscritpionComplement
             // 
-            this.pInscritpionComplement.Controls.Add(this.gbInscriptionBenevole);
             this.pInscritpionComplement.Controls.Add(this.gbInscriptionIntervenant);
+            this.pInscritpionComplement.Controls.Add(this.gbInscriptionBenevole);
             this.pInscritpionComplement.Controls.Add(this.gbInscriptionLicencie);
             resources.ApplyResources(this.pInscritpionComplement, "pInscritpionComplement");
             this.pInscritpionComplement.Name = "pInscritpionComplement";
-            // 
-            // gbInscriptionBenevole
-            // 
-            this.gbInscriptionBenevole.Controls.Add(this.gbInscriptionBenevoleDates);
-            this.gbInscriptionBenevole.Controls.Add(this.lbInscriptionBenevoleNumeroLicenceOptionel);
-            this.gbInscriptionBenevole.Controls.Add(this.tbInscriptionBenevoleNumeroLicence);
-            this.gbInscriptionBenevole.Controls.Add(this.lbInscriptionBenevoleNumeroLicence);
-            this.gbInscriptionBenevole.Controls.Add(this.tbInscriptionBenevoleDateNaissance);
-            this.gbInscriptionBenevole.Controls.Add(this.lbInscriptionBenevoleDateNaissance);
-            resources.ApplyResources(this.gbInscriptionBenevole, "gbInscriptionBenevole");
-            this.gbInscriptionBenevole.Name = "gbInscriptionBenevole";
-            this.gbInscriptionBenevole.TabStop = false;
-            // 
-            // gbInscriptionBenevoleDates
-            // 
-            this.gbInscriptionBenevoleDates.Controls.Add(this.pInscriptionBenevoleDates);
-            resources.ApplyResources(this.gbInscriptionBenevoleDates, "gbInscriptionBenevoleDates");
-            this.gbInscriptionBenevoleDates.Name = "gbInscriptionBenevoleDates";
-            this.gbInscriptionBenevoleDates.TabStop = false;
-            // 
-            // pInscriptionBenevoleDates
-            // 
-            resources.ApplyResources(this.pInscriptionBenevoleDates, "pInscriptionBenevoleDates");
-            this.pInscriptionBenevoleDates.Name = "pInscriptionBenevoleDates";
-            // 
-            // lbInscriptionBenevoleNumeroLicenceOptionel
-            // 
-            resources.ApplyResources(this.lbInscriptionBenevoleNumeroLicenceOptionel, "lbInscriptionBenevoleNumeroLicenceOptionel");
-            this.lbInscriptionBenevoleNumeroLicenceOptionel.Name = "lbInscriptionBenevoleNumeroLicenceOptionel";
-            // 
-            // tbInscriptionBenevoleNumeroLicence
-            // 
-            resources.ApplyResources(this.tbInscriptionBenevoleNumeroLicence, "tbInscriptionBenevoleNumeroLicence");
-            this.tbInscriptionBenevoleNumeroLicence.Name = "tbInscriptionBenevoleNumeroLicence";
-            this.tbInscriptionBenevoleNumeroLicence.TextChanged += new System.EventHandler(this.tbInscriptionBenevole_TextChanged);
-            // 
-            // lbInscriptionBenevoleNumeroLicence
-            // 
-            resources.ApplyResources(this.lbInscriptionBenevoleNumeroLicence, "lbInscriptionBenevoleNumeroLicence");
-            this.lbInscriptionBenevoleNumeroLicence.Name = "lbInscriptionBenevoleNumeroLicence";
-            // 
-            // tbInscriptionBenevoleDateNaissance
-            // 
-            resources.ApplyResources(this.tbInscriptionBenevoleDateNaissance, "tbInscriptionBenevoleDateNaissance");
-            this.tbInscriptionBenevoleDateNaissance.Name = "tbInscriptionBenevoleDateNaissance";
-            this.tbInscriptionBenevoleDateNaissance.TextChanged += new System.EventHandler(this.tbInscriptionBenevole_TextChanged);
-            // 
-            // lbInscriptionBenevoleDateNaissance
-            // 
-            resources.ApplyResources(this.lbInscriptionBenevoleDateNaissance, "lbInscriptionBenevoleDateNaissance");
-            this.lbInscriptionBenevoleDateNaissance.Name = "lbInscriptionBenevoleDateNaissance";
-            // 
-            // gbInscriptionIntervenant
-            // 
-            this.gbInscriptionIntervenant.Controls.Add(this.flpInscriptionIntervenantType);
-            this.gbInscriptionIntervenant.Controls.Add(this.cbInscriptionIntervenantAtelier);
-            this.gbInscriptionIntervenant.Controls.Add(this.lbInscriptionIntervenantAtelier);
-            resources.ApplyResources(this.gbInscriptionIntervenant, "gbInscriptionIntervenant");
-            this.gbInscriptionIntervenant.Name = "gbInscriptionIntervenant";
-            this.gbInscriptionIntervenant.TabStop = false;
-            // 
-            // flpInscriptionIntervenantType
-            // 
-            this.flpInscriptionIntervenantType.Controls.Add(this.rbInscriptionIntervenantTypeAnimateur);
-            this.flpInscriptionIntervenantType.Controls.Add(this.rbInscriptionIntervenantTypeIntervenant);
-            resources.ApplyResources(this.flpInscriptionIntervenantType, "flpInscriptionIntervenantType");
-            this.flpInscriptionIntervenantType.Name = "flpInscriptionIntervenantType";
-            // 
-            // rbInscriptionIntervenantTypeAnimateur
-            // 
-            resources.ApplyResources(this.rbInscriptionIntervenantTypeAnimateur, "rbInscriptionIntervenantTypeAnimateur");
-            this.rbInscriptionIntervenantTypeAnimateur.Name = "rbInscriptionIntervenantTypeAnimateur";
-            this.rbInscriptionIntervenantTypeAnimateur.TabStop = true;
-            this.rbInscriptionIntervenantTypeAnimateur.UseVisualStyleBackColor = true;
-            // 
-            // rbInscriptionIntervenantTypeIntervenant
-            // 
-            resources.ApplyResources(this.rbInscriptionIntervenantTypeIntervenant, "rbInscriptionIntervenantTypeIntervenant");
-            this.rbInscriptionIntervenantTypeIntervenant.Name = "rbInscriptionIntervenantTypeIntervenant";
-            this.rbInscriptionIntervenantTypeIntervenant.TabStop = true;
-            this.rbInscriptionIntervenantTypeIntervenant.UseVisualStyleBackColor = true;
-            // 
-            // cbInscriptionIntervenantAtelier
-            // 
-            this.cbInscriptionIntervenantAtelier.FormattingEnabled = true;
-            resources.ApplyResources(this.cbInscriptionIntervenantAtelier, "cbInscriptionIntervenantAtelier");
-            this.cbInscriptionIntervenantAtelier.Name = "cbInscriptionIntervenantAtelier";
-            // 
-            // lbInscriptionIntervenantAtelier
-            // 
-            resources.ApplyResources(this.lbInscriptionIntervenantAtelier, "lbInscriptionIntervenantAtelier");
-            this.lbInscriptionIntervenantAtelier.Name = "lbInscriptionIntervenantAtelier";
             // 
             // gbInscriptionLicencie
             // 
@@ -481,6 +389,7 @@
             // 
             resources.ApplyResources(this.tbInscriptionLicencieNumeroLicence, "tbInscriptionLicencieNumeroLicence");
             this.tbInscriptionLicencieNumeroLicence.Name = "tbInscriptionLicencieNumeroLicence";
+            this.tbInscriptionLicencieNumeroLicence.TextChanged += new System.EventHandler(this.tbInscriptionLicencie_TextChanged);
             // 
             // lbInscriptionLicencieNumeroLicence
             // 
@@ -507,12 +416,14 @@
             this.nudInscriptionLicencieChequeMontant2.DecimalPlaces = 2;
             resources.ApplyResources(this.nudInscriptionLicencieChequeMontant2, "nudInscriptionLicencieChequeMontant2");
             this.nudInscriptionLicencieChequeMontant2.Name = "nudInscriptionLicencieChequeMontant2";
+            this.nudInscriptionLicencieChequeMontant2.ValueChanged += new System.EventHandler(this.tbInscriptionLicencie_TextChanged);
             // 
             // nudInscriptionLicencieChequeMontant1
             // 
             this.nudInscriptionLicencieChequeMontant1.DecimalPlaces = 2;
             resources.ApplyResources(this.nudInscriptionLicencieChequeMontant1, "nudInscriptionLicencieChequeMontant1");
             this.nudInscriptionLicencieChequeMontant1.Name = "nudInscriptionLicencieChequeMontant1";
+            this.nudInscriptionLicencieChequeMontant1.ValueChanged += new System.EventHandler(this.tbInscriptionLicencie_TextChanged);
             // 
             // lbInscriptionLicencieChequeN
             // 
@@ -533,6 +444,7 @@
             // 
             resources.ApplyResources(this.tbInscriptionLicencieChequeN1, "tbInscriptionLicencieChequeN1");
             this.tbInscriptionLicencieChequeN1.Name = "tbInscriptionLicencieChequeN1";
+            this.tbInscriptionLicencieChequeN1.TextChanged += new System.EventHandler(this.tbInscriptionLicencie_TextChanged);
             // 
             // lbInscriptionLicencieCheque2
             // 
@@ -544,11 +456,13 @@
             resources.ApplyResources(this.cbInscriptionLicencieChequeN2Activer, "cbInscriptionLicencieChequeN2Activer");
             this.cbInscriptionLicencieChequeN2Activer.Name = "cbInscriptionLicencieChequeN2Activer";
             this.cbInscriptionLicencieChequeN2Activer.UseVisualStyleBackColor = true;
+            this.cbInscriptionLicencieChequeN2Activer.CheckedChanged += new System.EventHandler(this.cbInscriptionLicencieChequeN2Activer_CheckedChanged);
             // 
             // tbInscriptionLicencieChequeN2
             // 
             resources.ApplyResources(this.tbInscriptionLicencieChequeN2, "tbInscriptionLicencieChequeN2");
             this.tbInscriptionLicencieChequeN2.Name = "tbInscriptionLicencieChequeN2";
+            this.tbInscriptionLicencieChequeN2.TextChanged += new System.EventHandler(this.tbInscriptionLicencie_TextChanged);
             // 
             // gbInscriptionLicencieRepasAccompagnant
             // 
@@ -564,23 +478,122 @@
             resources.ApplyResources(this.cbInscriptionLicencieRepasAccompagnantSamediMidi, "cbInscriptionLicencieRepasAccompagnantSamediMidi");
             this.cbInscriptionLicencieRepasAccompagnantSamediMidi.Name = "cbInscriptionLicencieRepasAccompagnantSamediMidi";
             this.cbInscriptionLicencieRepasAccompagnantSamediMidi.UseVisualStyleBackColor = true;
+            this.cbInscriptionLicencieRepasAccompagnantSamediMidi.CheckedChanged += new System.EventHandler(this.cbInscriptionLicencieRepasAccompagnant_CheckedChanged);
             // 
             // cbInscriptionLicencieRepasAccompagnantSamediSoir
             // 
             resources.ApplyResources(this.cbInscriptionLicencieRepasAccompagnantSamediSoir, "cbInscriptionLicencieRepasAccompagnantSamediSoir");
             this.cbInscriptionLicencieRepasAccompagnantSamediSoir.Name = "cbInscriptionLicencieRepasAccompagnantSamediSoir";
             this.cbInscriptionLicencieRepasAccompagnantSamediSoir.UseVisualStyleBackColor = true;
+            this.cbInscriptionLicencieRepasAccompagnantSamediSoir.CheckedChanged += new System.EventHandler(this.cbInscriptionLicencieRepasAccompagnant_CheckedChanged);
             // 
             // cbInscriptionLicencieRepasAccompagnantDimancheMidi
             // 
             resources.ApplyResources(this.cbInscriptionLicencieRepasAccompagnantDimancheMidi, "cbInscriptionLicencieRepasAccompagnantDimancheMidi");
             this.cbInscriptionLicencieRepasAccompagnantDimancheMidi.Name = "cbInscriptionLicencieRepasAccompagnantDimancheMidi";
             this.cbInscriptionLicencieRepasAccompagnantDimancheMidi.UseVisualStyleBackColor = true;
+            this.cbInscriptionLicencieRepasAccompagnantDimancheMidi.CheckedChanged += new System.EventHandler(this.cbInscriptionLicencieRepasAccompagnant_CheckedChanged);
             // 
             // lbInscriptionLicencieAtelier
             // 
             resources.ApplyResources(this.lbInscriptionLicencieAtelier, "lbInscriptionLicencieAtelier");
             this.lbInscriptionLicencieAtelier.Name = "lbInscriptionLicencieAtelier";
+            // 
+            // gbInscriptionIntervenant
+            // 
+            this.gbInscriptionIntervenant.Controls.Add(this.label2);
+            this.gbInscriptionIntervenant.Controls.Add(this.flpInscriptionIntervenantType);
+            this.gbInscriptionIntervenant.Controls.Add(this.cbInscriptionIntervenantAtelier);
+            this.gbInscriptionIntervenant.Controls.Add(this.lbInscriptionIntervenantAtelier);
+            resources.ApplyResources(this.gbInscriptionIntervenant, "gbInscriptionIntervenant");
+            this.gbInscriptionIntervenant.Name = "gbInscriptionIntervenant";
+            this.gbInscriptionIntervenant.TabStop = false;
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
+            // 
+            // flpInscriptionIntervenantType
+            // 
+            this.flpInscriptionIntervenantType.Controls.Add(this.rbInscriptionIntervenantTypeAnimateur);
+            this.flpInscriptionIntervenantType.Controls.Add(this.rbInscriptionIntervenantTypeIntervenant);
+            resources.ApplyResources(this.flpInscriptionIntervenantType, "flpInscriptionIntervenantType");
+            this.flpInscriptionIntervenantType.Name = "flpInscriptionIntervenantType";
+            // 
+            // rbInscriptionIntervenantTypeAnimateur
+            // 
+            resources.ApplyResources(this.rbInscriptionIntervenantTypeAnimateur, "rbInscriptionIntervenantTypeAnimateur");
+            this.rbInscriptionIntervenantTypeAnimateur.Name = "rbInscriptionIntervenantTypeAnimateur";
+            this.rbInscriptionIntervenantTypeAnimateur.TabStop = true;
+            this.rbInscriptionIntervenantTypeAnimateur.UseVisualStyleBackColor = true;
+            this.rbInscriptionIntervenantTypeAnimateur.CheckedChanged += new System.EventHandler(this.rbInscriptionIntervenantType_CheckedChanged);
+            // 
+            // rbInscriptionIntervenantTypeIntervenant
+            // 
+            resources.ApplyResources(this.rbInscriptionIntervenantTypeIntervenant, "rbInscriptionIntervenantTypeIntervenant");
+            this.rbInscriptionIntervenantTypeIntervenant.Name = "rbInscriptionIntervenantTypeIntervenant";
+            this.rbInscriptionIntervenantTypeIntervenant.TabStop = true;
+            this.rbInscriptionIntervenantTypeIntervenant.UseVisualStyleBackColor = true;
+            this.rbInscriptionIntervenantTypeIntervenant.CheckedChanged += new System.EventHandler(this.rbInscriptionIntervenantType_CheckedChanged);
+            // 
+            // cbInscriptionIntervenantAtelier
+            // 
+            this.cbInscriptionIntervenantAtelier.FormattingEnabled = true;
+            resources.ApplyResources(this.cbInscriptionIntervenantAtelier, "cbInscriptionIntervenantAtelier");
+            this.cbInscriptionIntervenantAtelier.Name = "cbInscriptionIntervenantAtelier";
+            this.cbInscriptionIntervenantAtelier.SelectedIndexChanged += new System.EventHandler(this.cbInscriptionIntervenantAtelier_Change);
+            this.cbInscriptionIntervenantAtelier.TextChanged += new System.EventHandler(this.cbInscriptionIntervenantAtelier_Change);
+            // 
+            // lbInscriptionIntervenantAtelier
+            // 
+            resources.ApplyResources(this.lbInscriptionIntervenantAtelier, "lbInscriptionIntervenantAtelier");
+            this.lbInscriptionIntervenantAtelier.Name = "lbInscriptionIntervenantAtelier";
+            // 
+            // gbInscriptionBenevole
+            // 
+            this.gbInscriptionBenevole.Controls.Add(this.gbInscriptionBenevoleDates);
+            this.gbInscriptionBenevole.Controls.Add(this.tbInscriptionBenevoleNumeroLicence);
+            this.gbInscriptionBenevole.Controls.Add(this.lbInscriptionBenevoleNumeroLicence);
+            this.gbInscriptionBenevole.Controls.Add(this.tbInscriptionBenevoleDateNaissance);
+            this.gbInscriptionBenevole.Controls.Add(this.lbInscriptionBenevoleDateNaissance);
+            resources.ApplyResources(this.gbInscriptionBenevole, "gbInscriptionBenevole");
+            this.gbInscriptionBenevole.Name = "gbInscriptionBenevole";
+            this.gbInscriptionBenevole.TabStop = false;
+            // 
+            // gbInscriptionBenevoleDates
+            // 
+            this.gbInscriptionBenevoleDates.Controls.Add(this.pInscriptionBenevoleDates);
+            resources.ApplyResources(this.gbInscriptionBenevoleDates, "gbInscriptionBenevoleDates");
+            this.gbInscriptionBenevoleDates.Name = "gbInscriptionBenevoleDates";
+            this.gbInscriptionBenevoleDates.TabStop = false;
+            // 
+            // pInscriptionBenevoleDates
+            // 
+            resources.ApplyResources(this.pInscriptionBenevoleDates, "pInscriptionBenevoleDates");
+            this.pInscriptionBenevoleDates.Name = "pInscriptionBenevoleDates";
+            // 
+            // tbInscriptionBenevoleNumeroLicence
+            // 
+            resources.ApplyResources(this.tbInscriptionBenevoleNumeroLicence, "tbInscriptionBenevoleNumeroLicence");
+            this.tbInscriptionBenevoleNumeroLicence.Name = "tbInscriptionBenevoleNumeroLicence";
+            this.tbInscriptionBenevoleNumeroLicence.TextChanged += new System.EventHandler(this.tbInscriptionBenevole_TextChanged);
+            // 
+            // lbInscriptionBenevoleNumeroLicence
+            // 
+            resources.ApplyResources(this.lbInscriptionBenevoleNumeroLicence, "lbInscriptionBenevoleNumeroLicence");
+            this.lbInscriptionBenevoleNumeroLicence.Name = "lbInscriptionBenevoleNumeroLicence";
+            // 
+            // tbInscriptionBenevoleDateNaissance
+            // 
+            resources.ApplyResources(this.tbInscriptionBenevoleDateNaissance, "tbInscriptionBenevoleDateNaissance");
+            this.tbInscriptionBenevoleDateNaissance.Name = "tbInscriptionBenevoleDateNaissance";
+            this.tbInscriptionBenevoleDateNaissance.TextChanged += new System.EventHandler(this.tbInscriptionBenevole_TextChanged);
+            // 
+            // lbInscriptionBenevoleDateNaissance
+            // 
+            resources.ApplyResources(this.lbInscriptionBenevoleDateNaissance, "lbInscriptionBenevoleDateNaissance");
+            this.lbInscriptionBenevoleDateNaissance.Name = "lbInscriptionBenevoleDateNaissance";
             // 
             // btInscritpionErreurs
             // 
@@ -691,14 +704,6 @@
             this.gbInscriptionIdentite.ResumeLayout(false);
             this.gbInscriptionIdentite.PerformLayout();
             this.pInscritpionComplement.ResumeLayout(false);
-            this.gbInscriptionBenevole.ResumeLayout(false);
-            this.gbInscriptionBenevole.PerformLayout();
-            this.gbInscriptionBenevoleDates.ResumeLayout(false);
-            this.gbInscriptionBenevoleDates.PerformLayout();
-            this.gbInscriptionIntervenant.ResumeLayout(false);
-            this.gbInscriptionIntervenant.PerformLayout();
-            this.flpInscriptionIntervenantType.ResumeLayout(false);
-            this.flpInscriptionIntervenantType.PerformLayout();
             this.gbInscriptionLicencie.ResumeLayout(false);
             this.gbInscriptionLicencie.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgInscriptionLicencieChoixAteliers)).EndInit();
@@ -708,6 +713,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudInscriptionLicencieChequeMontant1)).EndInit();
             this.gbInscriptionLicencieRepasAccompagnant.ResumeLayout(false);
             this.gbInscriptionLicencieRepasAccompagnant.PerformLayout();
+            this.gbInscriptionIntervenant.ResumeLayout(false);
+            this.gbInscriptionIntervenant.PerformLayout();
+            this.flpInscriptionIntervenantType.ResumeLayout(false);
+            this.flpInscriptionIntervenantType.PerformLayout();
+            this.gbInscriptionBenevole.ResumeLayout(false);
+            this.gbInscriptionBenevole.PerformLayout();
+            this.gbInscriptionBenevoleDates.ResumeLayout(false);
+            this.gbInscriptionBenevoleDates.PerformLayout();
             this.gbInscriptionHebergement.ResumeLayout(false);
             this.gbInscriptionHebergement.PerformLayout();
             this.gbInscriptionHebergementNuites.ResumeLayout(false);
@@ -791,7 +804,6 @@
         private System.Windows.Forms.TextBox tbInscriptionLicencieNumeroLicence;
         private System.Windows.Forms.Label lbInscriptionLicencieNumeroLicence;
         private System.Windows.Forms.DataGridView dgInscriptionLicencieChoixAteliers;
-        private System.Windows.Forms.Label lbInscriptionBenevoleNumeroLicenceOptionel;
         private System.Windows.Forms.GroupBox gbInscriptionBenevoleDates;
         private System.Windows.Forms.Panel pInscriptionBenevoleDates;
         private System.Windows.Forms.DataGridViewTextBoxColumn N;
@@ -800,6 +812,7 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn VACATION;
         private System.Windows.Forms.NumericUpDown nudInscriptionLicencieChequeMontant1;
         private System.Windows.Forms.NumericUpDown nudInscriptionLicencieChequeMontant2;
+        private System.Windows.Forms.Label label2;
     }
 }
 

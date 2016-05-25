@@ -43,14 +43,22 @@ namespace MaisonDesLigues
                     }
                     return listeDesNuitesChoisies;
                 }
-                public bool estAuMoinsUneNuiteChoisie() {
-                    foreach (LaNuite uneNuite in listeDesNuites) {
-                        if (uneNuite.estSelectionner()) {
-                            return true;
+                public float getPrixTotalDesNuites()
+                {
+                    Tuple<string, string, string> uneNuiteChoix;
+                    float total = 0;
+                    foreach (LaNuite uneNuite in listeDesNuites)
+                    {
+                        if(uneNuite.estSelectionner())
+                        {
+                            uneNuiteChoix = uneNuite.getChoix();
+
                         }
                     }
-                    return false;
+                    return total;
                 }
+
+
                 private List<LaNuite> listeDesNuites;
             }
 
@@ -67,7 +75,7 @@ namespace MaisonDesLigues
                     chLaNuite.Left = 10;
                     chLaNuite.Top = 5 + (25 * num);
                     chLaNuite.Visible = true;
-                    chLaNuite.TextChanged += new System.EventHandler(callback);
+                    chLaNuite.CheckedChanged += new System.EventHandler(callback);
                     cbHotel = new ComboBox();
                     cbHotel.Name = "cbInscriptionUneNuiteHotel" + num;
                     cbHotel.DataSource = Modele.ObtenirDonnees("VHOTEL01");
@@ -76,6 +84,7 @@ namespace MaisonDesLigues
                     cbHotel.Width = 200;
                     cbHotel.Left = 240;
                     cbHotel.Top = 5 + (25 * num);
+                    cbHotel.DropDownStyle = ComboBoxStyle.DropDownList;
                     cbHotel.Visible = true;
                     cbChambre = new ComboBox();
                     cbChambre.Name = "cbInscriptionUneNuiteChambre" + num;
@@ -85,6 +94,7 @@ namespace MaisonDesLigues
                     cbChambre.Width = 90;
                     cbChambre.Left = 450;
                     cbChambre.Top = 5 + (25 * num);
+                    cbChambre.DropDownStyle = ComboBoxStyle.DropDownList;
                     cbChambre.Visible = true;
                     // Ajout
                     lePanel.Controls.Add(chLaNuite);
@@ -96,6 +106,9 @@ namespace MaisonDesLigues
                 }
                 public String getIdNuite() {
                     return IdNuite;
+                }
+                public Tuple<string,string,string> getChoix() {
+                    return new Tuple<string, string, string>(IdNuite, cbHotel.SelectedValue.ToString(), cbChambre.SelectedValue.ToString());
                 }
                 private CheckBox chLaNuite;
                 private ComboBox cbHotel;
@@ -134,16 +147,6 @@ namespace MaisonDesLigues
                     }
                     return listeDesDatesBenevolatChoisies;
                 }
-                public bool estAuMoinsUneDateBenevolatChoisie()
-                {
-                    foreach (LaDateBenevolat uneDatesBenevolat in listeDesDatesBenevolat)
-                    {
-                        if (uneDatesBenevolat.estSelectionner()) {
-                            return true;
-                        }
-                    }
-                    return false;
-                }
                 private List<LaDateBenevolat> listeDesDatesBenevolat;
             }
 
@@ -159,7 +162,7 @@ namespace MaisonDesLigues
                     cbDateBenevolat.Left = 10;
                     cbDateBenevolat.Top = 5 + (25 * num);
                     cbDateBenevolat.Visible = true;
-                    cbDateBenevolat.TextChanged += new System.EventHandler(callback);
+                    cbDateBenevolat.CheckedChanged += new System.EventHandler(callback);
                     // Ajout
                     lePanel.Controls.Add(cbDateBenevolat);
                 }

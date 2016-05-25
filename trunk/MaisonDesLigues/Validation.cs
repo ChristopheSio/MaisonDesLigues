@@ -23,41 +23,33 @@ namespace MaisonDesLigues
         public static readonly Regex NumeroDeCheque = new Regex(@"^[A-Z0-9]{2,20}$", RegexOptions.IgnoreCase);
         public static readonly Regex NumeroDeLicence = new Regex(@"^[A-Z0-9]{5,20}$", RegexOptions.IgnoreCase);
 
-        public static bool contientAuMoinUnCheckboxChecked(ScrollableControl UnContainer)
-        {
+        public static bool contientAuMoinUnCheckboxChecked(ScrollableControl UnContainer) {
             return Utilitaire.totalCheckedDuContainer(UnContainer) > 0;
         }
 
-        public static bool estUnDateFR(string uneDate)
-        {
+        public static bool estUnDateFR(string uneDate) {
             DateTime result;
-            try
-            {
-                result = DateTime.ParseExact(uneDate, "DD/mm/YYYY", CultureInfo.InvariantCulture);
-                return true;
-            }
-            catch (FormatException)
-            {
-                return false;
-            }
+            DateTime maintenant = Utilitaire.obtenirMaintenant();
+            DateTime auPlusTart = new DateTime(1900, 01, 01);
+            if ( DateTime.TryParseExact(uneDate, "dd/MM/yyyy", CultureInfo.CurrentCulture, DateTimeStyles.None, out result) )
+                return (DateTime.Compare(maintenant, result) > 0 && DateTime.Compare(result,auPlusTart) > 0);
+            return false;
         }
-
     }
 
      class Validation
      {
-        public Validation(bool logErreursActive) {
+        public Validation(bool logErreursActive = true) {
             totalTest = 0;
             totalValidTest = 0;
             if (logErreursActive)
                 listLogErreurs = new List<string>();
         }
         //
-        private void setBackColor(Control unControl, bool doitValider) {
-            if (doitValider)
-                unControl.BackColor = System.Drawing.SystemColors.Window;
-            else
-                unControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192))))); // 255; 192; 192
+        private void setBackColor(Control unControle, bool doitValider) {
+            unControle.BackColor = doitValider ? 
+                System.Drawing.SystemColors.Window :
+                System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192))))); // 255; 192; 192
         }
         private void setValid(bool doitValider, string logErreur) {
             totalTest++;
@@ -68,30 +60,41 @@ namespace MaisonDesLigues
         }
         private void setControleDependant(bool doitValider, Control[] controlesDependant) {
             if (controlesDependant == null) return;
-            foreach (Control unControleDependant in controlesDependant)
-            {
+            foreach (Control unControleDependant in controlesDependant) {
                 setBackColor(unControleDependant, doitValider);
             }
         }
-        //
-        public void apply(Control unControle, bool doitValider, string logErreur = null, Control[] controlesDependant = null) {
-            setValid(doitValider, logErreur);
-            setBackColor(unControle, doitValider);
-            setControleDependant(doitValider, controlesDependant);
-        }
-        public void applyRegex(Control unControle, Regex doitMatch, string logErreur = null, Control[] controlesDependant = null) {
-            apply(unControle, doitMatch.IsMatch(unControle.Text), logErreur, controlesDependant);
-        }
-        public void applyFunction(Control unControle, Func<string, bool> functionDeTest, string logErreur = null, Control[] controlesDependant = null)
-        {
-            apply(unControle, functionDeTest(unControle.Text), logErreur, controlesDependant);
+        private bool validOptionel(Control unControle, bool doitValider, bool estOptionel) {
+            return (((unControle.Text=="")&&estOptionel==true)||unControle.Enabled==false) ? true : doitValider;
         }
         //
-        public void applyUnCheckedEstFait(Control unContainer, string logErreur = null, Control[] controlesDependant = null) {
+        public void apply(Control unControle, bool doitValider, string logErreur = null, bool estOptionel = false, Control[] controlesDependant = null) {
+            bool valid = validOptionel(unControle, doitValider, estOptionel);
+            setValid(valid, logErreur);
+            setBackColor(unControle, valid);
+            setControleDependant(valid, controlesDependant);
+        }
+        public void applyRegex(Control unControle, Regex doitMatch, string logErreur = null, bool estOptionel = false, Control[] controlesDependant = null) {
+            apply(unControle, doitMatch.IsMatch(unControle.Text), logErreur, estOptionel, controlesDependant);
+        }
+        public void applyFunction(Control unControle, Func<string, bool> functionDeTest, string logErreur = null, bool estOptionel = false, Control[] controlesDependant = null) {
+            apply(unControle, functionDeTest(unControle.Text), logErreur, estOptionel, controlesDependant);
+        }
+        //
+        public void applyAuMoinUnCheckedEstFait(Control unContainer, string logErreur = null, Control[] controlesDependant = null) {
             bool estOk = Utilitaire.totalCheckedDuContainer(unContainer) > 0;
             setValid(estOk, logErreur);
             setBackColor(unContainer, estOk);
-            /*foreach (Control unControle in unContainer.Controls) { setBackColor(unControle, estOk); }*/
+            setControleDependant(estOk, controlesDependant);
+        }
+        public void applyChoix(ComboBox uneCombobox, string logErreur, Control[] controlesDependant = null) {
+            bool estOk = false;
+            try {
+                estOk = uneCombobox.SelectedValue.ToString() != "-1";
+            } catch(Exception) { }
+            //
+            setValid(estOk, logErreur);
+            setBackColor(uneCombobox, estOk);
             setControleDependant(estOk, controlesDependant);
         }
         //
@@ -114,4 +117,7 @@ namespace MaisonDesLigues
         private int totalValidTest;
 
     }
+
+    // foreach (Control unControle in unContainer.Controls) { setBackColor(unControle, estOk); }
+    // MessageBox.Show("unControle :" + unControle.GetType().Name, "unControle", MessageBoxButtons.OK);
 }

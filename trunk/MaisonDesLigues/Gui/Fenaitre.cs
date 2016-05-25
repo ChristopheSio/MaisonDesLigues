@@ -43,8 +43,8 @@ namespace MaisonDesLigues.Gui
             else if (this.rbInscriptionLicencie.Checked)    switchInscription(TypeInscription.Licencie);
             else if (this.rbInscriptionBenevole.Checked)    switchInscription(TypeInscription.Benevole);
             //
-            validInscriptionType(false);
-            validInscriptionIdentite(false);
+            validInscriptionType();
+            validInscriptionIdentite();
         }
         private void switchInscription(TypeInscription activeType) {
             InscriptionChoixActif = activeType;
@@ -66,23 +66,25 @@ namespace MaisonDesLigues.Gui
         {
             if (cbInscriptionIntervenantAtelier.DataSource == null)
             {
-                cbInscriptionIntervenantAtelier.DataSource = Modele.ObtenirDonnees("VATELIER01");
+                DataTable IntervenantAtelier = Modele.ObtenirDonnees("VATELIER01");
+                Utilitaire.ajouterChoixSurUneDatatble(IntervenantAtelier, "ID", "LIBELLE");
+                cbInscriptionIntervenantAtelier.DataSource = IntervenantAtelier;
                 cbInscriptionIntervenantAtelier.ValueMember = "ID";
                 cbInscriptionIntervenantAtelier.DisplayMember = "LIBELLE";
             }
             // Gestion bouton auto
             loadInscriptionHebergement(true);
             loadInscriptionBenevoletDateBenevolat(false);
+            //
+            validInscriptionIntervenant();
         }
         private void loadInscriptionBenevole()
         {
-
-
             // Gestion bouton auto
             loadInscriptionHebergement(false);
             loadInscriptionBenevoletDateBenevolat(true);
             //
-            validInscriptionBenevole(false);
+            validInscriptionBenevole();
         }
         private void loadInscriptionLicencie()
         {
@@ -94,9 +96,20 @@ namespace MaisonDesLigues.Gui
                 dt.Columns.Add(new DataColumn("Selected", typeof(bool))); //this will show checkboxes
                 dt.Columns.Add(new DataColumn("Text", typeof(string)));   //this will show text
                 */
+            
+            //
+            nudInscriptionLicencieChequeMontant1.Maximum = decimal.MaxValue;
+            nudInscriptionLicencieChequeMontant2.Maximum = decimal.MaxValue;
             // Gestion bouton auto
             loadInscriptionHebergement(true);
             loadInscriptionBenevoletDateBenevolat(false);
+            //
+            tbInscriptionLicencieChequeN2.Enabled = cbInscriptionLicencieChequeN2Activer.Checked;
+            nudInscriptionLicencieChequeMontant2.Enabled = cbInscriptionLicencieChequeN2Activer.Checked;
+            //
+            validInscriptionLicencie();
+            //
+            loadMontantTotal();
         }
 
         /* GERER LES OPTIONS LIES AUX INSCRIPTIONS */
@@ -105,6 +118,7 @@ namespace MaisonDesLigues.Gui
             if (chbInscriptionNuites.Checked && visible) {
                 if (InscriptionLesNuites == null)
                     InscriptionLesNuites = new Structures.Inscription.LesNuites(pInscriptionNuites, chbInscriptionUneNuite_CheckedChanged);
+                validInscriptionNuite();
             }
             else {
                 if (InscriptionLesNuites != null)
@@ -114,12 +128,11 @@ namespace MaisonDesLigues.Gui
             gbInscriptionHebergementNuites.Visible = chbInscriptionNuites.Checked;
             gbInscriptionHebergement.Visible = visible;
         }
+
         private void loadInscriptionBenevoletDateBenevolat(bool visible) {
             if (visible) {
                 if (InscriptionLesDatesBenevolat == null)
                     InscriptionLesDatesBenevolat = new Structures.Inscription.LesDatesBenevolat(pInscriptionBenevoleDates, chbInscriptionBenevoleDates_CheckedChanged);
-                //
-
             }
             else {
                 if (InscriptionLesDatesBenevolat != null)
@@ -129,46 +142,73 @@ namespace MaisonDesLigues.Gui
             gbInscriptionBenevoleDates.Visible = visible;
         }
 
+
+        /* GERER LES OPTIONS LIES AUX PRIX D'UNE INSCRIPTION */
+
+        private void loadMontantTotal() {
+
+        }
+
+
+        private int calculerInscriptionLicencieAccompagnant()
+        {
+            DataTable LesTarifs = Modele.ObtenirDonnees("VTARIFINSCRIPTION");
+            //DataRow LesTarifs.Rows.
+            int prixRepasAccompagnant = Utilitaire.totalCheckedDuContainer(gbInscriptionLicencieRepasAccompagnant);
+            return prixRepasAccompagnant;
+        }
+
+            
+
         /* GERER LA VALIDATION */
 
-        private string validInscriptionType(bool avecLog)
+        private void validInscriptionType()
         {
-            Validation type = new Validation(avecLog);
-            type.applyUnCheckedEstFait(flpInscriptionTypeParticipant, "Aucun type choisi");
-            return type.logErreurs();
+            Validation type = new Validation();
+            type.applyAuMoinUnCheckedEstFait(flpInscriptionTypeParticipant, "Aucun type choisi");
         }
 
-        private string validInscriptionIdentite(bool avecLog)
+        private void validInscriptionIdentite()
         {
-            Validation identity = new Validation(avecLog);
+            Validation identity = new Validation();
             identity.applyRegex(tbInscriptionNom, Validateur.Nom, "Le nom est incorrecte");
             identity.applyRegex(tbInscriptionPrenom, Validateur.Nom, "Le prénom est incorrecte");
-            identity.applyRegex(tbInscriptionAdresse2, Validateur.Adresse2, "L'adresse n°2 est incorrecte");
-            identity.applyRegex(tbInscriptionAdresse1, Validateur.Adresse1, "L'adresse n°1 est incorrecte", new Control[] { tbInscriptionAdresse2 });
+            identity.applyRegex(tbInscriptionAdresse2, Validateur.Adresse1, "L'adresse n°2 est incorrecte", true);
+            identity.applyRegex(tbInscriptionAdresse1, Validateur.Adresse1, "L'adresse n°1 est incorrecte", false, new Control[] { tbInscriptionAdresse2 });
             identity.applyRegex(tbInscriptionCP, Validateur.CodePostal, "Le code postal est incorrecte");
             identity.applyRegex(tbInscriptionVille, Validateur.NomVille, "La ville est incorrecte");
-            identity.applyRegex(tbInscriptionTelephone, Validateur.TelephoneFr, "Le téléphone est incorrecte");
-            identity.applyRegex(tbInscriptionEmail, Validateur.Email, "L'email est incorrecte");
-            return identity.logErreurs();
+            identity.applyRegex(tbInscriptionTelephone, Validateur.TelephoneFr, "Le téléphone est incorrecte", true);
+            identity.applyRegex(tbInscriptionEmail, Validateur.Email, "L'email est incorrecte", true);
         }
 
-        private string validInscriptionBenevole(bool avecLog)
+        private void validInscriptionBenevole()
         {
-            Validation benevole = new Validation(avecLog);
+            Validation benevole = new Validation();
             benevole.applyFunction(tbInscriptionBenevoleDateNaissance, Validateur.estUnDateFR, "La date est incorrecte");
-            benevole.applyRegex(tbInscriptionBenevoleNumeroLicence, Validateur.NumeroDeLicence, "Le numéro de licence est incorrecte");
-            benevole.applyUnCheckedEstFait(pInscriptionBenevoleDates, "Au moins une date doit être choisi");
-            return benevole.logErreurs();
+            benevole.applyRegex(tbInscriptionBenevoleNumeroLicence, Validateur.NumeroDeLicence, "Le numéro de licence est incorrecte", true);
+            benevole.applyAuMoinUnCheckedEstFait(pInscriptionBenevoleDates, "Au moins une date doit être choisi");
         }
 
-        private string validInscriptionNuite(bool avecLog)
+        private void validInscriptionIntervenant()
         {
-            // @TODO A FAIRE
-            Validation benevole = new Validation(avecLog);
-            benevole.applyFunction(tbInscriptionBenevoleDateNaissance, Validateur.estUnDateFR, "La date est incorrecte");
-            benevole.applyRegex(tbInscriptionBenevoleNumeroLicence, Validateur.NumeroDeLicence, "Le numéro de licence est incorrecte");
-            benevole.applyUnCheckedEstFait(pInscriptionBenevoleDates, "Au moins une date doit être choisi");
-            return benevole.logErreurs();
+            Validation intervenant = new Validation();
+            intervenant.applyAuMoinUnCheckedEstFait(flpInscriptionIntervenantType, "Un intervenant doit animer ou intervenir");
+            intervenant.applyChoix(cbInscriptionIntervenantAtelier, "L'atelier de l'intervenant n'est pas correcte", new Control[]{ flpInscriptionIntervenantType });
+        }
+
+        private void validInscriptionLicencie()
+        {
+            Validation licencie = new Validation();
+            licencie.applyRegex(tbInscriptionLicencieNumeroLicence, Validateur.NumeroDeLicence, "Le numéro de licence est incorrecte");
+            licencie.applyRegex(tbInscriptionLicencieChequeN1, Validateur.NumeroDeCheque, "Le numéro de chèque 1 est incorrecte");
+            licencie.applyRegex(tbInscriptionLicencieChequeN2, Validateur.NumeroDeCheque, "Le numéro de chèque 2 est incorrecte");
+            licencie.applyChoix(cbInscriptionIntervenantAtelier, "L'atelier de l'intervenant n'est pas correcte", new Control[] { flpInscriptionIntervenantType });
+        }
+
+        private void validInscriptionNuite()
+        {
+            Validation nuite = new Validation();
+            nuite.applyAuMoinUnCheckedEstFait(pInscriptionNuites, "Au moins une nuite doit être choisi si hébergement demandé");
         }
 
 
@@ -195,30 +235,44 @@ namespace MaisonDesLigues.Gui
             refreshInscription();
         }
         
-        /* VALIDATION EVENTS */
+        /* VALIDATION IDENDITE EVENTS */
         private void tbInscriptionIdendite_TextChanged(object sender, EventArgs e) {
-            validInscriptionIdentite(false);
+            validInscriptionIdentite();
         }
 
+        /* VALIDATION INTERVENANT EVENTS */
+        private void rbInscriptionIntervenantType_CheckedChanged(object sender, EventArgs e) {
+            validInscriptionIntervenant();
+        }
+        private void cbInscriptionIntervenantAtelier_Change(object sender, EventArgs e) {
+            validInscriptionIntervenant();
+        }
+
+        /* GESTION & VALIDATION BENEVOLE/DATE BENEVOLAT EVENTS */
         private void tbInscriptionBenevole_TextChanged(object sender, EventArgs e) {
-            validInscriptionBenevole(false);
+            validInscriptionBenevole();
         }
-
-        /* GESTION DATE BENEVOLAT EVENTS */
         private void chbInscriptionBenevoleDates_CheckedChanged(object sender, EventArgs e) {
-            validInscriptionBenevole(false);
+            validInscriptionBenevole();
         }
 
-        /* GESTION NUITES EVENTS */
+        /* GESTION & VALIDATION NUITES EVENTS */
         private void chbInscriptionNuites_CheckedChanged(object sender, EventArgs e) {
             loadInscriptionHebergement(true);
-            validInscriptionNuite(false);
         }
-        private void chbInscriptionUneNuite_CheckedChanged(object sender, EventArgs e)
-        {
-            loadInscriptionHebergement(true);
-            validInscriptionNuite(false);
+        private void chbInscriptionUneNuite_CheckedChanged(object sender, EventArgs e) {
+            validInscriptionNuite();
         }
 
+        /* GESTION & VALIDATION  LICENCIE EVENTS */
+        private void cbInscriptionLicencieRepasAccompagnant_CheckedChanged(object sender, EventArgs e) {
+            loadInscriptionLicencie();
+        }
+        private void cbInscriptionLicencieChequeN2Activer_CheckedChanged(object sender, EventArgs e) {
+            loadInscriptionLicencie();
+        }
+        private void tbInscriptionLicencie_TextChanged(object sender, EventArgs e) {
+            validInscriptionLicencie();
+        }
     }
 }

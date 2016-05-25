@@ -40,6 +40,48 @@ namespace MaisonDesLigues
             return new DateTime(2015,09,01, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
         }
 
+        /// <summary> Met a jour une datatble avec un choix null -1</summary>
+        public static void ajouterChoixSurUneDatatble(DataTable uneDatatable,string valueColumn, string textColumn)
+        {
+            DataRow emplyLine = uneDatatable.NewRow();
+            emplyLine[valueColumn] = "-1";
+            emplyLine[textColumn] = "--choix--";
+            uneDatatable.Rows.InsertAt(emplyLine, 0);
+        }
+
+
+
+        /// <summary>Cette fonction va compter le nombre de controles types CheckBox qui sont cochées contenus dans la collection controls du container passé en paramètre</summary>
+        /// <param name="UnControl"> le container sur lequel on va compter les controles de type checkbox qui sont checked</param>
+        /// <returns>nombre  de checkbox cochées</returns>
+        internal static int totalCheckedDuContainer(Control UnContainer)
+        {
+            int i = 0;
+            foreach (Control UnControle in UnContainer.Controls)
+            {
+                if ((UnControle.GetType().Name == "CheckBox" && ((CheckBox)UnControle).Checked) || (UnControle.GetType().Name == "RadioButton" && ((RadioButton)UnControle).Checked))
+                    i++;
+            }
+            return i;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         /// <summary>
         /// Cette méthode permet de renseigner les propriétés des contrôles à créer. C'est une partie commune aux 
         /// 3 types de participants : intervenant, licencié, bénévole
@@ -141,17 +183,6 @@ namespace MaisonDesLigues
             UneCombo.ValueMember = "id";
         }
 
-        /// <summary>Cette fonction va compter le nombre de controles types CheckBox qui sont cochées contenus dans la collection controls du container passé en paramètre</summary>
-        /// <param name="UnControl"> le container sur lequel on va compter les controles de type checkbox qui sont checked</param>
-        /// <returns>nombre  de checkbox cochées</returns>
-        internal static int totalCheckedDuContainer(Control UnContainer)
-        {
-            int i = 0;
-            foreach (Control UnControle in UnContainer.Controls) {
-                if ( (UnControle.GetType().Name == "CheckBox" && ((CheckBox)UnControle).Checked) || (UnControle.GetType().Name == "RadioButton" && ((RadioButton)UnControle).Checked) )
-                    i++;
-            }
-            return i;
-        }
+        
     }
 }
