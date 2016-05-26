@@ -78,9 +78,6 @@
             this.cbInscriptionLicencieChequeN2Activer = new System.Windows.Forms.CheckBox();
             this.tbInscriptionLicencieChequeN2 = new System.Windows.Forms.TextBox();
             this.gbInscriptionLicencieRepasAccompagnant = new System.Windows.Forms.GroupBox();
-            this.cbInscriptionLicencieRepasAccompagnantSamediMidi = new System.Windows.Forms.CheckBox();
-            this.cbInscriptionLicencieRepasAccompagnantSamediSoir = new System.Windows.Forms.CheckBox();
-            this.cbInscriptionLicencieRepasAccompagnantDimancheMidi = new System.Windows.Forms.CheckBox();
             this.lbInscriptionLicencieAtelier = new System.Windows.Forms.Label();
             this.gbInscriptionBenevole = new System.Windows.Forms.GroupBox();
             this.gbInscriptionBenevoleDates = new System.Windows.Forms.GroupBox();
@@ -113,6 +110,7 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.lbInscriptionLicencieQualite = new System.Windows.Forms.Label();
             this.cbInscriptionLicencieQualite = new System.Windows.Forms.ComboBox();
+            this.pInscriptionLicencieRepasAccompagnant = new System.Windows.Forms.Panel();
             this.tabControl.SuspendLayout();
             this.tabInscription.SuspendLayout();
             this.gbInscriptionTypeParticipant.SuspendLayout();
@@ -506,33 +504,10 @@
             // 
             // gbInscriptionLicencieRepasAccompagnant
             // 
-            this.gbInscriptionLicencieRepasAccompagnant.Controls.Add(this.cbInscriptionLicencieRepasAccompagnantSamediMidi);
-            this.gbInscriptionLicencieRepasAccompagnant.Controls.Add(this.cbInscriptionLicencieRepasAccompagnantSamediSoir);
-            this.gbInscriptionLicencieRepasAccompagnant.Controls.Add(this.cbInscriptionLicencieRepasAccompagnantDimancheMidi);
+            this.gbInscriptionLicencieRepasAccompagnant.Controls.Add(this.pInscriptionLicencieRepasAccompagnant);
             resources.ApplyResources(this.gbInscriptionLicencieRepasAccompagnant, "gbInscriptionLicencieRepasAccompagnant");
             this.gbInscriptionLicencieRepasAccompagnant.Name = "gbInscriptionLicencieRepasAccompagnant";
             this.gbInscriptionLicencieRepasAccompagnant.TabStop = false;
-            // 
-            // cbInscriptionLicencieRepasAccompagnantSamediMidi
-            // 
-            resources.ApplyResources(this.cbInscriptionLicencieRepasAccompagnantSamediMidi, "cbInscriptionLicencieRepasAccompagnantSamediMidi");
-            this.cbInscriptionLicencieRepasAccompagnantSamediMidi.Name = "cbInscriptionLicencieRepasAccompagnantSamediMidi";
-            this.cbInscriptionLicencieRepasAccompagnantSamediMidi.UseVisualStyleBackColor = true;
-            this.cbInscriptionLicencieRepasAccompagnantSamediMidi.CheckedChanged += new System.EventHandler(this.cbInscriptionLicencieRepasAccompagnant_CheckedChanged);
-            // 
-            // cbInscriptionLicencieRepasAccompagnantSamediSoir
-            // 
-            resources.ApplyResources(this.cbInscriptionLicencieRepasAccompagnantSamediSoir, "cbInscriptionLicencieRepasAccompagnantSamediSoir");
-            this.cbInscriptionLicencieRepasAccompagnantSamediSoir.Name = "cbInscriptionLicencieRepasAccompagnantSamediSoir";
-            this.cbInscriptionLicencieRepasAccompagnantSamediSoir.UseVisualStyleBackColor = true;
-            this.cbInscriptionLicencieRepasAccompagnantSamediSoir.CheckedChanged += new System.EventHandler(this.cbInscriptionLicencieRepasAccompagnant_CheckedChanged);
-            // 
-            // cbInscriptionLicencieRepasAccompagnantDimancheMidi
-            // 
-            resources.ApplyResources(this.cbInscriptionLicencieRepasAccompagnantDimancheMidi, "cbInscriptionLicencieRepasAccompagnantDimancheMidi");
-            this.cbInscriptionLicencieRepasAccompagnantDimancheMidi.Name = "cbInscriptionLicencieRepasAccompagnantDimancheMidi";
-            this.cbInscriptionLicencieRepasAccompagnantDimancheMidi.UseVisualStyleBackColor = true;
-            this.cbInscriptionLicencieRepasAccompagnantDimancheMidi.CheckedChanged += new System.EventHandler(this.cbInscriptionLicencieRepasAccompagnant_CheckedChanged);
             // 
             // lbInscriptionLicencieAtelier
             // 
@@ -742,6 +717,11 @@
             this.cbInscriptionLicencieQualite.SelectedIndexChanged += new System.EventHandler(this.cbInscriptionLicencieQualite_Change);
             this.cbInscriptionLicencieQualite.TextChanged += new System.EventHandler(this.cbInscriptionLicencieQualite_Change);
             // 
+            // pInscriptionLicencieRepasAccompagnant
+            // 
+            resources.ApplyResources(this.pInscriptionLicencieRepasAccompagnant, "pInscriptionLicencieRepasAccompagnant");
+            this.pInscriptionLicencieRepasAccompagnant.Name = "pInscriptionLicencieRepasAccompagnant";
+            // 
             // Fenaitre
             // 
             resources.ApplyResources(this, "$this");
@@ -767,7 +747,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudInscriptionLicencieChequeMontant2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudInscriptionLicencieChequeMontant1)).EndInit();
             this.gbInscriptionLicencieRepasAccompagnant.ResumeLayout(false);
-            this.gbInscriptionLicencieRepasAccompagnant.PerformLayout();
             this.gbInscriptionBenevole.ResumeLayout(false);
             this.gbInscriptionBenevole.PerformLayout();
             this.gbInscriptionBenevoleDates.ResumeLayout(false);
@@ -844,9 +823,6 @@
         private System.Windows.Forms.Label lbInscriptionLicencieAtelier;
         private System.Windows.Forms.Label lbInscriptionMontant;
         private System.Windows.Forms.TextBox tbInscriptionMontant;
-        private System.Windows.Forms.CheckBox cbInscriptionLicencieRepasAccompagnantSamediMidi;
-        private System.Windows.Forms.CheckBox cbInscriptionLicencieRepasAccompagnantDimancheMidi;
-        private System.Windows.Forms.CheckBox cbInscriptionLicencieRepasAccompagnantSamediSoir;
         private System.Windows.Forms.Label lbInscriptionLicencieChequeMontant;
         private System.Windows.Forms.Label lbInscriptionLicencieChequeN;
         private System.Windows.Forms.TextBox tbInscriptionLicencieChequeN1;
@@ -872,6 +848,7 @@
         private System.Windows.Forms.Button btInscriptionAvertirTel;
         private System.Windows.Forms.ComboBox cbInscriptionLicencieQualite;
         private System.Windows.Forms.Label lbInscriptionLicencieQualite;
+        private System.Windows.Forms.Panel pInscriptionLicencieRepasAccompagnant;
     }
 }
 

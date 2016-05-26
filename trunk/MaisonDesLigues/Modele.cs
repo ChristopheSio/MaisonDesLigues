@@ -24,11 +24,6 @@ namespace MaisonDesLigues
         //
         private static SqlConnection DataBaseConnection = null;
 
-        /*private SqlCommand UneSqlCommand;
-        private SqlDataAdapter UnSqlDataAdapter;
-        private DataTable UneDataTable;
-        private SqlTransaction UneSqlTransaction;*/
-
         //
         // méthodes public static
         //
@@ -211,7 +206,7 @@ namespace MaisonDesLigues
                 command.Transaction = transaction;
                 //
                 command.Parameters.Add("@pIdParticipant", SqlDbType.Int).Value = pIdParticipant;
-                command.Parameters.Add("@pMontantCheque", SqlDbType.Int).Value = pMontantCheque;
+                command.Parameters.Add("@pMontantCheque", SqlDbType.Float).Value = pMontantCheque;
                 command.Parameters.Add("@pNumeroCheque", SqlDbType.VarChar).Value = pNumeroCheque;
                 command.Parameters.Add("@pTypePaiement", SqlDbType.VarChar).Value = pTypePaiement;
                 //
@@ -237,7 +232,84 @@ namespace MaisonDesLigues
 
         }
 
-        /// <summary>Procédure publique qui va appeler la procédure stockée permettant d'ajouter une nuites</summary>
+        /// <summary>Procédure publique qui va appeler la procédure stockée permettant d'ajouter une date de restauration a un accompagnant</summary>
+        static public void AjouterUneParticipation(String pIdParticipant, String pIdAtelier, out String outIdVacation)
+        {
+            outIdVacation = null;
+            String MessageErreur = "";
+            SqlTransaction transaction = DataBaseConnection.BeginTransaction();
+            try
+            {
+                SqlCommand command = new SqlCommand("PS_AjouterUneParticipation", DataBaseConnection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Transaction = transaction;
+                //
+                command.Parameters.Add("@pIdParticipant", SqlDbType.Int).Value = pIdParticipant;
+                command.Parameters.Add("@pIdAtelier", SqlDbType.Int).Value = pIdAtelier;
+                command.Parameters.Add("@outIdVacation", SqlDbType.Int).Direction = ParameterDirection.Output;
+                //execution
+                command.ExecuteNonQuery();
+                // Recup du nouvelle ID
+                outIdVacation = command.Parameters["@outIdVacation"].Value.ToString();
+                //
+                transaction.Commit();
+            }
+            catch (SqlException e)
+            {
+                MessageErreur = "Erreur SqlServer \n" + GetMessageSql(e.Message);
+            }
+            catch (Exception e)
+            {
+                MessageErreur = e.Message + "Autre Erreur, les informations n'ont pas été correctement saisies";
+            }
+            finally
+            {
+                if (MessageErreur.Length > 0)
+                {
+                    transaction.Rollback();
+                    throw new Exception(MessageErreur);
+                }
+            }
+
+        }
+
+        /// <summary>Procédure publique qui va appeler la procédure stockée permettant d'ajouter une date de restauration a un accompagnant</summary>
+        static public void AjouterUneRestaurationAccompagnant(String pIdParticipant, String pIdRestauration)
+        {
+            String MessageErreur = "";
+            SqlTransaction transaction = DataBaseConnection.BeginTransaction();
+            try
+            {
+                SqlCommand command = new SqlCommand("PS_AjouterUneRestaurationAccompagnant", DataBaseConnection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Transaction = transaction;
+                //
+                command.Parameters.Add("@pIdParticipant", SqlDbType.Int).Value = pIdParticipant;
+                command.Parameters.Add("@pIdRestauration", SqlDbType.Int).Value = pIdRestauration;
+                //
+                command.ExecuteNonQuery();
+                transaction.Commit();
+            }
+            catch (SqlException e)
+            {
+                MessageErreur = "Erreur SqlServer \n" + GetMessageSql(e.Message);
+            }
+            catch (Exception e)
+            {
+                MessageErreur = e.Message + "Autre Erreur, les informations n'ont pas été correctement saisies";
+            }
+            finally
+            {
+                if (MessageErreur.Length > 0)
+                {
+                    transaction.Rollback();
+                    throw new Exception(MessageErreur);
+                }
+            }
+
+        }
+
+        /// <summary>Procédure publique qui va appeler la procédure stockée permettant d'ajouter une date a un bénévole</summary>
         static public void AjouterUneDateDeBenevolat(String pIdParticipant, String pIdDateBenevolat)
         {
             String MessageErreur = "";
@@ -305,40 +377,6 @@ namespace MaisonDesLigues
         }
 
 
-
-
-
-
-
-
-
-
-        /*
-        
-        /// <summary>procédure qui va se charger d'invoquer la procédure stockée qui ira inscrire un participant de type bénévole</summary>
-        /// <param name="Cmd">nom de l'objet command concerné par les paramètres</param>
-        /// <param name="pNom">nom du participant</param>
-        /// <param name="pPrenom">prénom du participant</param>
-        /// <param name="pAdresse1">adresse1 du participant</param>
-        /// <param name="pAdresse2">adresse2 du participant</param>
-        /// <param name="pCp">cp du participant</param>
-        /// <param name="pVille">ville du participant</param>
-        /// <param name="pTel">téléphone du participant</param>
-        /// <param name="pMail">mail du participant</param>
-        /// <param name="pDateNaissance">mail du bénévole</param>
-        /// <param name="pNumeroLicence">numéro de licence du bénévole ou null</param>
-        /// <param name="pDateBenevolat">collection des id des dates où le bénévole sera présent</param>
-        static public void InscrireBenevole(String pNom, String pPrenom, String pAdresse1, String pAdresse2, String pCp, String pVille, String pTel, String pMail, DateTime pDateNaissance, Int64? pNumeroLicence, Collection<Int16> pDateBenevolat)
-        {
-
-
-        }
-        */
-
-        //
-        // méthodes private static
-        //
-
         /// <summary>méthode permettant de renvoyer un message d'erreur provenant de la bd après l'avoir formatté. On ne renvoie que le message, sans code erreur</summary>
         /// <param name="unMessage">message à formater</param>
         /// <returns>message formaté à afficher dans l'application</returns>
@@ -347,8 +385,7 @@ namespace MaisonDesLigues
             String[] message = Regex.Split(unMessage, "SQLSERVER-");
             return (Regex.Split(message[1], ":"))[1];
         }
-   
-        
+
 
         /// <summary>méthode privée permettant de valoriser les paramètres d'un objet commmand communs aux licenciés, bénévoles et intervenants</summary>
         /// <param name="Cmd">nom de l'objet command concerné par les paramètres</param>
@@ -371,24 +408,6 @@ namespace MaisonDesLigues
             Cmd.Parameters.Add("@pTel", SqlDbType.VarChar).Value = pTel;
             Cmd.Parameters.Add("@pMail", SqlDbType.VarChar).Value = pMail;
         }
-
-        /*
-        /// <summary>
-        /// fonction permettant de construire un dictionnaire dont l'id est l'id d'une nuité et le contenu une date
-        /// sous la la forme : lundi 7 janvier 2014        /// 
-        /// </summary>
-        /// <returns>un dictionnaire dont l'id est l'id d'une nuité et le contenu une date</returns>
-        static public Dictionary<Int16, String> ObtenirDatesNuitees() {
-            Dictionary<Int16, String> LesDatesARetourner = new Dictionary<Int16, String>();
-            DataTable LesDatesNuitees = ObtenirDonnees("V_DATENUITEE02");
-            foreach (DataRow UneLigne in LesDatesNuitees.Rows) {
-                LesDatesARetourner.Add(System.Convert.ToInt16(UneLigne["ID"]), UneLigne["DATEARRIVEENUITEE"].ToString());
-            }
-            return LesDatesARetourner;
-        }
-        */
-
-
 
 
 

@@ -139,13 +139,13 @@ namespace MaisonDesLigues
                     UnChoixNuite unChoix = new UnChoixNuite();
                     unChoix.idNuite = IdNuite;
                     unChoix.composeStr = chLaNuite.Text;
-                    if (cbHotel.SelectedValue != null) {
+                    if (cbHotel.SelectedItem!= null) {
                         unChoix.idHotel = cbHotel.SelectedValue.ToString();
-                        unChoix.composeStr += " Dans l'hotel " + cbHotel.SelectedText.ToString();
+                        unChoix.composeStr += " Dans l'hotel " + cbHotel.Text;
                     }
-                    if (cbChambre.SelectedValue != null) {
+                    if (cbChambre.SelectedItem != null) {
                         unChoix.idChambre = cbChambre.SelectedValue.ToString();
-                        unChoix.composeStr += " Avec chambre " + cbChambre.SelectedText.ToString();
+                        unChoix.composeStr += " Avec chambre " + cbChambre.Text;
                     }
                     return unChoix;
                 }
@@ -275,6 +275,18 @@ namespace MaisonDesLigues
                     }
                     return listeDesDatesRepasAccompagnantChoisies;
                 }
+                public float getPrixTotalDesRepasAccompagnant()
+                {
+                    DataTable LesTarifs = Modele.ObtenirDonnees("V_TARIFINSCRIPTION");
+                    float prixDuRepasAccompagnant = float.Parse(LesTarifs.Rows[0]["TARIFREPASACCOMPAGNANT"].ToString());
+                    int nbRepas = 0;
+                    //
+                    foreach (LaDateRepasAccompagnant uneDateRepasAccompagnant in listeDesDatesRepasAccompagnant) {
+                        if (uneDateRepasAccompagnant.estSelectionner())
+                            nbRepas++;
+                    }
+                    return prixDuRepasAccompagnant * nbRepas;
+                }
                 private List<LaDateRepasAccompagnant> listeDesDatesRepasAccompagnant;
             }
 
@@ -285,10 +297,10 @@ namespace MaisonDesLigues
                     IdDateRepasAccompagnant = UnIDDateRepasAccompagnant;
                     cbDateRepasAccompagnant = new CheckBox();
                     cbDateRepasAccompagnant.Name =  "cbInscriptionUneDateRepasAccompagnant" + num;
-                    cbDateRepasAccompagnant.Text = type + " du " + laDateRepasAccompagnant.ToString("D");
+                    cbDateRepasAccompagnant.Text = type + " du " + laDateRepasAccompagnant.ToString("d");
                     cbDateRepasAccompagnant.Width = 300;
-                    cbDateRepasAccompagnant.Left = 10;
-                    cbDateRepasAccompagnant.Top = 5 + (25 * num);
+                    cbDateRepasAccompagnant.Left = 6;
+                    cbDateRepasAccompagnant.Top = (19 * num);
                     cbDateRepasAccompagnant.Visible = true;
                     cbDateRepasAccompagnant.CheckedChanged += new System.EventHandler(callback);
                     // Ajout

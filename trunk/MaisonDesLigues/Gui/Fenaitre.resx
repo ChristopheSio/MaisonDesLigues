@@ -602,10 +602,10 @@
     <value>7</value>
   </data>
   <data name="cbInscriptionLicencieQualite.Location" type="System.Drawing.Point, System.Drawing">
-    <value>58, 46</value>
+    <value>8, 58</value>
   </data>
   <data name="cbInscriptionLicencieQualite.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 21</value>
+    <value>190, 21</value>
   </data>
   <data name="cbInscriptionLicencieQualite.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -626,7 +626,7 @@
     <value>True</value>
   </data>
   <data name="lbInscriptionLicencieQualite.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 49</value>
+    <value>6, 42</value>
   </data>
   <data name="lbInscriptionLicencieQualite.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 13</value>
@@ -689,7 +689,7 @@
     <value>114, 20</value>
   </data>
   <data name="tbInscriptionLicencieNumeroLicence.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 20</value>
+    <value>84, 20</value>
   </data>
   <data name="tbInscriptionLicencieNumeroLicence.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
@@ -865,92 +865,38 @@
   <data name="&gt;&gt;gbInscriptionLicencieCheque.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="cbInscriptionLicencieRepasAccompagnantSamediMidi.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="pInscriptionLicencieRepasAccompagnant.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
-  <data name="cbInscriptionLicencieRepasAccompagnantSamediMidi.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 17</value>
+  <data name="pInscriptionLicencieRepasAccompagnant.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 16</value>
   </data>
-  <data name="cbInscriptionLicencieRepasAccompagnantSamediMidi.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 17</value>
+  <data name="pInscriptionLicencieRepasAccompagnant.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
   </data>
-  <data name="cbInscriptionLicencieRepasAccompagnantSamediMidi.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="pInscriptionLicencieRepasAccompagnant.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 71</value>
   </data>
-  <data name="cbInscriptionLicencieRepasAccompagnantSamediMidi.Text" xml:space="preserve">
-    <value>Déjeuner du samedi</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediMidi.Name" xml:space="preserve">
-    <value>cbInscriptionLicencieRepasAccompagnantSamediMidi</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediMidi.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediMidi.Parent" xml:space="preserve">
-    <value>gbInscriptionLicencieRepasAccompagnant</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediMidi.ZOrder" xml:space="preserve">
+  <data name="pInscriptionLicencieRepasAccompagnant.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="cbInscriptionLicencieRepasAccompagnantSamediSoir.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;pInscriptionLicencieRepasAccompagnant.Name" xml:space="preserve">
+    <value>pInscriptionLicencieRepasAccompagnant</value>
   </data>
-  <data name="cbInscriptionLicencieRepasAccompagnantSamediSoir.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 33</value>
+  <data name="&gt;&gt;pInscriptionLicencieRepasAccompagnant.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="cbInscriptionLicencieRepasAccompagnantSamediSoir.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 17</value>
-  </data>
-  <data name="cbInscriptionLicencieRepasAccompagnantSamediSoir.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="cbInscriptionLicencieRepasAccompagnantSamediSoir.Text" xml:space="preserve">
-    <value>Dîner du samedi</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediSoir.Name" xml:space="preserve">
-    <value>cbInscriptionLicencieRepasAccompagnantSamediSoir</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediSoir.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediSoir.Parent" xml:space="preserve">
+  <data name="&gt;&gt;pInscriptionLicencieRepasAccompagnant.Parent" xml:space="preserve">
     <value>gbInscriptionLicencieRepasAccompagnant</value>
   </data>
-  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantSamediSoir.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="cbInscriptionLicencieRepasAccompagnantDimancheMidi.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbInscriptionLicencieRepasAccompagnantDimancheMidi.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 50</value>
-  </data>
-  <data name="cbInscriptionLicencieRepasAccompagnantDimancheMidi.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 17</value>
-  </data>
-  <data name="cbInscriptionLicencieRepasAccompagnantDimancheMidi.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="cbInscriptionLicencieRepasAccompagnantDimancheMidi.Text" xml:space="preserve">
-    <value>Déjeuner du dimanche</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantDimancheMidi.Name" xml:space="preserve">
-    <value>cbInscriptionLicencieRepasAccompagnantDimancheMidi</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantDimancheMidi.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantDimancheMidi.Parent" xml:space="preserve">
-    <value>gbInscriptionLicencieRepasAccompagnant</value>
-  </data>
-  <data name="&gt;&gt;cbInscriptionLicencieRepasAccompagnantDimancheMidi.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;pInscriptionLicencieRepasAccompagnant.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="gbInscriptionLicencieRepasAccompagnant.Location" type="System.Drawing.Point, System.Drawing">
-    <value>213, 13</value>
+    <value>204, 13</value>
   </data>
   <data name="gbInscriptionLicencieRepasAccompagnant.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 70</value>
+    <value>156, 90</value>
   </data>
   <data name="gbInscriptionLicencieRepasAccompagnant.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>

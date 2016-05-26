@@ -189,7 +189,7 @@ ALTER TABLE RESTAURATION ADD CONSTRAINT PK_RESTAURATION  PRIMARY KEY(IDRESTAURAT
 go
 insert into RESTAURATION (DATERESTAURATION,TYPEREPAS) values ('2015-09-13','Déjeuner');
 insert into RESTAURATION (DATERESTAURATION,TYPEREPAS) values ('2015-09-13','Dîner');
-insert into RESTAURATION (DATEARRIVEENUITEE,TYPEREPAS) values ('2015-09-14','Déjeuner');
+insert into RESTAURATION (DATERESTAURATION,TYPEREPAS) values ('2015-09-14','Déjeuner');
 /* -----------------------------------------------------------------------------
       TABLE : CATEGORIECHAMBRE
 ----------------------------------------------------------------------------- */
@@ -480,6 +480,14 @@ LEFT JOIN PARTICIPER p ON p.IDATELIER = v.IDATELIER AND p.IDVACATION = v.IDVACAT
 GROUP BY v.IDATELIER, v.IDVACATION, a.NBPLACESMAXI
 go
 
+CREATE VIEW V_ATELIERVACATIONLIBRE AS 
+SELECT v.IDATELIER, v.IDVACATION
+FROM  VACATION v
+INNER JOIN ATELIER a ON v.IDATELIER = a.ID
+LEFT JOIN PARTICIPER p ON p.IDATELIER = v.IDATELIER AND p.IDVACATION = v.IDVACATION
+GROUP BY v.IDATELIER, v.IDVACATION, a.NBPLACESMAXI
+HAVING COUNT(p.IDPARTICIPANT)<a.NBPLACESMAXI
+go
 
 -- -----------------------------------------------------------------------------
 --                LES VUES
@@ -503,6 +511,13 @@ select a.ID , a.LIBELLEATELIER as ATELIER, SUM(vavo.NBPLACESMAXI) AS MAXPLACESVA
 from atelier a
 inner join V_ATELIERVACATIONOCCUPEES vavo ON vavo.IDATELIER = a.ID
 GROUP BY a.ID , a.LIBELLEATELIER
+go
+
+-- Cette vue V_ATELIER03 va permettre de remplir les info de l'inscription
+create VIEW V_ATELIER03 as
+select v.IDATELIER, v.IDVACATION, a.LIBELLEATELIER, v.DATEHEUREDEBUT, v.DATEHEUREFIN
+from atelier a
+inner join VACATION v ON v.IDATELIER = a.ID
 go
 
 -- Cette vue V_DATENUITEE02 est une alternative à VDATENUITEE01 elle va renvoyer la date au format date
@@ -540,6 +555,12 @@ go
 -- Cette vue V_TARIFINSCRIPTION permet de connaître les info d'inscription
 CREATE VIEW V_TARIFINSCRIPTION AS 
 SELECT TARIFINSCRIPTION, TARIFREPASACCOMPAGNANT
+FROM  PARAMETRES
+go
+--
+-- Cette vue V_TARIFINSCRIPTION permet de connaître les info d'inscription
+CREATE VIEW V_PARAMETRESMAIL AS 
+SELECT NOMDDL AS NOM , MAIL
 FROM  PARAMETRES
 go
 
@@ -636,7 +657,7 @@ create procedure PS_InsererLicencie
   as  
   BEGIN 
         SET NOCOUNT ON  -- indique à SQL Server de ne pas retourner le nombre de lignes affectées par la requête INSERT
-        insert into PARTICIPANT(nom, prenom, adresse1, adresse2,cp, ville,tel, mail,typeparticipant, DATEINSCRIPTION,DATENAISSANCEBENEVOLE,NUMEROLICENCE,IDQUALITELICENCIE)
+        insert into PARTICIPANT(nom, prenom, adresse1, adresse2,cp, ville,tel, mail,typeparticipant, DATEINSCRIPTION,NUMEROLICENCE,IDQUALITELICENCIE)
         values (@pNom,@pPrenom,@pAdr1,@pAdr2,@pCp,@pVille,@pTel,@pMail,@pType,GETDATE(),@pNumeroLicence,@pIdQualiteLicencie);
         SELECT @outId = SCOPE_IDENTITY();
   end
@@ -646,41 +667,39 @@ GO
 /* procédure insérant une nuite */
 create procedure PS_AjouterUneRestaurationAccompagnant
   @pIdParticipant int,
-  @pIdVacation int,
-  @pIdAtelier int
+  @pIdRestauration int
   as  
   BEGIN 
     SET NOCOUNT ON -- indique à SQL Server de ne pas retourner le nombre de lignes affectées par la requête INSERT
-    -- atelier
-    insert into ACCOMPA..(IDATELIER, IDPARTICIPANT,NUMEROCHEQUE,TYPEPAIEMENT)
-        values (@pIdAtelier,@pIdParticipant);
-    --
-    insert into PARTICIPER(IDATELIER, IDVACATION,IDPARTICIPANT)
-        values (@pIdAtelier,@pIdVacation,@pIdParticipant);
+    insert into INCLUREACCOMPAGNANT(IDPARTICIPANT,IDRESTAURATION)
+        values (@pIdParticipant,@pIdRestauration);
   end
 GO
 
 /* procédure insérant une nuite */
 create procedure PS_AjouterUneParticipation
   @pIdParticipant int,
-  @pIdVacation int,
-  @pIdAtelier int
+  @pIdAtelier int,
+  @outIdVacation int output
   as  
   BEGIN 
     SET NOCOUNT ON -- indique à SQL Server de ne pas retourner le nombre de lignes affectées par la requête INSERT
-    -- atelier
-    insert into INSCRIRE(IDATELIER, IDPARTICIPANT,NUMEROCHEQUE,TYPEPAIEMENT)
+    -- ATELIER
+    insert into INSCRIRE(IDATELIER, IDPARTICIPANT)
         values (@pIdAtelier,@pIdParticipant);
-    --
+    -- Recherche la vaction la moins occupé
+    select top 1 @outIdVacation = IDVACATION from V_ATELIERVACATIONLIBRE
+    where IDATELIER = @pIdAtelier;
+    -- VACATION
     insert into PARTICIPER(IDATELIER, IDVACATION,IDPARTICIPANT)
-        values (@pIdAtelier,@pIdVacation,@pIdParticipant);
+        values (@pIdAtelier,@outIdVacation,@pIdParticipant);
   end
 GO
 
 /* procédure insérant un paiement */
 create procedure PS_AjouterPaiement
   @pIdParticipant int,
-  @pMontantCheque int
+  @pMontantCheque float,
   @pNumeroCheque varchar(15),
   @pTypePaiement varchar(30)
   as  
