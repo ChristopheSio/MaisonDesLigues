@@ -350,8 +350,8 @@
             // 
             // pInscritpionComplement
             // 
-            this.pInscritpionComplement.Controls.Add(this.gbInscriptionBenevole);
             this.pInscritpionComplement.Controls.Add(this.gbInscriptionLicencie);
+            this.pInscritpionComplement.Controls.Add(this.gbInscriptionBenevole);
             this.pInscritpionComplement.Controls.Add(this.gbInscriptionIntervenant);
             resources.ApplyResources(this.pInscritpionComplement, "pInscritpionComplement");
             this.pInscritpionComplement.Name = "pInscritpionComplement";

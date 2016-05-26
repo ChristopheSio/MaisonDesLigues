@@ -90,7 +90,6 @@ namespace MaisonDesLigues
         {
             outId = null; // Default Out
             String MessageErreur = "";
-            //
             SqlTransaction transaction = DataBaseConnection.BeginTransaction();
             try {
                 SqlCommand command = new SqlCommand("PS_InsererIntervenant", DataBaseConnection);
@@ -125,8 +124,8 @@ namespace MaisonDesLigues
         }
 
 
-        /// <summary>Procédure publique qui va appeler la procédure stockée permettant d'inscrire un nouvel intervenant</summary>
-        static public void InscrireLicencie(String pNom, String pPrenom, String pAdresse1, String pAdresse2, String pCp, String pVille, String pTel, String pMail, Int16 pIdAtelier, String pIdStatut, out String outId)
+        /// <summary>Procédure publique qui va appeler la procédure stockée permettant d'inscrire un nouveau licencié</summary>
+        static public void InscrireLicencie(String pNom, String pPrenom, String pAdresse1, String pAdresse2, String pCp, String pVille, String pTel, String pMail, String pIdQualiteLicencie, String pNumeroLicence, out String outId)
         {
             outId = null; // Default Out
             String MessageErreur = "";
@@ -137,9 +136,9 @@ namespace MaisonDesLigues
                 command.Transaction = transaction;
                 //
                 ParamCommunsNouveauxParticipants(command, pNom, pPrenom, pAdresse1, pAdresse2, pCp, pVille, pTel, pMail); // params commun aux participant
-                command.Parameters.Add("@pType", SqlDbType.VarChar).Value = "I";   // "I" pour Intervenant
-                command.Parameters.Add("@pIdAtelierIntervenant", SqlDbType.Int).Value = pIdAtelier;
-                command.Parameters.Add("@pIdStatut", SqlDbType.VarChar).Value = pIdStatut;
+                command.Parameters.Add("@pType", SqlDbType.VarChar).Value = "L";   // "L" pour Licencie
+                command.Parameters.Add("@pIdQualiteLicencie", SqlDbType.Int).Value = pIdQualiteLicencie;
+                command.Parameters.Add("@pNumeroLicence", SqlDbType.VarChar).Value = pNumeroLicence;
                 command.Parameters.Add("@outId", SqlDbType.Int).Direction = ParameterDirection.Output;
                 //
                 command.ExecuteNonQuery();
@@ -175,7 +174,7 @@ namespace MaisonDesLigues
                 // 
                 ParamCommunsNouveauxParticipants(command, pNom, pPrenom, pAdresse1, pAdresse2, pCp, pVille, pTel, pMail);  // params commun aux participant
                 command.Parameters.Add("@pType", SqlDbType.VarChar).Value = "B";   // "B" pour bénévole
-                command.Parameters.Add("@pDateNaissanceBenevole", SqlDbType.Int).Value = pDateNaissanceBenevole;
+                command.Parameters.Add("@pDateNaissanceBenevole", SqlDbType.Date).Value = pDateNaissanceBenevole;
                 command.Parameters.Add("@pNumeroLicence", SqlDbType.VarChar).Value = pNumeroLicence;
                 command.Parameters.Add("@outId", SqlDbType.Int).Direction = ParameterDirection.Output;
                 //
@@ -198,6 +197,44 @@ namespace MaisonDesLigues
                     throw new Exception(MessageErreur); // Déclenchement de l'exception
                 }
             }
+        }
+
+        /// <summary>Procédure publique qui va appeler la procédure stockée permettant d'ajouter un paiment</summary>
+        static public void AjouterPaiement(String pIdParticipant, String pMontantCheque, String pNumeroCheque, String pTypePaiement)
+        {
+            String MessageErreur = "";
+            SqlTransaction transaction = DataBaseConnection.BeginTransaction();
+            try
+            {
+                SqlCommand command = new SqlCommand("PS_AjouterPaiement", DataBaseConnection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Transaction = transaction;
+                //
+                command.Parameters.Add("@pIdParticipant", SqlDbType.Int).Value = pIdParticipant;
+                command.Parameters.Add("@pMontantCheque", SqlDbType.Int).Value = pMontantCheque;
+                command.Parameters.Add("@pNumeroCheque", SqlDbType.VarChar).Value = pNumeroCheque;
+                command.Parameters.Add("@pTypePaiement", SqlDbType.VarChar).Value = pTypePaiement;
+                //
+                command.ExecuteNonQuery();
+                transaction.Commit();
+            }
+            catch (SqlException e)
+            {
+                MessageErreur = "Erreur SqlServer \n" + GetMessageSql(e.Message);
+            }
+            catch (Exception e)
+            {
+                MessageErreur = e.Message + "Autre Erreur, les informations n'ont pas été correctement saisies";
+            }
+            finally
+            {
+                if (MessageErreur.Length > 0)
+                {
+                    transaction.Rollback();
+                    throw new Exception(MessageErreur);
+                }
+            }
+
         }
 
         /// <summary>Procédure publique qui va appeler la procédure stockée permettant d'ajouter une nuites</summary>

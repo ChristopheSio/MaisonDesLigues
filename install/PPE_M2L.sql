@@ -102,8 +102,8 @@ go
 /*      INDEX DE DATENUITEE      */
 ALTER TABLE DATENUITEE ADD CONSTRAINT PK_DATENUITEE PRIMARY KEY(ID)
 go
-insert into DATENUITEE (DATEARRIVEENUITEE) values ('2015-09-11');
-insert into DATENUITEE (DATEARRIVEENUITEE) values ('2015-09-12');
+insert into DATENUITEE (DATEARRIVEENUITEE) values ('2015-09-13');
+insert into DATENUITEE (DATEARRIVEENUITEE) values ('2015-09-14');
 /* -----------------------------------------------------------------------------
       TABLE : ATELIER
 ----------------------------------------------------------------------------- */
@@ -186,6 +186,10 @@ create table RESTAURATION
 go
 /*      INDEX DE RESTAURATION      */
 ALTER TABLE RESTAURATION ADD CONSTRAINT PK_RESTAURATION  PRIMARY KEY(IDRESTAURATION)
+go
+insert into RESTAURATION (DATERESTAURATION,TYPEREPAS) values ('2015-09-13','Déjeuner');
+insert into RESTAURATION (DATERESTAURATION,TYPEREPAS) values ('2015-09-13','Dîner');
+insert into RESTAURATION (DATEARRIVEENUITEE,TYPEREPAS) values ('2015-09-14','Déjeuner');
 /* -----------------------------------------------------------------------------
       TABLE : CATEGORIECHAMBRE
 ----------------------------------------------------------------------------- */
@@ -480,72 +484,67 @@ go
 -- -----------------------------------------------------------------------------
 --                LES VUES
 -- -----------------------------------------------------------------------------
--- Cette vue vqualite01 va permettre d'avoir un résultat trié dans les combobox
+-- Cette vue V_QUALITE01 va permettre d'avoir un résultat trié dans les combobox
 create VIEW V_QUALITE01 as
 select ID, LIBELLEQUALITE as LIBELLE
 from qualite
 go
 
 --
--- Cette vue VATELIER01 va permettre de remplir la combo Atelier pour l'intervenant
+-- Cette vue V_ATELIER01 va permettre de remplir la combo Atelier pour l'intervenant
 create VIEW V_ATELIER01 as
 select ID , LIBELLEATELIER as LIBELLE, IDPARTICIPANTINTERVENANT
 from atelier;
 go
 
--- Cette vue VATELIER02 va permettre de remplir la grid Atelier pour un licencié
+-- Cette vue V_ATELIER02 va permettre de remplir la grid Atelier pour un licencié
 create VIEW V_ATELIER02 as
 select a.ID , a.LIBELLEATELIER as ATELIER, SUM(vavo.NBPLACESMAXI) AS MAXPLACESVACATIONS, SUM(vavo.NBPLACESOCCUPEES) AS PLACESOCCUPEESVACATIONS, (SUM(vavo.NBPLACESMAXI)-SUM(vavo.NBPLACESOCCUPEES)) AS PLACESRETESTANTESVACATIONS
 from atelier a
-inner join VATELIERVACATIONOCCUPEES vavo ON vavo.IDATELIER = a.ID
+inner join V_ATELIERVACATIONOCCUPEES vavo ON vavo.IDATELIER = a.ID
 GROUP BY a.ID , a.LIBELLEATELIER
 go
 
-
-/*
-create VIEW V_ATELIER02 as
-select ID, LIBELLEATELIER,  rank() over (ORDER BY ID) as NUMORDRE from atelier;
-go*/
---
----- Cette vue VDATENUITEE01 va permettre de choisir les dates où un participant peut arriver à l'hotel
---create VIEW V_DATENUITEE01 as
---select id, to_char(DATEARRIVEENUITEE, 'Day dd Month YYYY','NLS_DATE_LANGUAGE = FRENCH')as libelle
---from DATENUITEE;
---go
--- Cette vue VDATENUITEE02 est une alternative à VDATENUITEE01 elle va renvoyer la date au format date
+-- Cette vue V_DATENUITEE02 est une alternative à VDATENUITEE01 elle va renvoyer la date au format date
 create VIEW V_DATENUITEE02 as
 select ID, DATEARRIVEENUITEE
 from DATENUITEE;
 go
 --
--- Cette vue VHOTEL01 va permettre de remplir la combobox du choix d'hotel du composant nuité
-
+-- Cette vue V_HOTEL01 va permettre de remplir la combobox du choix d'hotel du composant nuité
 create VIEW V_HOTEL01 as
 select CODEHOTEL as ID, NOMHOTEL as LIBELLE
 from HOTEL;
 go
 --
--- Cette vue VCATEGORIECHAMBRE01 va permettre de remplir la combobox du choix de la catégorie de la chambre du composant nuité
+-- Cette vue V_CATEGORIECHAMBRE01 va permettre de remplir la combobox du choix de la catégorie de la chambre du composant nuité
 create VIEW V_CATEGORIECHAMBRE01 as
 select ID , LIBELLECATEGORIE as LIBELLE
 from CATEGORIECHAMBRE;
 go
 --
--- Cette vue VDATEBENEVOLAT01 va permettre de choisir les dates où un bénévole est disponible
+-- Cette vue V_DATEBENEVOLAT01 va permettre de choisir les dates où un bénévole est disponible
 create VIEW V_DATEBENEVOLAT01 as
 select ID,DATEBENEVOLAT as LIBELLE
 from DATEBENEVOLAT;
 go
 
 --
--- Cette vue VTARIFINSCRIPTION permet de connaître les info d'inscription
+-- Cette vue V_DATEBENEVOLAT01 va permettre de choisir les dates où un bénévole est disponible
+create VIEW V_RESTAURATION01 as
+select IDRESTAURATION,DATERESTAURATION,TYPEREPAS
+from RESTAURATION;
+go
+
+--
+-- Cette vue V_TARIFINSCRIPTION permet de connaître les info d'inscription
 CREATE VIEW V_TARIFINSCRIPTION AS 
 SELECT TARIFINSCRIPTION, TARIFREPASACCOMPAGNANT
 FROM  PARAMETRES
 go
 
 --
--- Cette vue VTARIFHOTELCHAMBRE permet de connaître le prix d'une chambre pour un hotel
+-- Cette vue V_TARIFHOTELCHAMBRE permet de connaître le prix d'une chambre pour un hotel
 CREATE VIEW V_TARIFHOTELCHAMBRE AS 
 SELECT CODEHOTEL, IDCATEGORIECHAMBRE, PRIX
 FROM  HOTELCHAMBREPRIX
@@ -587,11 +586,10 @@ create procedure PS_InsererIntervenant
   as  
   BEGIN 
         SET NOCOUNT ON  -- indique à SQL Server de ne pas retourner le nombre de lignes affectées par la requête INSERT
-        /* insérant un intervenant */
         insert into PARTICIPANT(nom, prenom, adresse1, adresse2,cp, ville,tel, mail,typeparticipant, DATEINSCRIPTION,IDATELIERINTERVENANT,IDSTATUT)
         values (@pNom,@pPrenom,@pAdr1,@pAdr2,@pCp,@pVille,@pTel,@pMail,@pType,GETDATE(),@pIdAtelierIntervenant,@pIdStatut);
         SELECT @outId = SCOPE_IDENTITY();
-        /* mettre à jour IDPARTICIPANTINTERVENANT la table Atelier si necessaire */
+        /* mettre à jour IDPARTICIPANTINTERVENANT de la table Atelier si necessaire */
         IF ( @pType = 'I' AND @pIdStatut = 'INT') BEGIN -- Si c'est un intervenant I INT alors, est assigné a atelier comme tel
          UPDATE ATELIER SET IDPARTICIPANTINTERVENANT = @outId WHERE ID = @pIdAtelierIntervenant;
         END
@@ -615,24 +613,91 @@ create procedure PS_InsererBenevole
   as  
   BEGIN 
         SET NOCOUNT ON  -- indique à SQL Server de ne pas retourner le nombre de lignes affectées par la requête INSERT
-        /* insérant un intervenant */
         insert into PARTICIPANT(nom, prenom, adresse1, adresse2,cp, ville,tel, mail,typeparticipant, DATEINSCRIPTION,DATENAISSANCEBENEVOLE,NUMEROLICENCE)
         values (@pNom,@pPrenom,@pAdr1,@pAdr2,@pCp,@pVille,@pTel,@pMail,@pType,GETDATE(),@pDateNaissanceBenevole,@pNumeroLicence);
         SELECT @outId = SCOPE_IDENTITY();
   end
 GO
 
--- PS_InsererLicencie @pIdQualiteLicencie int,
+/* procédure insérant un benevole et retournant un paramètre @erreur = 1 si erreur à l'insertion, 0 sinon */
+create procedure PS_InsererLicencie 
+  @pNom varchar(50),
+  @pPrenom varchar(50),
+  @pAdr1 varchar(50),
+  @pAdr2 varchar(50),
+  @pCp varchar(5),
+  @pVille varchar(50),
+  @pTel varchar(15),
+  @pMail varchar(50),
+  @pType varchar(1),
+  @pIdQualiteLicencie int,
+  @pNumeroLicence varchar(32),
+  @outId int output
+  as  
+  BEGIN 
+        SET NOCOUNT ON  -- indique à SQL Server de ne pas retourner le nombre de lignes affectées par la requête INSERT
+        insert into PARTICIPANT(nom, prenom, adresse1, adresse2,cp, ville,tel, mail,typeparticipant, DATEINSCRIPTION,DATENAISSANCEBENEVOLE,NUMEROLICENCE,IDQUALITELICENCIE)
+        values (@pNom,@pPrenom,@pAdr1,@pAdr2,@pCp,@pVille,@pTel,@pMail,@pType,GETDATE(),@pNumeroLicence,@pIdQualiteLicencie);
+        SELECT @outId = SCOPE_IDENTITY();
+  end
+GO
 
 
+/* procédure insérant une nuite */
+create procedure PS_AjouterUneRestaurationAccompagnant
+  @pIdParticipant int,
+  @pIdVacation int,
+  @pIdAtelier int
+  as  
+  BEGIN 
+    SET NOCOUNT ON -- indique à SQL Server de ne pas retourner le nombre de lignes affectées par la requête INSERT
+    -- atelier
+    insert into ACCOMPA..(IDATELIER, IDPARTICIPANT,NUMEROCHEQUE,TYPEPAIEMENT)
+        values (@pIdAtelier,@pIdParticipant);
+    --
+    insert into PARTICIPER(IDATELIER, IDVACATION,IDPARTICIPANT)
+        values (@pIdAtelier,@pIdVacation,@pIdParticipant);
+  end
+GO
+
+/* procédure insérant une nuite */
+create procedure PS_AjouterUneParticipation
+  @pIdParticipant int,
+  @pIdVacation int,
+  @pIdAtelier int
+  as  
+  BEGIN 
+    SET NOCOUNT ON -- indique à SQL Server de ne pas retourner le nombre de lignes affectées par la requête INSERT
+    -- atelier
+    insert into INSCRIRE(IDATELIER, IDPARTICIPANT,NUMEROCHEQUE,TYPEPAIEMENT)
+        values (@pIdAtelier,@pIdParticipant);
+    --
+    insert into PARTICIPER(IDATELIER, IDVACATION,IDPARTICIPANT)
+        values (@pIdAtelier,@pIdVacation,@pIdParticipant);
+  end
+GO
+
+/* procédure insérant un paiement */
+create procedure PS_AjouterPaiement
+  @pIdParticipant int,
+  @pMontantCheque int
+  @pNumeroCheque varchar(15),
+  @pTypePaiement varchar(30)
+  as  
+  BEGIN 
+    SET NOCOUNT ON -- indique à SQL Server de ne pas retourner le nombre de lignes affectées par la requête INSERT
+    insert into PAIEMENT(IDPARTICIPANT, MONTANTCHEQUE,NUMEROCHEQUE,TYPEPAIEMENT)
+        values (@pIdParticipant,@pMontantCheque,@pNumeroCheque,@pTypePaiement);
+  end
+GO
 
 /* procédure insérant une nuite */
 create procedure PS_AjouterDateBenevolat
   @pIdParticipant int,
-  @pIdDateBenevolat int,
+  @pIdDateBenevolat int
   as  
   BEGIN 
-    SET NOCOUNT ON -- indique à SQL Server de ne pas retourner le nombre de lignes affectées par la requête INSERT*/
+    SET NOCOUNT ON -- indique à SQL Server de ne pas retourner le nombre de lignes affectées par la requête INSER
     insert into ETREPRESENT(IDPARTICIPANT, IDDATEBENEVOLAT)
         values (@pIdParticipant,@pIdDateBenevolat);
   end

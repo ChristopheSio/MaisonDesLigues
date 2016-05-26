@@ -164,8 +164,8 @@ namespace MaisonDesLigues.Gui
                 validInscriptionNuite();
             }
             else {
-                //if (InscriptionLesNuites != null)
-                //    InscriptionLesNuites = null; // Supprime les nuites et appel le destructeur de chaque nuitee
+                if (InscriptionLesNuites != null)
+                    InscriptionLesNuites = null; // Supprime les nuites et appel le destructeur de chaque nuitee
                 InscriptionGlobaleValidatation.detacher(gbInscriptionHebergement.Text);
             }
             // Afin de laisser les elements se charger, a placer en dernier donc
@@ -180,8 +180,8 @@ namespace MaisonDesLigues.Gui
                 validInscriptionBenevole();
             }
             else {
-                //if (InscriptionLesDatesBenevolat != null)
-                //    InscriptionLesDatesBenevolat = null; // Supprime les nuites et appel le destructeur de chaque nuitee
+                if (InscriptionLesDatesBenevolat != null)
+                    InscriptionLesDatesBenevolat = null; // Supprime les nuites et appel le destructeur de chaque nuitee
                 InscriptionGlobaleValidatation.detacher(gbInscriptionBenevole.Text);
             }
             // Afin de laisser les elements se charger, a placer en dernier donc
@@ -370,6 +370,12 @@ namespace MaisonDesLigues.Gui
         /* ENREGISTER ET MAIL */
         private void btInscritpionEnregistrerEtMail_Click(object sender, EventArgs e)
         {
+            // Preparation du messages
+            string infoSaisie = "Participant\n Nom : "+ tbInscriptionNom.Text +"; Prenom : "+ tbInscriptionPrenom.Text + "; \n Adresse1 : " + tbInscriptionAdresse1.Text + "; Adresse2 : " + tbInscriptionAdresse2.Text + "; \n Code postal : " + tbInscriptionCP.Text + "; Ville : " + tbInscriptionVille.Text + "; \n Telephone : " + tbInscriptionTelephone.Text + "; Email : " + tbInscriptionEmail.Text;
+            string infoInserer = null;
+            string infoNuites = null;
+            string infoDatesBenevolat = null;
+            // Insertion en BDD
             String newId = null;
             switch (InscriptionChoixActif)
             {
@@ -381,35 +387,84 @@ namespace MaisonDesLigues.Gui
                         cbInscriptionIntervenantAtelier.SelectedValue.ToString(), statut, 
                         out newId
                     );
+                    infoInserer = "Intervenant\n Atelier : " + cbInscriptionIntervenantAtelier.SelectedText.ToString() + "\n Statut : ";
+                    if (rbInscriptionIntervenantTypeAnimateur.Checked) infoInserer += "Animateur";
+                    else if (rbInscriptionIntervenantTypeIntervenant.Checked) infoInserer += "Intervenant";
+                    else infoInserer += "Incconu";
                     break;
                 //
-                case TypeInscription.Licencie: break;
+                case TypeInscription.Licencie:
+                    
+                    Modele.InscrireLicencie(
+                        tbInscriptionNom.Text, tbInscriptionPrenom.Text, tbInscriptionAdresse1.Text, tbInscriptionAdresse2.Text, tbInscriptionCP.Text, tbInscriptionVille.Text, tbInscriptionTelephone.Text, tbInscriptionEmail.Text,
+                        cbInscriptionIntervenantAtelier.SelectedValue.ToString(), statut,
+                        out newId
+                    );
+                    infoInserer = "Intervenant\n Atelier : " + cbInscriptionIntervenantAtelier.SelectedText.ToString() + "\n Statut : ";
+                    if (rbInscriptionIntervenantTypeAnimateur.Checked) infoInserer += "Animateur";
+                    else if (rbInscriptionIntervenantTypeIntervenant.Checked) infoInserer += "Intervenant";
+                    else infoInserer += "Incconu";
+                    break;
                 //
                 case TypeInscription.Benevole:
-                    DateTime dateDeNaisance;
-                    DateTime.TryParseExact(tbInscriptionBenevoleDateNaissance.Text, "dd/MM/yyyy", CultureInfo.CurrentCulture, DateTimeStyles.None, out dateDeNaisance);
+                    DateTime dateDeNaissance;
+                    DateTime.TryParseExact(tbInscriptionBenevoleDateNaissance.Text, "dd/MM/yyyy", CultureInfo.CurrentCulture, DateTimeStyles.None, out dateDeNaissance);
                     //
                     Modele.InscrireBenevole(
                         tbInscriptionNom.Text, tbInscriptionPrenom.Text, tbInscriptionAdresse1.Text, tbInscriptionAdresse2.Text, tbInscriptionCP.Text, tbInscriptionVille.Text, tbInscriptionTelephone.Text, tbInscriptionEmail.Text,
-                        dateDeNaisance, tbInscriptionBenevoleNumeroLicence.Text,
+                        dateDeNaissance, tbInscriptionBenevoleNumeroLicence.Text,
                         out newId
                         );
+                    infoInserer = "Benevole\n Date de naissance : " + tbInscriptionBenevoleDateNaissance.Text + "\n Numero de licence : " + tbInscriptionBenevoleNumeroLicence.Text+"\n Dates de bénévolat :";
                     //
-                    List<String> LesDatesDeBenevolatChoix = InscriptionLesDatesBenevolat.getLesDatesBenevolatChoisies();
-                    foreach (String uneDateBenevolatChoix in LesDatesDeBenevolatChoix) {
-                        Modele.AjouterUneDateDeBenevolat(newId, uneDateBenevolatChoix);
+                    List<Structures.Inscription.UnChoixDateBenevolat> LesDatesDeBenevolatChoix = InscriptionLesDatesBenevolat.getLesDatesBenevolatChoisies();
+                    foreach (Structures.Inscription.UnChoixDateBenevolat uneDateBenevolatChoix in LesDatesDeBenevolatChoix) {
+                        Modele.AjouterUneDateDeBenevolat(newId, uneDateBenevolatChoix.idDateBenevolat);
+                        infoInserer += "  - " + uneDateBenevolatChoix.composeStr+"\n";
                     }
                     break;
                 
             }
             // Pour nuites si Licencié ou Intervenant
             if(newId!=null && chbInscriptionNuites.Checked && (InscriptionChoixActif == TypeInscription.Intervenant || InscriptionChoixActif == TypeInscription.Licencie)) {
+                infoNuites = " Nuitées :";
                 List <Structures.Inscription.UnChoixNuite> LesChoixDeNuites = InscriptionLesNuites.getLesNuitesChoisies();
                 foreach (Structures.Inscription.UnChoixNuite unChoixNuite in LesChoixDeNuites) {
                     Modele.AjouterUneNuite(newId, unChoixNuite.idNuite, unChoixNuite.idHotel, unChoixNuite.idChambre);
+                    infoNuites += "  - " + unChoixNuite.composeStr + "\n";
                 }
             }
-            // Rafrichir la fenaitre
+            // Msg recapitulatif
+            string recapitulatif = "Enregistrment effectué le " + DateTime.Today.ToString() + "\n":
+            recapitulatif += infoSaisie + "\n"; 
+            if(infoInserer!=null)           recapitulatif += infoInserer + "\n";
+            if (infoNuites != null)         recapitulatif += infoNuites + "\n";
+            if (infoDatesBenevolat != null) recapitulatif += infoDatesBenevolat + "\n";
+            // Envoie Email
+            string msg = "Enregistrement terminé,\n un récaptulatif de cet enregistement a été enregistré dans le fichier journal.txt\n Voici le racapitulatif : \n\n";
+            msg += recapitulatif;
+            var result = MessageBox.Show(msg, "Confirmer l'envoie", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+
+            }
+
+                /*string msg = "Félicitation ! Votre inscription a était réalisé";
+                if (Validateur.Email.IsMatch(tbInscriptionEmail.Text)) {
+                    string MailMsg = "Félicitation ! Votre inscription a était réalisé";
+
+                }
+                string msg = "L'email suivant va être envoyé au destinataire : " + tbInscriptionEmail.Text;
+                msg += " \n\n--------------------------\n\n" + genererContenueMsgMailAvertir() + "\n\n--------------------------\n\n Vous confirmer l'envoie ?";
+                var result = MessageBox.Show(msg, "Confirmer l'envoie", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    string msg = "Bonjour " + tbInscriptionNom.Text + " " + tbInscriptionPrenom.Text + ".\n Votre inscription n'a pas pus être réalisé à causes des faits suivant :\n\n";
+                    msg += licencieChequeValidation.logErreurs();
+                    msg += "\n\n Nous attendons votre réponse au plus vite pour regler ce problème";
+                    return msg;
+                }*/
+                // Rafrichir la fenaitre
             Utilitaire.toutVider(tabInscription);
             refreshInscription();
 

@@ -14,14 +14,19 @@ namespace MaisonDesLigues
     {
         namespace Inscription
         {
+            
+            //
+            //
+            //
+            //
+            
             /// <summary> Cette strucutre permet de connaitre les d'une nuité </summary>
             struct UnChoixNuite
             {
-                public UnChoixNuite(string _idNuite =null, string _idHotel = null, string _idChambre = null)
-                { idNuite = _idNuite; idHotel = _idHotel; idChambre = _idChambre; }
                 public string idNuite;
                 public string idHotel;
                 public string idChambre;
+                public string composeStr;
             }
             
             /// <summary> Cette classe permet l'affichage d'une entrée pour la nuités </summary>
@@ -29,6 +34,7 @@ namespace MaisonDesLigues
             {
                 public LesNuites(ScrollableControl lePanel, Action<object, EventArgs> callback)
                 {
+                    lePanel.Controls.Clear();
                     listeDesNuites = new List<LaNuite>();
                     DataTable lesNuites = Modele.ObtenirDonnees("V_DATENUITEE02");
                     DateTime dateDeMaintenant = Utilitaire.obtenirMaintenant();
@@ -85,7 +91,7 @@ namespace MaisonDesLigues
             /// <summary> Cette classe permet l'affichage des entrées pour les nuités </summary>
             class LaNuite
             {
-                public LaNuite(ScrollableControl lePanel, String UnIDNuite, Int16 num, DateTime laDate, Action<object, EventArgs> callback)
+                public LaNuite(ScrollableControl lePanel, String UnIDNuite, int num, DateTime laDate, Action<object, EventArgs> callback)
                 {
                     IdNuite = UnIDNuite;
                     chLaNuite = new CheckBox();
@@ -130,9 +136,17 @@ namespace MaisonDesLigues
                     return IdNuite;
                 }
                 public UnChoixNuite getChoix() {
-                    UnChoixNuite unChoix = new UnChoixNuite(IdNuite);
-                    if (cbHotel.SelectedValue != null) unChoix.idHotel = cbHotel.SelectedValue.ToString();
-                    if (cbChambre.SelectedValue != null) unChoix.idChambre = cbChambre.SelectedValue.ToString();
+                    UnChoixNuite unChoix = new UnChoixNuite();
+                    unChoix.idNuite = IdNuite;
+                    unChoix.composeStr = chLaNuite.Text;
+                    if (cbHotel.SelectedValue != null) {
+                        unChoix.idHotel = cbHotel.SelectedValue.ToString();
+                        unChoix.composeStr += " Dans l'hotel " + cbHotel.SelectedText.ToString();
+                    }
+                    if (cbChambre.SelectedValue != null) {
+                        unChoix.idChambre = cbChambre.SelectedValue.ToString();
+                        unChoix.composeStr += " Avec chambre " + cbChambre.SelectedText.ToString();
+                    }
                     return unChoix;
                 }
                 private CheckBox chLaNuite;
@@ -141,12 +155,23 @@ namespace MaisonDesLigues
                 private String IdNuite;
             }
 
+           ///
+           ///
+           ///
+           ///
 
+            /// <summary> Cette strucutre permet de connaitre les d'une nuité </summary>
+            struct UnChoixDateBenevolat
+            {
+                public string idDateBenevolat;
+                public string composeStr;
+            }
             /// <summary> Cette classe permet l'affichage d'une entrée pour la nuités </summary>
             class LesDatesBenevolat
             {
                 public LesDatesBenevolat(ScrollableControl lePanel, Action<object, EventArgs> callback)
                 {
+                    lePanel.Controls.Clear();
                     listeDesDatesBenevolat = new List<LaDateBenevolat>();
                     DataTable lesDateBenevolat = Modele.ObtenirDonnees("V_DATEBENEVOLAT01");
                     DateTime dateDeMaintenant = Utilitaire.obtenirMaintenant();
@@ -161,9 +186,9 @@ namespace MaisonDesLigues
                         }
                     }
                 }
-                public List<String> getLesDatesBenevolatChoisies()
+                public List<UnChoixDateBenevolat> getLesDatesBenevolatChoisies()
                 {
-                    List<String> listeDesDatesBenevolatChoisies = new List<String>();
+                    List<UnChoixDateBenevolat> listeDesDatesBenevolatChoisies = new List<UnChoixDateBenevolat>();
                     foreach (LaDateBenevolat uneDatesBenevolat in listeDesDatesBenevolat)
                     {
                         if (uneDatesBenevolat.estSelectionner()) {
@@ -177,7 +202,7 @@ namespace MaisonDesLigues
 
             class LaDateBenevolat
             {
-                public LaDateBenevolat(ScrollableControl lePanel, String UnIDDateBenevolat, Int16 num, DateTime laDateBenevolat, Action<object, EventArgs> callback)
+                public LaDateBenevolat(ScrollableControl lePanel, String UnIDDateBenevolat, int num, DateTime laDateBenevolat, Action<object, EventArgs> callback)
                 {
                     IdDateBenevolat = UnIDDateBenevolat;
                     cbDateBenevolat = new CheckBox();
@@ -195,12 +220,93 @@ namespace MaisonDesLigues
                 {
                     return cbDateBenevolat.Checked;
                 }
-                public String getIdDateBenevolat()
+                public UnChoixDateBenevolat getIdDateBenevolat()
                 {
-                    return IdDateBenevolat;
+                    UnChoixDateBenevolat uneDateBenevolat = new UnChoixDateBenevolat();
+                    uneDateBenevolat.idDateBenevolat = IdDateBenevolat;
+                    uneDateBenevolat.composeStr = cbDateBenevolat.Text;
+                    return uneDateBenevolat;
                 }
                 private CheckBox cbDateBenevolat;
                 private String IdDateBenevolat;
+            }
+
+            ///
+            ///
+            ///
+            ///
+
+
+            /// <summary> Cette strucutre permet de connaitre les chois repas accompagnant </summary>
+            struct UnChoixDateRepasAccompagnant
+            {
+                public string idDateRepasAccompagnant;
+                public string composeStr;
+            }
+            /// <summary> Cette classe permet l'affichage d'une entrée pour les repas accompagnant </summary>
+            class LesDatesRepasAccompagnant
+            {
+                public LesDatesRepasAccompagnant(ScrollableControl lePanel, Action<object, EventArgs> callback)
+                {
+                    lePanel.Controls.Clear();
+                    listeDesDatesRepasAccompagnant = new List<LaDateRepasAccompagnant>();
+                    DataTable lesDateRepasAccompagnant = Modele.ObtenirDonnees("V_RESTAURATION01");
+                    DateTime dateDeMaintenant = Utilitaire.obtenirMaintenant();
+                    Int16 numDateRepasAccompagnant = 0;
+                    foreach (DataRow dateRepasAccompagnantLigne in lesDateRepasAccompagnant.Rows)
+                    {
+                        DateTime laDateNuite = (DateTime)dateRepasAccompagnantLigne[1];
+                        if ((DateTime.Compare(laDateNuite, dateDeMaintenant) > 0) || laDateNuite.Date.Equals(dateDeMaintenant.Date)) // est bien une date dans le futur ou bien la date d'aujourd'hui
+                        {
+                            listeDesDatesRepasAccompagnant.Add(new LaDateRepasAccompagnant(lePanel, dateRepasAccompagnantLigne[0].ToString(), numDateRepasAccompagnant, laDateNuite, dateRepasAccompagnantLigne[2].ToString(), callback));
+                            numDateRepasAccompagnant++;
+                        }
+                    }
+                }
+                public List<UnChoixDateRepasAccompagnant> getLesDatesRepasAccompagnantChoisies()
+                {
+                    List<UnChoixDateRepasAccompagnant> listeDesDatesRepasAccompagnantChoisies = new List<UnChoixDateRepasAccompagnant>();
+                    foreach (LaDateRepasAccompagnant uneDatesRepasAccompagnant in listeDesDatesRepasAccompagnant)
+                    {
+                        if (uneDatesRepasAccompagnant.estSelectionner())
+                        {
+                            listeDesDatesRepasAccompagnantChoisies.Add(uneDatesRepasAccompagnant.getIdDateRepasAccompagnant());
+                        }
+                    }
+                    return listeDesDatesRepasAccompagnantChoisies;
+                }
+                private List<LaDateRepasAccompagnant> listeDesDatesRepasAccompagnant;
+            }
+
+            class LaDateRepasAccompagnant
+            {
+                public LaDateRepasAccompagnant(ScrollableControl lePanel, String UnIDDateRepasAccompagnant, int num, DateTime laDateRepasAccompagnant, String type, Action<object, EventArgs> callback)
+                {
+                    IdDateRepasAccompagnant = UnIDDateRepasAccompagnant;
+                    cbDateRepasAccompagnant = new CheckBox();
+                    cbDateRepasAccompagnant.Name =  "cbInscriptionUneDateRepasAccompagnant" + num;
+                    cbDateRepasAccompagnant.Text = type + " du " + laDateRepasAccompagnant.ToString("D");
+                    cbDateRepasAccompagnant.Width = 300;
+                    cbDateRepasAccompagnant.Left = 10;
+                    cbDateRepasAccompagnant.Top = 5 + (25 * num);
+                    cbDateRepasAccompagnant.Visible = true;
+                    cbDateRepasAccompagnant.CheckedChanged += new System.EventHandler(callback);
+                    // Ajout
+                    lePanel.Controls.Add(cbDateRepasAccompagnant);
+                }
+                public bool estSelectionner()
+                {
+                    return cbDateRepasAccompagnant.Checked;
+                }
+                public UnChoixDateRepasAccompagnant getIdDateRepasAccompagnant()
+                {
+                    UnChoixDateRepasAccompagnant uneDateRepasAccompagnant = new UnChoixDateRepasAccompagnant();
+                    uneDateRepasAccompagnant.idDateRepasAccompagnant = IdDateRepasAccompagnant;
+                    uneDateRepasAccompagnant.composeStr = cbDateRepasAccompagnant.Text;
+                    return uneDateRepasAccompagnant;
+                }
+                private CheckBox cbDateRepasAccompagnant;
+                private String IdDateRepasAccompagnant;
             }
         }
     }
