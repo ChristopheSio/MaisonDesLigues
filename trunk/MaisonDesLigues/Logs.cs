@@ -70,7 +70,7 @@ namespace MaisonDesLigues
 
         static string fileLog = "journal.txt";
         static string emailFileLog = "journal_email.txt";
-        static string emailSmtp = "pop3.btconnect.com";
+        static string emailSmtp = "smtp.comcast.net";
     }
 }
 

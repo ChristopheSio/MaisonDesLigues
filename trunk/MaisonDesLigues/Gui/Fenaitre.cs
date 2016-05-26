@@ -50,11 +50,14 @@ namespace MaisonDesLigues.Gui
         //
         private void resetInscription()
         {
+            InscriptionChoixActif = TypeInscription.Aucun;
+            Utilitaire.toutVider(tabInscription);
+            refreshInscription();
+            //
             loadInscriptionHebergement(false);
             loadInscriptionBenevoleDateBenevolat(false);
             loadInscriptionBenevoletDateRepasAccompagnant(false);
             //
-            Utilitaire.toutVider(tabInscription);
             refreshInscription();
         }
 
@@ -491,9 +494,9 @@ namespace MaisonDesLigues.Gui
             // Msg recapitulatif
             string recapitulatif = "Enregistrment effectué le " + DateTime.Now.ToString() + "\n";
             recapitulatif += infoSaisie + "\n\n"; 
-            if(infoInserer!=null)           recapitulatif += infoInserer + "\n\n";
-            if (infoNuites != null)         recapitulatif += "\n" + infoNuites + "\n\n";
-            if (infoDatesBenevolat != null) recapitulatif += "\n" + infoDatesBenevolat + "\n\n";
+            if(infoInserer!=null)           recapitulatif += infoInserer + "\n";
+            if (infoNuites != null)         recapitulatif += "\n" + infoNuites + "\n";
+            if (infoDatesBenevolat != null) recapitulatif += "\n" + infoDatesBenevolat + "\n";
             // Envoie Email
             string msg = "Enregistrement terminé,\n un récaptulatif de cet enregistement a été enregistré dans le fichier journal.txt\n Voici le racapitulatif : \n\n";
             msg += recapitulatif;
@@ -506,13 +509,11 @@ namespace MaisonDesLigues.Gui
                 var result = MessageBox.Show(msg, "Confirmer l'envoie", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    DataTable parametres = Modele.ObtenirDonnees("V_PARAMETRESMAIL");
-                    MailAddress from = new MailAddress(parametres.Rows[0]["MAIL"].ToString(), parametres.Rows[0]["NOM"].ToString());
                     MailAddress to = new MailAddress(tbInscriptionEmail.Text, tbInscriptionNom.Text+" "+ tbInscriptionPrenom.Text);
                     string statut = Logs.envoyerEmail(
                         "Inscription MDL",
                         "Félicitation ! Votre inscription a MDL était réalisée\n" + recapitulatif,
-                        from, to
+                        obtennirEmailMDL(), to
                     );
                     MessageBox.Show("L'email vient d'etre envoyé, voici son statut : \n" + statut, "Statut email", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -524,7 +525,11 @@ namespace MaisonDesLigues.Gui
             resetInscription();
         }
 
-
+        private MailAddress obtennirEmailMDL()
+        {
+            DataTable parametres = Modele.ObtenirDonnees("V_PARAMETRESMAIL");
+            return  new MailAddress(parametres.Rows[0]["MAIL"].ToString(), parametres.Rows[0]["NOM"].ToString());
+        }
 
 
         /* RAFRAICHIR */
@@ -558,13 +563,12 @@ namespace MaisonDesLigues.Gui
             var result = MessageBox.Show(msg, "Confirmer l'envoie", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                DataTable parametres = Modele.ObtenirDonnees("V_PARAMETRESMAIL");
-                MailAddress from = new MailAddress(parametres.Rows[0]["MAIL"].ToString(), parametres.Rows[0]["NOM"].ToString());
+                
                 MailAddress to = new MailAddress(tbInscriptionEmail.Text, tbInscriptionNom.Text + " " + tbInscriptionPrenom.Text);
                 string statut = Logs.envoyerEmail(
                     "Service inscription MDL, problèmes de saisie",
                     genererContenueMsgMailAvertir(),
-                    from, to
+                    obtennirEmailMDL(), to
                 );
                 MessageBox.Show("L'email vient d'etre envoyé, voici son statut : \n" + statut, "Statut email", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

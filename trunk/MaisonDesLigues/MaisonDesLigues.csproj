@@ -75,7 +75,7 @@
       <DependentUpon>Fenaitre.cs</DependentUpon>
     </Compile>
     <Compile Include="Modele.cs" />
-    <Compile Include="News.cs" />
+    <Compile Include="Logs.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
